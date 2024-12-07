@@ -136,3 +136,16 @@ _:
     end
   '';
 }
+
+# -- Set the keymaps for whenever a terminal is opened
+# Autocmd("TermOpen", "float_term", function()
+#     vim.cmd("lua set_terminal_keymaps()")
+# end)
+
+# function _G.set_terminal_keymaps()
+#     require("which-key").add({
+#         mode = { "t" },
+#         { "<C-D>", "<Cmd>wincmd h<CR>", desc = "Terminal exit kemap" }
+#     })
+# end
+

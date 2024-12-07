@@ -26,5 +26,5 @@ _:
     };
   };
 
-  # TODO: add a keybind for previewing blame (+ check out other cool gitsigns stuff)
+  # TODO: [later] add a keybind for previewing blame (+ check out other cool gitsigns stuff)
 }

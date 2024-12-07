@@ -39,7 +39,7 @@ let
     val = "  ${icon}  ${dscr}";
   };
 
-  # TODO: make this work (buttons work, keys don't trigger them)
+  # FIXME: make this work (buttons work, keys don't trigger them)
 
   buttons = {
     type = "group";
