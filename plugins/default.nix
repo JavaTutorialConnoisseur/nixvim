@@ -22,4 +22,4 @@ in lib.mkMerge (map (file:
       extraPlugins = plugin.extra.packages;
     })
     (plugin.rootOpts or { })
-  ]) (lib.trace definitions definitions))
+  ]) definitions)
