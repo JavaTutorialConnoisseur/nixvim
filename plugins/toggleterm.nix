@@ -37,6 +37,18 @@ _:
     };
   };
 
+    # { "<leader>t",        group = "terminals | whitespace | todo's" },
+    # -- this should be diff prolly
+    # { "<leader>ta",       "<Cmd>ToggleAlternate<CR>",               desc = "Toggle alternate boolean values" },
+    # { "<leader>td",       "<Cmd>TodoTelescope<CR>",                 desc = "Toggle searching for Todo messages" },
+    # { "<leader><C-D>",    "<Cmd>ToggleTerm direction=float<CR>",    desc = "Toggle all terminals" },
+    # { "<leader><leader>", ZshTermToggle,                            desc = "Toggle Zsh" },
+    # { "<leader>tg",       GefTermToggle,                            desc = "Toggle GEF terminal" },
+    # { "<leader>tk",       ShellTermToggle,                          desc = "Toggle custom shell terminal" },
+    # { "<leader>tl",       LazyTermToggle,                           desc = "Toggle LazyGit terminal" },
+    # { "<leader>tr",       RemoveTrailingWhitespace,                 desc = "Remove trailing whitespace" },
+    # { "<leader>tv",       ZshTermHorizToggle,                       desc = "Toggle Zsh horizontally" },
+
   rootOpts.keymaps = [
     {
       mode = "n";

@@ -12,4 +12,11 @@ _:
       hint = false;
     };
   };
+
+  rootOpts.keymaps = [{
+    mode = "n";
+    key = "<leader>ht";
+    action = "<Cmd>Hardtime toggle<CR>";
+    options.desc = "Toggle Hardtime";
+  }];
 }

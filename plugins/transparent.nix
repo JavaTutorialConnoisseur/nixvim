@@ -12,14 +12,18 @@ _:
 
       "BufferCurrentSign"
       "BufferCurrentSignRight"
-      "BufferInactive"
+
       "BufferDefaultVisible"
+
       "BufferAlternate"
-      "BufferInactive"
-      "BufferVisible"
       "BufferAlternateMod"
+
+      "BufferInactive"
       "BufferInactiveMod"
+
+      "BufferVisible"
       "BufferVisibleMod"
+
       "BufferTabpageFill"
 
       # TODO: move these to related plugins
@@ -41,8 +45,6 @@ _:
       "TelescopePromptBorder"
       "TelescopeResultsNormal"
       "TelescopeResultsBorder"
-
-      "RenamerBorder"
 
       "NotifyWARNBorder"
       "NotifyWARNTitle"

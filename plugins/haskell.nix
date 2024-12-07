@@ -1,6 +1,8 @@
 _:
 
 {
+  rootOpts.plugins.lsp.servers.hls.enabled = true;
+
   rootOpts.autoCmd = [{
     command.__raw = ''
       vim.cmd [[

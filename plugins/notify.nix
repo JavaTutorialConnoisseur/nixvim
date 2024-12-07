@@ -24,7 +24,7 @@ _:
   rootOpts.keymaps = [
     {
       mode = "n";
-      key = "<leader>nD";
+      key = "<leader>nd";
       action.__raw =
         "function() require('notify').dismiss { pending = true, silent = true } end";
       options.desc = "Dismiss notifications";
