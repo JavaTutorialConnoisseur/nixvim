@@ -1,0 +1,9 @@
+.cache/*
+.cache
+.nvim/*
+.nvim
+
+.rooter-root
+debug.txt
+result/*
+result
