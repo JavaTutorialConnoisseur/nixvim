@@ -69,5 +69,25 @@ in {
     }
   ];
 
-  userCommands = { };
+  userCommands = {
+    RemoveTrailingWhitespace = {
+      desc = "";
+      command.__raw = ''
+        function()
+          if vim.bo.modifiable then
+            local cursor_pos = vim.api.nvim_win_get_cursor(0)
+            local total_lines = vim.api.nvim_buf_line_count(0)
+
+            vim.cmd([[ %s/\s\+$//e ]])
+            vim.cmd([[ :noh ]])
+
+            assert(total_lines == vim.api.nvim_buf_line_count(0),
+                "line counts should not change when removing trailing whitespace...")
+
+            vim.api.nvim_win_set_cursor(0, cursor_pos)
+          end
+        end
+      '';
+    };
+  };
 }
