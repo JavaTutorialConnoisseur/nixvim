@@ -28,7 +28,6 @@
       end
     '';
 
-    # I don't really understand this, stole it from https://github.com/nicolas-goudry/nixvim-config/
     keymaps = let
       mkTelescopeKeymap = { key, fn, args ? { __empty = true; }, desc ? ""
         , extension ? null, mode ? "n" }: {
@@ -62,6 +61,18 @@
         desc = "Find files";
         key = "<leader>gf";
         fn = "find_files";
+      }
+
+      {
+        desc = "Visualize undotree";
+        key = "<leader>gu";
+        fn = "undo";
+      }
+
+      {
+        desc = "Find marx (no typo)";
+        key = "<leader>gm";
+        fn = "marks";
       }
 
       {
@@ -114,6 +125,12 @@
         desc = "Search references";
         key = "<leader>cr";
         fn = "lsp_references";
+      }
+
+      {
+        desc = "List all diagnostics";
+        key = "<leader>dl";
+        fn = "diagnostics";
       }
     ];
   };

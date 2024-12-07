@@ -2,6 +2,8 @@ _:
 
 let c_or_cpp = "c";
 in {
+  rootOpts.plugins.lsp.servers.ccls.enable = true;
+
   rootOpts.extraConfigLua = ''
     if ${c_or_cpp} == "c" then
       vim.g.c_syntax_for_h = 1
