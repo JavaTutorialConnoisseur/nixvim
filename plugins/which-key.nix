@@ -24,7 +24,10 @@ _:
 
         keys.add({
           buffer = buf,
-          { "q",     "<cmd>close<cr>",       desc = "Close q-closable buffer" },
+          { "q",
+            "<cmd>close<cr>",
+            desc = "Close q-closable buffer"
+          },
         })
       end'';
     event = [ "FileType" ];
