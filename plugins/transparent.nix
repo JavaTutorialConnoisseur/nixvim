@@ -28,14 +28,15 @@ _:
 
       # TODO: move these to related plugins
 
-      "ToggleTerm1Normal"
+      "ZenBg"
 
-      "NvimTreeNormal"
-      "NvimTreeNormalNC"
-      "NvimTreeNormalFloat"
-      "NvimTreeLiveFilterValue"
-      "NvimTreeEndOfBuffer"
-      "NvimTreeWinSeparator"
+      "NeoTreeTabActive"
+      "NeoTreeTabInactive"
+      "NeoTreeNormal"
+      "NeoTreeNormalNC"
+      "NeoTreeWinSeparator"
+
+      "ToggleTerm1Normal"
 
       "TelescopeNormal"
       "TelescopeBorder"
