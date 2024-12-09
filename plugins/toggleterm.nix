@@ -46,7 +46,6 @@ _:
     # { "<leader>tg",       GefTermToggle,                            desc = "Toggle GEF terminal" },
     # { "<leader>tk",       ShellTermToggle,                          desc = "Toggle custom shell terminal" },
     # { "<leader>tl",       LazyTermToggle,                           desc = "Toggle LazyGit terminal" },
-    # { "<leader>tr",       RemoveTrailingWhitespace,                 desc = "Remove trailing whitespace" },
     # { "<leader>tv",       ZshTermHorizToggle,                       desc = "Toggle Zsh horizontally" },
 
   rootOpts.keymaps = [
