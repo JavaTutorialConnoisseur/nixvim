@@ -1,7 +1,15 @@
 _:
 
-# FIXME: check why this doesn't show catppuccin colors
-{
+let
+  _catppuccin_colors = [
+    [ "Catppuccin1" "#c6a0f6" ]
+    [ "Catppuccin2" "#8aadf4" ]
+    [ "Catppuccin3" "#8bd5ca" ]
+    [ "Catppuccin4" "#a6da95" ]
+    [ "Catppuccin5" "#eed49f" ]
+    [ "Catppuccin6" "#f5a97f" ]
+  ];
+in {
   rootOpts.colorschemes.catppuccin.settings.integrations.indent_blankline =
     true;
 
@@ -9,12 +17,16 @@ _:
     enable = true;
 
     settings = {
-      indent.char = "▏";
+      indent = {
+        highlight = [ "Comment" "Type" "Constant" "Error" ];
+        char = "│";
+      };
 
       scope = {
         enabled = true;
-        show_start = true;
+        show_start = false;
         show_end = false;
+        highlight = "String";
       };
 
       exclude.filetypes = [
