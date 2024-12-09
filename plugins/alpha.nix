@@ -29,8 +29,21 @@ let
   };
 
   mkButton = { key, fn, icon, dscr }: {
-    on_press = { __raw = "function() ${fn} end"; };
+    on_press.__raw = ''
+      function()
+        ${fn}
+      end'';
     opts = {
+      keymap = [
+        "n"
+        key
+        "<cmd>:lua ${fn}<cr>" # potentially a bug if someone misunderstands 'fn'
+        {
+          noremap = true;
+          silent = true;
+          nowait = true;
+        }
+      ];
       shortcut = key;
       position = "center";
       hl = "AlphaButtons";
@@ -38,8 +51,6 @@ let
     type = "button";
     val = "  ${icon}  ${dscr}";
   };
-
-  # FIXME: make this work (buttons work, keys don't trigger them)
 
   buttons = {
     type = "group";
@@ -88,6 +99,21 @@ in {
     layout = [ winheight-padding header (padding 2) buttons (padding 4) ];
   };
 
+  rootOpts.keymaps = [{
+    mode = "n";
+    key = "<leader>hs";
+    options.desc = "Home screen";
+    action.__raw = ''
+      function()
+        local wins = vim.api.nvim_tabpage_list_wins(0)
+        if #wins > 1 and vim.bo[vim.api.nvim_win_get_buf(wins[1])].filetype == "neo-tree" then
+          vim.fn.win_gotoid(wins[2])
+        end
+        require("alpha").start(false)
+      end
+    '';
+  }];
+
   rootOpts = {
     autoGroups.alpha = { };
     autoCmd = [{
@@ -118,21 +144,6 @@ in {
       '';
     }];
 
-    colorschemes.catppuccin.settings = { integrations.alpha = true; };
-
-    keymaps = [{
-      mode = "n";
-      key = "<leader>hs";
-      options.desc = "Home screen";
-      action.__raw = ''
-        function()
-          local wins = vim.api.nvim_tabpage_list_wins(0)
-          if #wins > 1 and vim.bo[vim.api.nvim_win_get_buf(wins[1])].filetype == "neo-tree" then
-            vim.fn.win_gotoid(wins[2])
-          end
-          require("alpha").start(false)
-        end
-      '';
-    }];
+    colorschemes.catppuccin.settings.integrations.alpha = true;
   };
 }
