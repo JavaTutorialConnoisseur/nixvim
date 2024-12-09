@@ -245,6 +245,12 @@ let
       action = "<Cmd>wincmd l<CR>";
       options.desc = "Move to split right";
     }
+
+    {
+      key = "<leader>tr";
+      action = "<cmd>RemoveTrailingWhitespace<cr>";
+      options.desc = "Remove trailing whitespace";
+    }
   ];
 
   insert_mode = map (key: key // { mode = "i"; }) [
