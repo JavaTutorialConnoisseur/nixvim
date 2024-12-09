@@ -14,8 +14,7 @@ _:
       lspBuf = {
         K = "hover";
         "<leader>f" = "format";
-        # TODO: see if this works with inc-rename
-        "<leader>rn" = "rename";
+        "<leader>rl" = "rename";
         "<leader>cD" = "declaration";
         "<leader>cd" = "definition";
         "<leader>ci" = "implementation";

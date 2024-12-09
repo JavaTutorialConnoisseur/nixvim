@@ -1,4 +1,5 @@
-possible plugins folders: 
+<!-- TODO: add folders / categorize plugins -->
+possible plugins folders:
 - coding
 - colorscheme
 - languages
@@ -6,10 +7,11 @@ possible plugins folders:
 - lsp
 - ui
 
-possible other plugins: 
+possible other plugins:
 - precognition-nvim
 - vim-be-good
 - dap
+- java-related stuff
 
 other stuff:
 - function that uncomments contiguous comment lines (prolly ez)
