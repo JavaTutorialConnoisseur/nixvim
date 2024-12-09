@@ -74,6 +74,7 @@ _:
           left = "";
           right = "";
         };
+        disabled_filetypes = [ "alpha" "neo-tree" ];
       };
 
       sections = {
