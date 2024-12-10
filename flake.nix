@@ -39,6 +39,31 @@
       packages = forAllSystems (system:
         let
           pkgs = import nixpkgs { inherit system; };
+
+          # filterDefinitions = lib:
+          #   lib.filterAttrs (filename: kind:
+          #     filename != "default.nix"
+          #     && (kind == "regular" || kind == "directory"));
+          #
+          # getDefinitions = lib: dir:
+          #   lib.attrNames ((filterDefinitions lib) (builtins.readDir dir));
+          #
+          # getPlugins = dir: lib: args:
+          #   lib.mkMerge (map (file:
+          #     let
+          #       pluginName = lib.elemAt (lib.splitString "." file) 0;
+          #       plugin = import ./plugins/ui/${file} args;
+          #     in lib.mkMerge [
+          #       (lib.optionalAttrs (plugin ? opts) {
+          #         plugins.${pluginName} = plugin.opts;
+          #       })
+          #       (lib.optionalAttrs (plugin ? extra) {
+          #         extraConfigLua = plugin.extra.config or "";
+          #         extraPlugins = plugin.extra.packages;
+          #       })
+          #       (plugin.rootOpts or { })
+          #     ]) (getDefinitions lib dir));
+          #
           mkNixvim = specialArgs:
             nixvim.legacyPackages.${system}.makeNixvimWithModule {
               inherit pkgs;

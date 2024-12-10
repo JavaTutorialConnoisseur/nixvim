@@ -5,7 +5,7 @@
 
   rootOpts.keymaps = [{
     mode = "n";
-    key = "<leader>ta";
+    key = "<leader>a";
     action = "<Cmd>ToggleAlternate<CR>";
     options.desc = "Toggle alternate";
   }];

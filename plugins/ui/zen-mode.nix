@@ -1,9 +1,9 @@
 _:
 
-# TODO: [later] add window bg shade diff (+ add transparency)
 {
   opts.enable = true;
 
+  rootOpts.plugins.transparent.settings.extra_groups = [ "ZenBg" ];
   rootOpts.keymaps = [{
     mode = "n";
     key = "<leader>z";

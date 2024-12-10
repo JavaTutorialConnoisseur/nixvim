@@ -5,7 +5,7 @@
 
   rootOpts.keymaps = [{
     mode = "n";
-    key = "<leader>uk";
+    key = "<leader>hk";
     action = "<Cmd>Screenkey toggle<CR>";
     options.desc = "Toggle screenkey";
   }];

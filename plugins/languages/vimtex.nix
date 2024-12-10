@@ -9,4 +9,6 @@ _:
       view_general_options = "--unique file:@pdf#src:@line@tex";
     };
   };
+
+  rootOpts.plugins.transparent.settings.extra_groups = [ "VimtexMsg" ];
 }

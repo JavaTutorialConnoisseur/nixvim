@@ -1,9 +1,16 @@
 { lib, ... }@args:
 
 let
-  definitions = lib.attrNames (lib.filterAttrs (filename: kind:
-    filename != "default.nix" && (kind == "regular" || kind == "directory"))
-    (builtins.readDir ./.));
+  withLSP = args.withLSP or true;
+
+  disabled_files = [ "haskell.nix" "scala.nix" ];
+  filterDisabled = dir:
+    lib.filterAttrs (filename: _: !(lib.elem filename disabled_files)) dir;
+
+  definitions = lib.attrNames (filterDisabled (lib.filterAttrs (filename: kind:
+    filename != "default.nix" && (kind == "regular" || kind == "directory")
+    && (if filename == "lsp.nix" then withLSP else true))
+    (builtins.readDir ./.)));
 in lib.mkMerge (map (file:
   let
     pluginName = lib.elemAt (lib.splitString "." file) 0;
