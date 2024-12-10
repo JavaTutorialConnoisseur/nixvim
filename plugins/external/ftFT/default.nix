@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
-# TODO: figure out how to make this not screw up tagbar
-#     + [later] un-hardcode #AF87FF
+# BUG: figure out how to make this not screw up tagbar
+# TODO: [later] un-hardcode #AF87FF
 let special_event_color = "#AF86FF";
 in {
   extra.packages = [ (import ./package.nix { inherit lib pkgs; }) ];

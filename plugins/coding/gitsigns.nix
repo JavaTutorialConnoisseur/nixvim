@@ -26,5 +26,8 @@ _:
     };
   };
 
+  rootOpts.plugins.transparent.settings.extra_groups =
+    [ "GitSignsAdd" "GitSignsChange" "GitSignsDelete" ];
+
   # TODO: [later] add a keybind for previewing blame (+ check out other cool gitsigns stuff)
 }

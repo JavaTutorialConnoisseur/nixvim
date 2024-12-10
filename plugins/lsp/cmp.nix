@@ -5,9 +5,15 @@ _:
     enable = true;
 
     settings = {
-      sources = [ { name = "nvim_lsp"; } { name = "luasnip"; } ];
+      sources = [
+        { name = "luasnip"; }
+        { name = "nvim_lsp"; }
+        { name = "friendly-snippets"; }
+      ];
+
       snippet.expand =
         "function(args) require('luasnip').lsp_expand(args.body) end";
+
       mapping = {
         "<C-Space>" = "cmp.mapping.complete()";
         "<C-e>" = "cmp.mapping.close()";

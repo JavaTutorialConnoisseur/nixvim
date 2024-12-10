@@ -10,5 +10,15 @@ _:
     action = "<cmd>TodoTelescope<cr>";
   }];
 
+  rootOpts.plugins.transparent.settings.extra_groups = [
+    "TodoSignNOTE"
+    "TodoSignFIX"
+    "TodoSignHACK"
+    "TodoSignPERF"
+    "TodoSignTEST"
+    "TodoSignTODO"
+    "TodoSignWARN"
+  ];
+
   # NOTE: maybe add other todo things (there's a loclist one?)
 }

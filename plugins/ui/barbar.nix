@@ -5,6 +5,7 @@ _: {
     settings = {
       animation = true;
       highlight_alternate = true;
+      auto_hide = 1;
 
       icons = {
         filetype = {

@@ -165,6 +165,14 @@ _:
 
   rootOpts = {
     colorschemes.catppuccin.settings.integrations.neotree = true;
+    plugins.transparent.settings.extra_groups = [
+      "NeoTreeTabActive"
+      "NeoTreeTabInactive"
+      "NeoTreeNormal"
+      "NeoTreeNormalNC"
+      "NeoTreeWinSeparator"
+    ];
+
     autoGroups.neotree = { };
 
     # Custom autocommands (taken from AstroNvim)

@@ -85,7 +85,6 @@ _:
         lualine_x = [
           "lsp_progress"
           {
-            # WARN: if cursor blinks, this could be the reason
             __raw = ''
               function()
                   local count = vim.fn.wordcount().visual_words

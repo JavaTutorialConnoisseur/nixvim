@@ -29,6 +29,7 @@ _:
         "function() require('notify').dismiss { pending = true, silent = true } end";
       options.desc = "Dismiss notifications";
     }
+
     {
       mode = "n";
       key = "<leader>nf";
@@ -36,5 +37,28 @@ _:
         "function() TelescopeWithTheme('notify', {}, 'notify') end";
       options.desc = "Find notifications";
     }
+  ];
+
+  rootOpts.plugins.transparent.settings.extra_groups = [
+    "NotifyWARNBorder"
+    "NotifyWARNTitle"
+    "NotifyWARNIcon"
+    "NotifyERRORBorder"
+    "NotifyERRORTitle"
+    "NotifyERRORIcon"
+    "NotifyINFOBorder"
+    "NotifyINFOTitle"
+    "NotifyINFOIcon"
+    "NotifyTRACEBorder"
+    "NotifyTRACETitle"
+    "NotifyTRACEIcon"
+    "NotifyDEBUGBorder"
+    "NotifyDEBUGTitle"
+    "NotifyDEBUGIcon"
+    "NotifyERRORBody"
+    "NotifyWARNBody"
+    "NotifyINFOBody"
+    "NotifyDEBUGBody"
+    "NotifyTRACEBody"
   ];
 }

@@ -1,7 +1,10 @@
 _:
 
 {
-  rootOpts.plugins.lsp.servers.hls.enabled = true;
+  rootOpts.plugins.lsp.servers.hls = {
+    enable = true;
+    installGhc = false;
+  };
 
   rootOpts.autoCmd = [{
     command.__raw = ''

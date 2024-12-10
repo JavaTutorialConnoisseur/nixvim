@@ -7,6 +7,16 @@
     extraPackages = [ pkgs.ripgrep ];
 
     colorschemes.catppuccin.settings.integrations.telescope.enabled = true;
+    plugins.transparent.settings.extra_groups = [
+      "TelescopeNormal"
+      "TelescopeBorder"
+      "TelescopePreviewNormal"
+      "TelescopePreviewBorder"
+      "TelescopePromptNormal"
+      "TelescopePromptBorder"
+      "TelescopeResultsNormal"
+      "TelescopeResultsBorder"
+    ];
 
     extraConfigLuaPre = ''
       local TelescopeWithTheme = function(fn, args, extension)
