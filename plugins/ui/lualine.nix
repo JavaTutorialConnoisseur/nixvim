@@ -14,7 +14,6 @@ _:
       dark = "#80807F";
     };
 
-    # TODO: [later] make this auto-attach to selected `theme`
     curr_theme = {
       normal.a.fg = colors.black;
       normal.a.bg = colors.violet;

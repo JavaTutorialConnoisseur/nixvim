@@ -19,6 +19,4 @@ _:
     "TodoSignTODO"
     "TodoSignWARN"
   ];
-
-  # NOTE: maybe add other todo things (there's a loclist one?)
 }

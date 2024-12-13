@@ -1,4 +1,4 @@
-_:
+{ pkgs, ... }:
 
 {
   opts = {
@@ -10,5 +10,8 @@ _:
     };
   };
 
+  # TODO: add / label keybinds for compilation?
+
+  rootOpts.extraPackages = [ pkgs.texliveBasic ];
   rootOpts.plugins.transparent.settings.extra_groups = [ "VimtexMsg" ];
 }

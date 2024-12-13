@@ -33,7 +33,6 @@ _: {
     };
   };
 
-  # TODO: [later] un-hardcode these colors, try attaching catppuccin to this
   rootOpts.autoCmd = [{
     desc = "Set all tab bar highlights";
     callback.__raw = ''

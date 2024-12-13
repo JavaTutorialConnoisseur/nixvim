@@ -19,7 +19,7 @@ _:
   }];
 }
 
-# NOTE: if I ever need haskell, this is one way:
+# if I ever need haskell, this should be added:
 
 # -- https://github.com/MrcJkb/haskell-tools.nvim
 # RequireEnvironment({ 'haskell-tools', 'which-key' }, function()

@@ -4,7 +4,7 @@ _:
 
 }
 
-# NOTE: if I ever need scala, this is one way:
+# if I ever need scala, this is one way:
 
 # -- https://github.com/scalameta/nvim-metals
 # RequireEnvironment('metals', function()

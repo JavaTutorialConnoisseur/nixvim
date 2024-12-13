@@ -1,5 +1,4 @@
 # collaborative editing plugin
-# TEST: does this even work?
 _:
 
 {
