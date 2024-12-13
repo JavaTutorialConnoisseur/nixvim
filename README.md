@@ -1,17 +1,14 @@
-<!-- TODO: add folders / categorize plugins -->
-possible plugins folders:
-- coding
-- colorscheme
-- languages
-- editor
-- lsp
-- ui
+# Possible things to add: <!-- TODO: -->
 
-possible other plugins:
-- precognition-nvim
-- vim-be-good
-- dap
-- java-related stuff
-
-other stuff:
-- function that uncomments contiguous comment lines (prolly ez)
+- figure out how to make ftFT not screw up tagbar highlighting
+- fill in this README
+- think about plugin categorization
+- un-hardcode (read from custom theme) colors in:
+    - lualine
+    - barbar
+    - ftFT
+- change the `default.nix` hell
+- possible other plugins:
+    - (none so far)
+- functions:
+    - function that uncomments contiguous comment lines (prolly ez)

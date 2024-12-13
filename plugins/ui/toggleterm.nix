@@ -80,24 +80,24 @@ _:
       options.desc = "Select terminal";
     }
 
-    # {
-    #   mode = [ "n" ];
-    #   key = "<Leader>tl";
-    #   action = "<cmd>lua lazygit_term:toggle()<cr>";
-    #   options.desc = "Toggle lazygit term";
-    # }
+    {
+      mode = [ "n" ];
+      key = "<Leader>tl";
+      action = "<cmd>LazyGitTermToggle<cr>";
+      options.desc = "Toggle lazygit term";
+    }
 
     {
       mode = [ "n" ];
       key = "<Leader>tg";
-      action = "<cmd>lua gef_term:toggle()<cr>";
+      action = "<cmd>GefTermToggle<cr>";
       options.desc = "Toggle GEF GDB term";
     }
 
     {
       mode = [ "n" ];
       key = "<leader><leader>";
-      action = "<cmd>lua zsh_term:toggle()<cr>";
+      action = "<cmd>ZshTermToggle<cr>";
       options.desc = "Toggle zsh term";
     }
 
@@ -125,24 +125,6 @@ _:
     }
   ];
 
-  rootOpts.userCommands = {
-    NixShellTermToggle = {
-      command.__raw = ''
-        function()
-          local cwd = vim.fn.getcwd()
-          local shell_path = vim.fn.expand(cwd .. '/shell.nix')
-          if vim.fn.filereadable(shell_path) == 1 then
-            shell_term:toggle()
-          else
-            vim.notify("File «shell.nix» does not " ..
-              "exist in the current directory!", "error")
-          end
-        end
-      '';
-      desc = "Prints whole file using 'silicon'.";
-    };
-  };
-
   rootOpts.keymapsOnEvents = {
     TermOpen = [{
       mode = [ "t" ];
@@ -152,46 +134,130 @@ _:
     }];
   };
 
-  # FIXME: this doesn't work. Have it so these aren't global but still work somehow (w/o overriding)
-  extraConfigLuaPre = ''
-    local Terminal = require('toggleterm.terminal').Terminal
+  rootOpts.userCommands = let
+    nixShellTermCount = "999";
+    lazyGitTermCount = "998";
+    zshTermCount = "997";
+    gefTermCount = "996";
 
-    lazygit_term = Terminal:new({
-        display_name = "LazyGit",
-        count = 999,
-        cmd = "lazygit",
+    createTerminal = { count, name, cmd }: ''
+      local Terminal = require('toggleterm.terminal').Terminal
+
+      local term = Terminal:new({
+        display_name = "${name}",
+        count = "${count}",
+        cmd = "${cmd}",
         direction = "float",
         hidden = true,
-    })
+      })
+    '';
 
-    function LazyGitToggle()
-      lazygit_term:toggle()
-    end
+    termExists = ''
+      local function terminal_exists(count)
+        local terminals = require("toggleterm.terminal").get_all()
+        for _, term in ipairs(terminals) do
+            if term.id == count then
+                return term
+            end
+        end
+        return nil
+      end
+    '';
 
-    vim.api.nvim_set_keymap("n", "<leader>tl", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+    toggleTerm = { term, ... }: ''
+      function()
+        ${termExists}
 
-    gef_term = Terminal:new({
-        display_name = "GDB GEF",
-        count = 998,
-        cmd = "gef",
-        direction = "float",
-        hidden = true,
-    })
+        local termCount = ${term.count}
+        local term = terminal_exists(termCount)
 
-    zsh_term = Terminal:new({
-        display_name = "Zsh",
-        count = 997,
-        cmd = "zsh",
-        direction = "float",
-        hidden = true,
-    })
+        if term then
+          vim.cmd(term.id .. "ToggleTermSetName ${term.name}")
+          term:toggle()
+        else
+          ${createTerminal term}
+          term:toggle()
+        end
+      end'';
+  in {
+    NixShellTermToggle = {
+      command.__raw = ''
+        function()
+          local cwd = vim.fn.getcwd()
+          local shell_path = vim.fn.expand(cwd .. '/shell.nix')
 
-    shell_term = Terminal:new({
-        display_name = "nix-shell",
-        count = 996,
-        cmd = "nix-shell shell.nix",
-        direction = "float",
-        hidden = true,
-    })
-  '';
+          if vim.fn.filereadable(shell_path) == 1 then
+            local fn = ${
+              toggleTerm {
+                term = {
+                  name = "nix-shell";
+                  cmd = "nix-shell shell.nix";
+                  count = nixShellTermCount;
+                };
+              }
+            }
+
+            fn()
+          else
+            vim.notify("File «shell.nix» does not " ..
+              "exist in the current directory!", "error")
+          end
+        end
+      '';
+      desc = "Toggles the Nix Shell terminal.";
+    };
+
+    LazyGitTermToggle = {
+      command.__raw = ''
+        function()
+          local cwd = vim.fn.getcwd()
+          local gitpath = vim.fn.expand(cwd .. '/.git')
+
+          if vim.fn.isdirectory(gitpath) == 1 then
+            local fn = ${
+              toggleTerm {
+                term = {
+                  name = "lazygit";
+                  cmd = "lazygit";
+                  count = lazyGitTermCount;
+                };
+              }
+            }
+
+            fn()
+          else
+            vim.notify("«.git» directory does not " ..
+              "exist in the current workspace!", "error")
+          end
+        end
+      '';
+      desc = "Toggles the lazygit terminal.";
+    };
+
+    GefTermToggle = {
+      command.__raw = ''
+        ${toggleTerm {
+          term = {
+            name = "gef (gdb)";
+            cmd = "gef";
+            count = gefTermCount;
+          };
+        }}
+      '';
+      desc = "Toggles the gef (gdb) terminal.";
+    };
+
+    ZshTermToggle = {
+      command.__raw = ''
+        ${toggleTerm {
+          term = {
+            name = "zsh";
+            cmd = "zsh";
+            count = zshTermCount;
+          };
+        }}
+      '';
+      desc = "Toggles the zsh terminal.";
+    };
+  };
 }

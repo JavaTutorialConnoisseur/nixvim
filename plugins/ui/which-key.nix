@@ -22,13 +22,26 @@ in {
       disable.ft = [ "TelescopePrompt" "neo-tree" "neo-tree-popup" ];
 
       spec = [
-        # NOTE: [later] move these to relevant plugins maybe? idk maybe not
+        # TODO: move these to relevant plugins maybe? idk maybe not
         #       + code analysis internals
         #       + diagnostics internals
         #       + <leader>gt
         #       + <leader>rl
         #       + VISUAL : <l>cr, <l>gt <- probably remove these
         #       + VISUAL : <l>pl <- the 'p' part is enough
+
+        (addIcon "<leader>i" {
+          name = "Git";
+          icon = "󰮠 ";
+        })
+
+        (addIcon "<leader>l" {
+          name = "Learning";
+          icon = {
+            icon = "󰑴 ";
+            color = "green";
+          };
+        })
 
         (addIcon "<leader>r" {
           name = "Rename";
@@ -163,10 +176,9 @@ in {
       "notify"
       "qf" # what is this pattern?
 
-      # NOTE: [later] When I decide to add neotest:
-      # "neotest-output"
-      # "neotest-summary"
-      # "neotest-output-panel"
+      "neotest-output"
+      "neotest-summary"
+      "neotest-output-panel"
     ];
     desc = "Allows for closing specific filetypes w/ just 'q'";
   }];

@@ -29,5 +29,40 @@ _:
   rootOpts.plugins.transparent.settings.extra_groups =
     [ "GitSignsAdd" "GitSignsChange" "GitSignsDelete" ];
 
-  # TODO: [later] add a keybind for previewing blame (+ check out other cool gitsigns stuff)
+  rootOpts.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>itb";
+      options.desc = "Toggle line blame showing";
+      action = "<cmd>Gitsigns toggle_current_line_blame<cr>";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>ib";
+      options.desc = "Show current line blame";
+      action = "<cmd>Gitsigns blame_line<cr>";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>iih";
+      options.desc = "Preview current hunk inline";
+      action = "<cmd>Gitsigns preview_hunk_inline<cr>";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>ih";
+      options.desc = "Preview current hunk";
+      action = "<cmd>Gitsigns prev_hunk<cr>";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>ih";
+      options.desc = "Show current file's diffview";
+      action = "<cmd>Gitsigns diffthis<cr>";
+    }
+  ];
 }
