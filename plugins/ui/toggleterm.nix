@@ -144,11 +144,12 @@ _:
       local Terminal = require('toggleterm.terminal').Terminal
 
       local term = Terminal:new({
-        display_name = "${name}",
+        display_name = "[${name}]",
         count = "${count}",
         cmd = "${cmd}",
         direction = "float",
         hidden = true,
+        close_on_exit = true,
       })
     '';
 
