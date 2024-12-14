@@ -11,4 +11,4 @@
 - possible other plugins:
     - (none so far)
 - functions:
-    - function that uncomments contiguous comment lines (prolly ez)
+    - (none so far)

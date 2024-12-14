@@ -96,6 +96,11 @@ in {
           icon = "󰓹 ";
         })
 
+        (addIcon "<leader>|" {
+          name = "Uncomment line-commented area";
+          icon = " ";
+        })
+
         (addIcon "<leader>/" {
           name = "Toggle line comment";
           icon = " ";
