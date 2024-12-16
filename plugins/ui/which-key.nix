@@ -18,9 +18,11 @@ in {
         scroll_up = "<M-]>";
       };
 
-      sort = [ "local" "order" "group" "alphanum" "mod" ];
+      sort = [ "group" "alphanum" ];
       disable.ft = [ "TelescopePrompt" "neo-tree" "neo-tree-popup" ];
 
+      # color (string): the color to use for the icon (optional) valid colors are: 
+      #     azure, blue, cyan, green, grey, orange, purple, red, yellow
       spec = [
         # TODO: move these to relevant plugins maybe? idk maybe not
         #       + code analysis internals
