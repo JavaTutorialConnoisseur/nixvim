@@ -73,7 +73,7 @@ _:
           left = "";
           right = "";
         };
-        disabled_filetypes = [ "alpha" "neo-tree" ];
+        disabled_filetypes = [ "vimtex-toc" "alpha" "neo-tree" ];
       };
 
       sections = {
