@@ -21,21 +21,15 @@ _:
         "<leader>ct" = "type_definition";
       };
 
-      extra = [
-        {
-          action = { __raw = "require('telescope.builtin').lsp_references"; };
-          key = "<leader>cr";
-        }
-
-        {
-          action = {
-            __raw = "require('telescope.builtin').lsp_document_symbols";
-          };
-          key = "<leader>gt";
-        }
-      ];
+      extra = [{
+        action = { __raw = "require('telescope.builtin').lsp_references"; };
+        key = "<leader>cr";
+        options.desc = "Find code references";
+      }];
     };
   };
+
+  rootOpts.plugins.lsp-signature.enable = true;
 
   rootOpts = {
     colorschemes.catppuccin.settings.integrations.native_lsp.enabled = true;
