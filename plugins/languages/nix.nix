@@ -1,11 +1,16 @@
 _:
 
 {
-  rootOpts.plugins.lsp.servers.nil_ls = {
-    enable = true;
-    settings = {
-      formatting.command = [ "nixfmt" ];
-      nix.flake.autoArchive = true;
+  rootOpts.plugins = {
+    nix-develop.enable = true;
+    hmts.enable = true; # string code highlighting (like css)
+
+    lsp.servers.nil_ls = {
+      enable = true;
+      settings = {
+        formatting.command = [ "nixfmt" ];
+        nix.flake.autoArchive = true;
+      };
     };
   };
 

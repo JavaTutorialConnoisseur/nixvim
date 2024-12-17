@@ -16,6 +16,7 @@
   };
 
   rootOpts.autoCmd = [
+    # move this to keymapsOnEvents
     {
       callback.__raw = ''
         function()
@@ -51,6 +52,7 @@
   rootOpts.plugins.transparent.settings.extra_groups = [ "VimtexMsg" ];
   rootOpts.extraPackages = [ pkgs.texlivePackages.latexmk ];
 
+  # TODO: change this to keymapsOnEvents -> ["FileType"] ["tex"]
   rootOpts.keymaps = let
     plugMap = { plugCmd, newKey, dsc }: {
       mode = "n";
@@ -116,7 +118,6 @@
 }
 
 # TODO: add / label keybinds:
-# TODO: add latex TEMPLATE -> mb add flk keybind for it?
 
 # dse              |<plug>(vimtex-env-delete)|                     `n`
 # dsc              |<plug>(vimtex-cmd-delete)|                     `n`

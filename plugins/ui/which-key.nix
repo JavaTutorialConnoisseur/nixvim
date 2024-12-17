@@ -27,7 +27,6 @@ in {
         # TODO: move these to relevant plugins maybe? idk maybe not
         #       + code analysis internals
         #       + diagnostics internals
-        #       + <leader>gt
         #       + <leader>rl
         #       + VISUAL : <l>cr, <l>gt <- probably remove these
         #       + VISUAL : <l>pl <- the 'p' part is enough

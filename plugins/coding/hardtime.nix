@@ -9,8 +9,17 @@ _:
 
       # I don't use it anyway, and when I do it's for terminal scroll which I want enabled
       disable_mouse = false;
-      disabled_filetypes =
-        [ "vimtex-toc" "qf" "netrw" "NvimTree" "lazy" "mason" ];
+      disabled_filetypes = [
+        "Navbuddy"
+        "dbui"
+        "neo-tree"
+        "vimtex-toc"
+        "qf"
+        "netrw"
+        "NvimTree"
+        "lazy"
+        "mason"
+      ];
       hint = false;
     };
   };
