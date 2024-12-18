@@ -26,7 +26,11 @@ _:
     };
   };
 
-  rootOpts.plugins.intellitab.enable = true;
+  rootOpts.plugins = {
+    cmp-nvim-lsp.enable = true;
+    intellitab.enable = true;
+  };
+
   rootOpts.keymaps = [{ # TEST: this might screw something up?
     mode = "i";
     key = "<tab>";
