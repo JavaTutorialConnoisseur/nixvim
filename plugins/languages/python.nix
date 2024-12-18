@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # TEST: verify that a project with __main__ is executed on DAP run
   rootOpts.plugins = {
     conform-nvim = {
       enable = true;
