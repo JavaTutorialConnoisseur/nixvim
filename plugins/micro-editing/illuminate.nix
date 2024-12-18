@@ -1,5 +1,6 @@
 _:
 
+# highlight other variable instances when hovering over one
 {
   opts = {
     enable = true;
