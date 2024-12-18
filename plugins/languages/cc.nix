@@ -5,7 +5,6 @@ in {
   rootOpts.plugins.lsp.servers.ccls.enable = true;
 
   rootOpts.plugins.dap = {
-    # TODO: do this
     adapters = {
       executables.gdb = {
         command = "gdb";
