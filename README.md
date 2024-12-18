@@ -1,12 +1,16 @@
 To-Do's
 -------
 
-Set up DAP stuff
 Move some telescope stuff to the 'styled' telescope thing
 
 Think about plugin categorization
 Change the `default.nix` hell
 
+Set up debug + DAP for:
+    - C
+    - Java
+    - Zig
+    - ~~Python~~
 Un-hardcode (read from custom theme) colors in:
     - lualine
     - barbar

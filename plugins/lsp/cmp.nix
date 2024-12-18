@@ -5,7 +5,12 @@ _:
     enable = true;
 
     settings = {
-      sources = [ { name = "luasnip"; } { name = "nvim_lsp"; } ];
+      sources = map (src: { name = src; }) [
+        "friendly-snippets"
+        "snippy"
+        "luasnip"
+        "nvim_lsp"
+      ];
 
       snippet.expand =
         "function(args) require('luasnip').lsp_expand(args.body) end";
@@ -24,6 +29,8 @@ _:
 
   rootOpts.plugins = {
     cmp-nvim-lsp.enable = true;
+    cmp-snippy.enable = true;
+    friendly-snippets.enable = true;
     intellitab.enable = true;
   };
 
