@@ -1,7 +1,7 @@
 To-Do's
 -------
 
-Think about plugin categorization
+Find a way to move 'external' plugins to related directories
 Move some telescope stuff to the 'styled' telescope thing
 Change the `default.nix` hell
 
