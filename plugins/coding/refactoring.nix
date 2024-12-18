@@ -9,7 +9,7 @@ _:
   rootOpts.plugins.which-key.settings.spec = [{
     __unkeyed-1 = "<leader>cp";
     group = "Printing (printf | var | clean)";
-    icon = "";
+    icon = " ";
   }];
 
   rootOpts.keymaps = [

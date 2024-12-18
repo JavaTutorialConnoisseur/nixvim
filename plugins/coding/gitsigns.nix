@@ -29,10 +29,20 @@ _:
   rootOpts.plugins.transparent.settings.extra_groups =
     [ "GitSignsAdd" "GitSignsChange" "GitSignsDelete" ];
 
+  rootOpts.plugins.which-key.settings.spec = [{
+    __unkeyed-1 = "<leader>i";
+    group = "Git";
+    icon = {
+      icon = "󰮠 ";
+      color = "yellow";
+    };
+    mode = "n";
+  }];
+
   rootOpts.keymaps = [
     {
       mode = "n";
-      key = "<leader>itb";
+      key = "<leader>iB";
       options.desc = "Toggle line blame showing";
       action = "<cmd>Gitsigns toggle_current_line_blame<cr>";
     }
@@ -46,7 +56,7 @@ _:
 
     {
       mode = "n";
-      key = "<leader>iih";
+      key = "<leader>iH";
       options.desc = "Preview current hunk inline";
       action = "<cmd>Gitsigns preview_hunk_inline<cr>";
     }

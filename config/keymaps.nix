@@ -1,18 +1,6 @@
 let
   normal_mode = map (key: key // { mode = "n"; }) [
     {
-      key = "<leader><Left>";
-      action = "<Cmd>wincmd h<CR>";
-      options.desc = "Move to left buffer";
-    }
-
-    {
-      key = "<leader><Right>";
-      action = "<Cmd>wincmd l<CR>";
-      options.desc = "Move to right buffer";
-    }
-
-    {
       key = "<leader>bc";
       action = "<Cmd>BufferClose<CR>";
       options.desc = "Close (tab) buffer";
@@ -46,12 +34,6 @@ let
       key = "<leader>bow";
       action = "<Cmd>BufferOrderByWindowNumber<CR>";
       options.desc = "By window number";
-    }
-
-    {
-      key = "<leader>?";
-      action = "<Cmd>WhichKey<CR>";
-      options.desc = "Toggle WhichKey";
     }
 
     {

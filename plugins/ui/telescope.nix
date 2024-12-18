@@ -18,6 +18,15 @@
       "TelescopeResultsBorder"
     ];
 
+    plugins.which-key.settings.spec = [{
+      __unkeyed-1 = "<leader>g";
+      group = "Searching";
+      icon = {
+        icon = " ";
+        color = "green";
+      };
+    }];
+
     extraConfigLuaPre = ''
       local TelescopeWithTheme = function(fn, args, extension)
         args.layout_config = {
@@ -26,7 +35,11 @@
           width = 0.8,
         }
 
-        if fn == "keymaps" or fn == "registers" then args.layout_config.height = function(_, _, max_lines) return max_lines end end
+        if fn == "keymaps" or fn == "registers" then
+          args.layout_config.height = function(_, _, max_lines)
+            return max_lines
+          end
+        end
 
         local args_with_theme = require("telescope.themes").get_dropdown(args)
 
@@ -56,19 +69,19 @@
       }
 
       {
-        desc = "Find words in current buffer";
+        desc = "Words in current buffer";
         key = "<leader>g/";
         fn = "current_buffer_fuzzy_find";
       }
 
       {
-        desc = "Find buffers";
+        desc = "Buffers";
         key = "<leader>gb";
         fn = "buffers";
       }
 
       {
-        desc = "Find files";
+        desc = "Files";
         key = "<leader>gf";
         fn = "find_files";
       }
@@ -80,13 +93,13 @@
       }
 
       {
-        desc = "Find marx (no typo)";
+        desc = "Marx";
         key = "<leader>gm";
         fn = "marks";
       }
 
       {
-        desc = "Find all files";
+        desc = "All files";
         key = "<leader>gF";
         fn = "find_files";
         args = {
@@ -96,43 +109,43 @@
       }
 
       {
-        desc = "Find words";
+        desc = "Words";
         key = "<leader>gr";
         fn = "live_grep";
       }
 
       {
-        desc = "Find help tags";
+        desc = "Help tags";
         key = "<leader>gh";
         fn = "help_tags";
       }
 
       {
-        desc = "Find keymaps";
+        desc = "Keymaps";
         key = "<leader>gk";
         fn = "keymaps";
       }
 
       {
-        desc = "Find history";
+        desc = "History";
         key = "<leader>go";
         fn = "oldfiles";
       }
 
       {
-        desc = "Find registers";
+        desc = "Registers";
         key = "<leader>g`";
         fn = "registers";
       }
 
       {
-        desc = "Find word under cursor";
+        desc = "Word under cursor";
         key = "<leader>gw";
         fn = "grep_string";
       }
 
       {
-        desc = "Search references";
+        desc = "References";
         key = "<leader>cr";
         fn = "lsp_references";
       }

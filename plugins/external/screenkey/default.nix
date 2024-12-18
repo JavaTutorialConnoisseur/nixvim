@@ -7,6 +7,6 @@
     mode = "n";
     key = "<leader>hk";
     action = "<Cmd>Screenkey toggle<CR>";
-    options.desc = "Toggle screenkey";
+    options.desc = "Screenkey";
   }];
 }

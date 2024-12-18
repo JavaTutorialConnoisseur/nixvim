@@ -28,7 +28,8 @@ _:
                 if node.type == "file" then
                   state.commands.open(state)
                 else
-                  require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
+                  require("neo-tree.ui.renderer").focus_node(state,
+                      node:get_child_ids()[1])
                 end
               end
             else -- if has no children
@@ -55,7 +56,9 @@ _:
               ["URI"] = vim.uri_from_fname(filepath),
             }
 
-            local options = vim.tbl_filter(function(val) return vals[val] ~= "" end, vim.tbl_keys(vals))
+            local options = vim.tbl_filter(function(val)
+                return vals[val] ~= ""
+            end, vim.tbl_keys(vals))
             if vim.tbl_isempty(options) then
               notify("No values to copy", vim.log.levels.WARN)
               return
@@ -63,7 +66,9 @@ _:
             table.sort(options)
             vim.ui.select(options, {
               prompt = "Choose to copy to clipboard:",
-              format_item = function(item) return ("%s: %s"):format(item, vals[item]) end,
+              format_item = function(item)
+                return ("%s: %s"):format(item, vals[item])
+              end,
             }, function(choice)
               local result = vals[choice]
               if result then
@@ -77,7 +82,8 @@ _:
         find_file_in_dir.__raw = ''
           function(state)
             local node = state.tree:get_node()
-            local path = node.type == "file" and node:get_parent_id() or node:get_id()
+            local path = node.type == "file"
+              and node:get_parent_id() or node:get_id()
             TelescopeWithTheme('find_files', { cwd = path }, "")
           end
         '';
@@ -85,7 +91,8 @@ _:
         grep_in_dir.__raw = ''
           function(state)
             local node = state.tree:get_node()
-            local path = node.type == "file" and node:get_parent_id() or node:get_id()
+            local path = node.type == "file"
+              and node:get_parent_id() or node:get_id()
             TelescopeWithTheme('live_grep', { cwd = path }, "")
           end
         '';
@@ -96,7 +103,8 @@ _:
             if node:has_children() and node:is_expanded() then
               state.commands.toggle_node(state)
             else
-              require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+              require("neo-tree.ui.renderer").focus_node(state,
+                node:get_parent_id())
             end
           end
         '';
@@ -165,6 +173,26 @@ _:
 
   rootOpts = {
     colorschemes.catppuccin.settings.integrations.neotree = true;
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed-1 = "<leader>m";
+        group = "Toggle explorer";
+        icon = {
+          icon = " ";
+          color = "azure";
+        };
+      }
+
+      {
+        __unkeyed-1 = "<leader>o";
+        group = "Toggle explorer focus";
+        icon = {
+          icon = " ";
+          color = "azure";
+        };
+      }
+    ];
+
     plugins.transparent.settings.extra_groups = [
       "NeoTreeTabActive"
       "NeoTreeTabInactive"
@@ -179,17 +207,20 @@ _:
     autoCmd = let
       refresh = ''
         function()
-          local manager_avail, manager = pcall(require, "neo-tree.sources.manager")
+          local manager_avail, manager = pcall(require,
+            "neo-tree.sources.manager")
           if manager_avail then
-            for _, source in ipairs { "filesystem", "git_status", "document_symbols" } do
+            for _, source in ipairs {
+              "filesystem", "git_status", "document_symbols" } do
               local module = "neo-tree.sources." .. source
-              if package.loaded[module] then manager.refresh(require(module).name) end
+              if package.loaded[module] then
+                manager.refresh(require(module).name)
+              end
             end
           end
         end
       '';
     in [
-      # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/neo-tree.lua#L21-L37
       {
         desc = "Open explorer on startup with directory";
         event = "BufEnter";
@@ -208,7 +239,6 @@ _:
           end
         '';
       }
-      # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/neo-tree.lua#L25-L35
       {
         desc = "Refresh explorer sources when closing lazygit";
         event = "TermClose";
@@ -236,7 +266,6 @@ _:
         key = "<leader>o";
         options.desc = "Toggle explorer focus";
 
-        # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/neo-tree.lua#L12-L18
         action.__raw = ''
           function()
             if vim.bo.filetype == "neo-tree" then

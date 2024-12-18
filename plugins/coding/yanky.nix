@@ -10,6 +10,6 @@ _:
     mode = "n";
     key = "<leader>gy";
     action = "<cmd>Telescope yank_history<cr>";
-    options.desc = "Find YANK selections";
+    options.desc = "Yank selections";
   }];
 }

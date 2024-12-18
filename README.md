@@ -1,13 +1,12 @@
 To-Do's
 -------
 
-Fill in this README <!-- TODO: -->
+Set up DAP stuff
+Move some telescope stuff to the 'styled' telescope thing
+Fix snippies & check out if friendly-snippets is optimal or not
+
 Think about plugin categorization
 Change the `default.nix` hell
-
-Check out if friendly-snippets is optimal or not
-
-Move some telescope stuff to the 'styled' telescope thing
 
 Un-hardcode (read from custom theme) colors in:
     - lualine
@@ -15,15 +14,12 @@ Un-hardcode (read from custom theme) colors in:
     - ftFT
 
 Perhaps add testing (rootOpts.test.check... / .runNvim / ...)
+Fill in this README <!-- TODO: -->
 
 Improvements
 ------------
 Possible other plugins: (in order of likelihood / usefulness)
-- [codesnap](https://github.com/mistricky/codesnap.nvim)
-
-- [neo-test](https://github.com/nvim-neotest/neotest)
-    - [coverage](https://github.com/andythigpen/nvim-coverage)
-- [competitest](https://github.com/xeluxee/competitest.nvim/)
+- (none so far)
 
 Functions:
 - (none so far)
