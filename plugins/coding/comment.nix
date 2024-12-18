@@ -16,6 +16,32 @@ _:
     };
   };
 
+  rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>|";
+      group = "Uncomment custom area";
+      icon = " ";
+    }
+
+    {
+      __unkeyed-1 = "<leader>/";
+      group = "Toggle line comment";
+      icon = " ";
+    }
+
+    {
+      __unkeyed-1 = "<leader>\\";
+      group = "Toggle block comment";
+      icon = " ";
+    }
+
+    {
+      __unkeyed-1 = "<leader>>";
+      group = "Add end-of-line comment";
+      icon = " ";
+    }
+  ];
+
   rootOpts.keymaps = [{
     mode = "n";
     key = "<leader>|";

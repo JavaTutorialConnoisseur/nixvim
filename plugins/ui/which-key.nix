@@ -1,17 +1,11 @@
 _:
 
-let
-  addIcon = key:
-    { name, icon ? "" }: {
-      __unkeyed-1 = key;
-      group = name;
-      icon = icon;
-    };
-in {
+{
   opts = {
     enable = true;
     settings = {
       win.border = "rounded";
+      icons.rules = false;
 
       keys = {
         scroll_down = "<M-[>";
@@ -21,136 +15,74 @@ in {
       sort = [ "group" "alphanum" ];
       disable.ft = [ "TelescopePrompt" "neo-tree" "neo-tree-popup" ];
 
-      # color (string): the color to use for the icon (optional) valid colors are: 
-      #     azure, blue, cyan, green, grey, orange, purple, red, yellow
+      # col: azure, blue, cyan, green, grey, purple, red, orange, yellow
       spec = [
-        # TODO: move these to relevant plugins maybe? idk maybe not
-        #       + code analysis internals
-        #       + diagnostics internals
-        #       + <leader>rl
-        #       + VISUAL : <l>cr, <l>gt <- probably remove these
-        #       + VISUAL : <l>pl <- the 'p' part is enough
+        {
+          __unkeyed-1 = "<leader>?";
+          __unkeyed-2 = "<cmd>WhichKey<cr>";
+          desc = "Show keymaps";
+          icon = {
+            icon = "󰌓 ";
+            color = "gray";
+          };
+          mode = "n";
+        }
 
-        (addIcon "<leader>i" {
-          name = "Git";
-          icon = "󰮠 ";
-        })
+        {
+          __unkeyed-1 = "<leader>p";
+          group = "Pretty-printing";
+          icon = {
+            icon = "󰸭 ";
+            color = "orange";
+          };
+          mode = [ "n" "x" ];
+        }
 
-        (addIcon "<leader>l" {
-          name = "Learning";
+        {
+          __unkeyed-1 = "<leader>l";
+          group = "Learning";
           icon = {
             icon = "󰑴 ";
-            color = "green";
+            color = "orange";
           };
-        })
+        }
 
-        (addIcon "<leader>r" {
-          name = "Rename";
+        {
+          __unkeyed-1 = "<leader>h";
+          group = "Special windows";
           icon = {
-            icon = "󰑕 ";
-            color = "green";
+            icon = " ";
+            color = "gray";
           };
-        })
+        }
 
-        (addIcon "<leader>c" {
-          name = "Code analysis";
-          icon = " ";
-        })
-
-        (addIcon "<leader>t" {
-          name = "Terminals | TODO's";
-          icon = " ";
-        })
-
-        (addIcon "<leader>h" {
-          name = "Special windows";
-          icon = " ";
-        })
-
-        (addIcon "<leader>d" {
-          name = "Diagnostics";
-          icon = " ";
-        })
-
-        (addIcon "<leader>q" {
-          name = "Exiting";
-          icon = "󰈆 ";
-        })
-
-        (addIcon "<leader>p" {
-          name = "Pretty-printing";
-          icon = "󰸭 ";
-        })
-
-        (addIcon "<leader>n" {
-          name = "Notifications";
-          icon = "󰀦 ";
-        })
-
-        (addIcon "<leader>g" {
-          name = "Searching";
-          icon = " ";
-        })
-
-        (addIcon "<leader>~" {
-          name = "Toggle tagbar";
-          icon = "󰓹 ";
-        })
-
-        (addIcon "<leader>|" {
-          name = "Uncomment line-commented area";
-          icon = " ";
-        })
-
-        (addIcon "<leader>/" {
-          name = "Toggle line comment";
-          icon = " ";
-        })
-
-        (addIcon "<leader>>" {
-          name = "Add end-of-line comment";
-          icon = " ";
-        })
-
-        (addIcon "<leader>m" {
-          name = "Toggle explorer";
-          icon = " ";
-        })
-
-        (addIcon "<leader>o" {
-          name = "Toggle explorer focus";
-          icon = " ";
-        })
-
-        (addIcon "<leader>z" {
-          name = "Toggle zen mode";
+        {
+          __unkeyed-1 = "<leader>b";
+          group = "Buffers";
           icon = {
-            icon = "󱅻 ";
-            color = "azure";
+            icon = "󰓩 ";
+            color = "purple";
           };
-        })
+        }
 
-        (addIcon "<leader>f" {
-          name = "Format Code";
-          icon = "󰉵 ";
-        })
+        {
+          __unkeyed-1 = "<leader>bo";
+          group = "Ordering";
+          icon = {
+            icon = "󰈍 ";
+            color = "cyan";
+          };
+        }
 
-        (addIcon "<leader>b" {
-          name = "Buffers";
-          icon = "󰓩 ";
-        })
-
-        (addIcon "<leader>b#" {
-          name = "Move to buffer 0-9";
-          icon = "󰓩 ";
-        })
-
-        (addIcon "<leader>bo" {
-          name = "Ordering";
-          icon = "󰈍 ";
-        })
+        {
+          __unkeyed-1 = "<leader>q";
+          group = "Exiting";
+          icon = {
+            icon = "󰈆 ";
+            color = "red";
+          };
+        }
       ];
-
     };
   };
 

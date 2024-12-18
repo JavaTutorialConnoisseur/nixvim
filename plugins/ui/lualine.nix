@@ -73,7 +73,18 @@ _:
           left = "";
           right = "";
         };
-        disabled_filetypes = [ "vimtex-toc" "alpha" "neo-tree" ];
+        disabled_filetypes = [
+          "dapui_stacks"
+          "dapui_breakpoints"
+          "dapui_watches"
+          "dapui_scopes"
+          "neotest-output"
+          "neotest-summary"
+          "neotest-output-panel"
+          "vimtex-toc"
+          "alpha"
+          "neo-tree"
+        ];
       };
 
       sections = {

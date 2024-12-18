@@ -21,6 +21,15 @@ _:
     '';
   };
 
+  rootOpts.plugins.which-key.settings.spec = [{
+    __unkeyed-1 = "<leader>n";
+    group = "Notifications";
+    icon = {
+      icon = "󰀦 ";
+      color = "orange";
+    };
+  }];
+
   rootOpts.keymaps = [
     {
       mode = "n";

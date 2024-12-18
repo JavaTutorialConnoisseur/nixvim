@@ -31,7 +31,8 @@ _:
     intellitab.enable = true;
   };
 
-  rootOpts.keymaps = [{ # TEST: this might screw something up?
+  # TEST: this might screw something up?
+  rootOpts.keymaps = [{
     mode = "i";
     key = "<tab>";
     action = "<cmd>lua require('intellitab').indent()<cr>";

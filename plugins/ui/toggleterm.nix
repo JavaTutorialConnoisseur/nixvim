@@ -26,7 +26,9 @@ _:
           vim.opt_local.foldcolumn = "0"
           vim.opt_local.signcolumn = "no"
           if t.hidden then
-            vim.keymap.set({ "n", "t", "i" }, "<F7>", function() t:toggle() end, { desc = "Toggle terminal", buffer = t.bufnr })
+            vim.keymap.set({ "n", "t", "i" }, "<F7>", function()
+              t:toggle()
+            end, { desc = "Toggle terminal", buffer = t.bufnr })
           end
           local term_name = "ToggleTermBuf" .. tostring(t.bufnr)
           vim.cmd(t.id .. "ToggleTermSetName " .. term_name)
@@ -36,15 +38,29 @@ _:
   };
 
   rootOpts.plugins.transparent.settings.extra_groups = [ "ToggleTerm1Normal" ];
-
-  rootOpts.keymaps = [
+  rootOpts.plugins.which-key.settings.spec = [
     {
+      __unkeyed-1 = "<leader><leader>";
+      __unkeyed-2 = "<cmd>ZshTermToggle<cr>";
+      desc = "Zsh";
+      icon = {
+        icon = "󱆃 ";
+        color = "purple";
+      };
       mode = "n";
-      key = "<leader><C-D>";
-      action = "<Cmd>ToggleTerm direction=float<CR>";
-      options.desc = "Toggle all terminals";
     }
 
+    {
+      __unkeyed-1 = "<leader>t";
+      group = "Terminals | TODO's";
+      icon = {
+        icon = " ";
+        color = "purple";
+      };
+    }
+  ];
+
+  rootOpts.keymaps = [
     {
       mode = "n";
       key = "<F7>";
@@ -84,28 +100,21 @@ _:
       mode = [ "n" ];
       key = "<Leader>tl";
       action = "<cmd>LazyGitTermToggle<cr>";
-      options.desc = "Toggle lazygit term";
+      options.desc = "Lazygit";
     }
 
     {
       mode = [ "n" ];
       key = "<Leader>tg";
       action = "<cmd>GefTermToggle<cr>";
-      options.desc = "Toggle GEF GDB term";
-    }
-
-    {
-      mode = [ "n" ];
-      key = "<leader><leader>";
-      action = "<cmd>ZshTermToggle<cr>";
-      options.desc = "Toggle zsh term";
+      options.desc = "[gdb] + GEF";
     }
 
     {
       mode = [ "n" ];
       key = "<leader>tk";
       action = "<cmd>NixShellTermToggle<cr>";
-      options.desc = "Toggle shell term term";
+      options.desc = "Nix-shell";
     }
 
     {
