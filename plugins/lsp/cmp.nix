@@ -5,11 +5,7 @@ _:
     enable = true;
 
     settings = {
-      sources = [
-        { name = "luasnip"; }
-        { name = "nvim_lsp"; }
-        { name = "friendly-snippets"; }
-      ];
+      sources = [ { name = "luasnip"; } { name = "nvim_lsp"; } ];
 
       snippet.expand =
         "function(args) require('luasnip').lsp_expand(args.body) end";
@@ -31,7 +27,7 @@ _:
     intellitab.enable = true;
   };
 
-  # TEST: this might screw something up?
+  # WARN: this might screw something up?
   rootOpts.keymaps = [{
     mode = "i";
     key = "<tab>";

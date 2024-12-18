@@ -3,7 +3,6 @@ To-Do's
 
 Set up DAP stuff
 Move some telescope stuff to the 'styled' telescope thing
-Fix snippies & check out if friendly-snippets is optimal or not
 
 Think about plugin categorization
 Change the `default.nix` hell
