@@ -1,5 +1,6 @@
 { pkgs, lib, ... }:
 
+# FIXME: why the hell is this not just working??
 let
   start-jdt-server = lib.getExe (pkgs.writeShellScriptBin "start-jdt-server"
     "jdtls -data ${workspacePath}/data_structures");
