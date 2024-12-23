@@ -7,7 +7,11 @@ _:
     mode = "n";
     key = "<leader>td";
     options.desc = "Find TODO's";
-    action = "<cmd>TodoTelescope<cr>";
+    action.__raw = ''
+      function()
+        TelescopeWithTheme('todo', { }, 'todo-comments')
+      end
+    '';
   }];
 
   rootOpts.plugins.transparent.settings.extra_groups = [
