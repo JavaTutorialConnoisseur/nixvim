@@ -1,25 +1,18 @@
 To-Do's
 -------
 
-Change the `default.nix` hell
 Set up debug + DAP for:
-    - C
-    - Java
-    - Zig
-    - ~~Python~~
+ - Java
 
-Un-hardcode (read from custom theme) colors in:
-    - lualine
-    - barbar
-    - ftFT
-
-Perhaps add testing (rootOpts.test.check... / .runNvim / ...)
 Fill in this README <!-- TODO: -->
 
 Improvements
 ------------
 Possible other plugins: (in order of likelihood / usefulness)
-- (none so far)
+- (nil so far)
 
 Functions:
-- (none so far)
+- (nil so far)
+
+Future:
+- (nil so far)
