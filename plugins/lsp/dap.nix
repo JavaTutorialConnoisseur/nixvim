@@ -136,7 +136,19 @@
           })
         end
       '';
-      options.desc = "Toggle DAP ui glyphs (run, etc.)";
+      options.desc = "Show DAP ui glyphs";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>ccg";
+      action.__raw = ''
+        function()
+          require('dapui').float_element('repl', { width = 110,
+            height = 28, position = 'center', title = 'REPL' })
+        end
+      '';
+      options.desc = "Show DAP repl";
     }
   ];
 
@@ -148,7 +160,7 @@
     dap.listeners.before.event_terminated.dapui_config = function()
       dapui.close()
     end
-    dap.listeners.before.event_exited.dapui_config = function() 
+    dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
   '';
