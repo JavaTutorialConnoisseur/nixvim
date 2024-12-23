@@ -1,7 +1,13 @@
 _:
 
 {
-  opts.enable = true;
+  opts = {
+    enable = true;
+    settings.keywords.FUTURE = {
+      color = "hint";
+      icon = "󱄅 ";
+    };
+  };
 
   rootOpts.keymaps = [{
     mode = "n";
