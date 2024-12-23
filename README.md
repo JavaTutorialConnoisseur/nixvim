@@ -1,9 +1,6 @@
 To-Do's
 -------
 
-Set up LSP for:
- - HTML, CSS, JS, TS?
-
 Set up debug + DAP for:
  - Java
 
