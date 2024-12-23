@@ -49,6 +49,6 @@
     filetype plugin on
     set fillchars+=eob:\ 
     set fillchars+=vert:\ 
-    set listchars+=trail:-
+    set listchars+=trail:─
   '';
 }
