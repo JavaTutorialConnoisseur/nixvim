@@ -117,7 +117,7 @@
       action.__raw = ''
         function()
           require('dap.ext.vscode').load_launchjs()
-          vim.cmd('Telescope dap configurations')
+          TelescopeWithTheme('configurations', { }, 'dap')
         end
       '';
       options.desc = "Debug Configurations";

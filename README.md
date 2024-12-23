@@ -2,8 +2,6 @@ To-Do's
 -------
 
 Change the `default.nix` hell
-Move some telescope stuff to the 'styled' telescope thing
-
 Set up debug + DAP for:
     - C
     - Java
