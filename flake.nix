@@ -35,6 +35,7 @@
           # - haskell
           # - zig
           # - rust
+          # - web (html/css/js/ts)
 
           # Helper 'languages'
           # - assembly
@@ -43,11 +44,7 @@
           # - vimtex
           # - markdown
 
-          # TODO: (when added, put in)
-          # - [web.nix] HTML, CSS, JS, TS?
-
           disabledLangs = [ "scala.nix" "haskell.nix" ];
-          # when added ++> HTML/CSS/JS/TS
 
           theme.themeColors = { # NOTE: colors taken from theme:
             normal = "#f768a3"; # - 16th
