@@ -34,7 +34,6 @@ _:
     intellitab.enable = true;
   };
 
-  # WARN: this might screw something up?
   rootOpts.keymaps = [{
     mode = "i";
     key = "<tab>";
