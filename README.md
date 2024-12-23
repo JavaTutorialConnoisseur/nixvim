@@ -3,7 +3,6 @@ To-Do's
 
 Set up LSP for:
  - HTML, CSS, JS, TS?
- - R? : r_language_server
 
 Set up debug + DAP for:
  - Java
