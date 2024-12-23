@@ -22,7 +22,34 @@
       packages = forAllSystems (system:
         let
           pkgs = import nixpkgs { inherit system; };
+
+          # All languages w/ configurations:
+          # - lua
+          # - nix
+          # - cc (c, c++)
+
+          # - python
+          # - java
+
+          # - scala
+          # - haskell
+          # - zig
+          # - rust
+
+          # Helper 'languages'
+          # - hex
+          # - sql
+          # - vimtex
+          # - markdown
+
+          # TODO: (when added, put in)
+          # - [web.nix] HTML, CSS, JS, TS?
+          # - assembly : asm_lsp
+          # - R? : r_language_server
+
           disabledLangs = [ "scala.nix" "haskell.nix" ];
+          # when added ++> HTML/CSS/JS/TS/R
+
           theme.themeColors = { # NOTE: colors taken from theme:
             normal = "#f768a3"; # - 16th
             insert = "#faaea2"; # - 11th
@@ -34,9 +61,7 @@
           mkNixvim = specialArgs:
             nixvim.legacyPackages.${system}.makeNixvimWithModule {
               inherit pkgs;
-              extraSpecialArgs = specialArgs // {
-                inherit pkgs;
-              } // theme;
+              extraSpecialArgs = specialArgs // { inherit pkgs; } // theme;
               module = ./.;
             };
 
