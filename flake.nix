@@ -23,11 +23,20 @@
         let
           pkgs = import nixpkgs { inherit system; };
           disabledLangs = [ "scala.nix" "haskell.nix" ];
+          theme.themeColors = { # NOTE: colors taken from theme:
+            normal = "#f768a3"; # - 16th
+            insert = "#faaea2"; # - 11th
+            visual = "#258fc4"; # - 12th
+            replace = "#7986c5"; # - 7th
+            # neutral = "#23255a"; # - 3rd
+          };
 
           mkNixvim = specialArgs:
             nixvim.legacyPackages.${system}.makeNixvimWithModule {
               inherit pkgs;
-              extraSpecialArgs = specialArgs // { inherit pkgs; };
+              extraSpecialArgs = specialArgs // {
+                inherit pkgs;
+              } // theme;
               module = ./.;
             };
 
