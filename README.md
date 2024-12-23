@@ -3,7 +3,6 @@ To-Do's
 
 Set up LSP for:
  - HTML, CSS, JS, TS?
- - assembly : asm_lsp
  - R? : r_language_server
 
 Set up debug + DAP for:

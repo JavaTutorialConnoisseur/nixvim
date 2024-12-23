@@ -37,6 +37,7 @@
           # - rust
 
           # Helper 'languages'
+          # - assembly
           # - hex
           # - sql
           # - vimtex
@@ -44,11 +45,10 @@
 
           # TODO: (when added, put in)
           # - [web.nix] HTML, CSS, JS, TS?
-          # - assembly : asm_lsp
           # - R? : r_language_server
 
           disabledLangs = [ "scala.nix" "haskell.nix" ];
-          # when added ++> HTML/CSS/JS/TS/R
+          # when added ++> HTML/CSS/JS/TS
 
           theme.themeColors = { # NOTE: colors taken from theme:
             normal = "#f768a3"; # - 16th
