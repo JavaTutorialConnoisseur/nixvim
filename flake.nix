@@ -45,7 +45,6 @@
 
           # TODO: (when added, put in)
           # - [web.nix] HTML, CSS, JS, TS?
-          # - R? : r_language_server
 
           disabledLangs = [ "scala.nix" "haskell.nix" ];
           # when added ++> HTML/CSS/JS/TS
