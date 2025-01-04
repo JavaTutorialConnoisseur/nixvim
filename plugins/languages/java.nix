@@ -1,23 +1,16 @@
-{ pkgs, lib, ... }:
+_:
 
-# FIXME: why the hell is this not just working??
-let
-  start-jdt-server = lib.getExe (pkgs.writeShellScriptBin "start-jdt-server"
-    "jdtls -data ${workspacePath}/data_structures");
-  workspacePath = "/home/parrycat/Documents/projects/java/projects/workspaces";
-in {
+# FUTURE: to enable DAP, eclipse.jdt.ls needs to load the java-debug extension.
+# dunno where / how to do that without explicit control?
+{
   rootOpts.plugins = {
     nvim-jdtls = {
       enable = true;
+      # WARN: this expects that the project is directly inside of its workspace
+      # folder: ..workspace/project.., if not like this then data will point
+      # to the wrong place, and server will likely not run correctly.
       data = "../.";
-      # for now: hardcoded. Tries to fix indexing issue
       settings.java.gradle.enabled = true;
     };
-
-    # lsp.servers.java_language_server = {
-    #   enable = true;
-    #   cmd = [ "${start-jdt-server}" ];
-    #   package = pkgs.jdt-language-server;
-    # };
   };
 }
