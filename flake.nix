@@ -47,11 +47,11 @@
           disabledLangs = [ "scala.nix" "haskell.nix" ];
 
           theme.themeColors = { # NOTE: colors taken from theme:
-            normal = "#f768a3"; # - 16th
-            insert = "#faaea2"; # - 11th
-            visual = "#258fc4"; # - 12th
-            replace = "#7986c5"; # - 7th
-            # neutral = "#23255a"; # - 3rd
+            normal = "#707b6d"; # - 16th
+            insert = "#83775a"; # - 15th
+            visual = "#d8d2cc"; # - 7th
+            replace = "#29261d"; # - 1st
+            # neutral = "#???";
           };
 
           mkNixvim = specialArgs:
