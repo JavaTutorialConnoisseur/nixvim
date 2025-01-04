@@ -1,15 +1,16 @@
-To-Do's
+<!--toc:start-->
+- [To-Do's](#to-dos)
+- [Improvements](#improvements)
+<!--toc:end-->
+
+# To-Do's
 -------
-
-Set up debug + DAP for:
- - Java
-
-Test LSP / DAP for C, C++, Java, ???
 
 Fill in this README <!-- TODO: -->
 
-Improvements
+# Improvements
 ------------
+
 Possible other plugins: (in order of likelihood / usefulness)
 - (nil so far)
 
