@@ -9,13 +9,13 @@ _:
       detection_methods = [ "pattern" "lsp" ];
       patterns = [
         ".git"
-        ".gitignore"
+        # ".gitignore"
         ".rooter-root"
         "_darcs"
         ".hg"
         ".bzr"
         ".svn"
-        "Makefile"
+        # "Makefile"
         "package.json"
       ];
 
