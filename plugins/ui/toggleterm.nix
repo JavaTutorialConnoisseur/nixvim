@@ -90,6 +90,13 @@ _:
     }
 
     {
+      mode = "t";
+      key = "<Esc><cr>";
+      action = "<esc>";
+      options.desc = "Send 'escape' key";
+    }
+
+    {
       mode = [ "n" ];
       key = "<Leader>ts";
       action = "<cmd>TermSelect<cr>";
