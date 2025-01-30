@@ -97,6 +97,18 @@ _:
           end
         '';
 
+        reveal_with_focus.__raw = ''
+          function(state)
+            local node = state.tree:get_node()
+            if require("neo-tree.utils").is_expandable(node) then
+              state.commands["toggle_node"](state)
+            else
+              state.commands['open'](state)
+              vim.cmd('Neotree reveal')
+            end
+          end
+        '';
+
         parent_or_close.__raw = ''
           function(state)
             local node = state.tree:get_node()
@@ -121,6 +133,7 @@ _:
           "]b" = "next_source";
 
           "<Space>".__raw = "false";
+          "<Tab>" = "reveal_with_focus";
 
           h = "parent_or_close";
           l = "child_or_open";
