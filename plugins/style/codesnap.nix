@@ -11,9 +11,10 @@ _:
       mac_window_bar = true;
       min_width = 40;
 
-      bg_x_padding = 20;
-      bg_y_padding = 20;
-      bg_theme = "grape";
+      # bg_x_padding = 20;
+      # bg_y_padding = 20;
+      # bg_theme = "grape";
+      bg_padding = 0;
 
       save_path = "~/Pictures/Screenshots/";
       title = "";
