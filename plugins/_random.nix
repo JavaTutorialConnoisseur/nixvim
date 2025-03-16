@@ -19,6 +19,14 @@ in {
   rootOpts.keymaps = [
     {
       mode = "n";
+      key = "<leader>bb";
+      options.desc = "Open bug report file";
+      action =
+        "<cmd>e /home/parrycat/Documents/projects/random/nixvim/BUGS.md<cr>";
+    }
+
+    {
+      mode = "n";
       key = "<leader>pa";
       options.desc = "Pretty-print full file w/ Silicon";
       action = "<cmd>PrettyPrintFile<cr>";
