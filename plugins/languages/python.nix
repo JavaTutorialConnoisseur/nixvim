@@ -4,25 +4,10 @@
   rootOpts.plugins = {
     conform-nvim = {
       enable = true;
-      settings = { formatters_by_ft.python = [ "black" ]; };
+      settings.formatters_by_ft.python = [ "isort" "black" ];
     };
 
-    lsp.servers.pylsp = {
-      enable = true;
-      settings.plugins = {
-        black.enabled = true;
-        flake8.enabled = true;
-        isort.enabled = true;
-        jedi.enabled = true;
-        mccabe.enabled = true;
-        pycodestyle.enabled = true;
-        pydocstyle.enabled = true;
-        pyflakes.enabled = true;
-        pylint.enabled = true;
-        rope.enabled = true;
-        yapf.enabled = true;
-      };
-    };
+    lsp.servers.basedpyright.enable = true;
 
     dap = {
       configurations = {
@@ -33,8 +18,6 @@
           module = "\${fileBasenameNoExtension}";
         }];
       };
-
-      extensions.dap-python.enable = true;
     };
 
     neotest.adapters.python = {
@@ -51,5 +34,22 @@
     };
   };
 
+  rootOpts.autoCmd = [{
+    callback.__raw = ''
+      function()
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          pattern = "*.py",
+          callback = function(args)
+            require("conform").format({ bufnr = args.buf })
+          end,
+        })
+      end
+    '';
+    event = [ "FileType" ];
+    pattern = [ "python" ];
+    desc = "Set automatic formatting for python files.";
+  }];
+
+  rootOpts.plugins.dap-python.enable = true;
   rootOpts.extraPackages = [ pkgs.python312Packages.pytest ];
 }

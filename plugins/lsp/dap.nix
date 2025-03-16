@@ -14,27 +14,6 @@
       dapLogPoint.text = "◆";
       dapLogPoint.texthl = "DapLogPoint";
     };
-
-    extensions.dap-virtual-text.enable = true;
-    extensions.dap-ui = {
-      enable = true;
-
-      floating.mappings.close = [ "<ESC>" "q" ];
-
-      layouts = let
-        section = items: pos: size: {
-          elements = map (id: {
-            id = id;
-            size = 0.5;
-          }) items;
-          position = pos;
-          size = size;
-        };
-      in [
-        (section [ "scopes" "watches" ] "left" 30)
-        (section [ "breakpoints" "stacks" ] "right" 30)
-      ];
-    };
   };
 
   rootOpts.plugins.which-key.settings.spec = [{
@@ -165,5 +144,27 @@
     end
   '';
 
+  rootOpts.plugins.dap-virtual-text.enable = true;
+  rootOpts.plugins.dap-ui = {
+    enable = true;
+
+    settings = {
+      floating.mappings.close = [ "<ESC>" "q" ];
+
+      layouts = let
+        section = items: pos: size: {
+          elements = map (id: {
+            id = id;
+            size = 0.5;
+          }) items;
+          position = pos;
+          size = size;
+        };
+      in [
+        (section [ "scopes" "watches" ] "left" 30)
+        (section [ "breakpoints" "stacks" ] "right" 30)
+      ];
+    };
+  };
   rootOpts.extraPlugins = [ (pkgs.vimPlugins.telescope-dap-nvim) ];
 }
