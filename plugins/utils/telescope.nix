@@ -115,6 +115,12 @@
       }
 
       {
+        desc = "Words in all files";
+        key = "<leader>gR";
+        fn = "live_grep";
+      }
+
+      {
         desc = "Help tags";
         key = "<leader>gh";
         fn = "help_tags";
