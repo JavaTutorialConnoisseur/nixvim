@@ -2,9 +2,9 @@
 
 let
   colors = {
-    purple = themeColors.normal;
-    darkPurple = themeColors.replace;
-    gray = "#373643";
+    base = themeColors.normal;
+    darker = themeColors.replace;
+    gray = "373643";
   };
 in {
   opts = {
@@ -54,9 +54,9 @@ in {
             vim.cmd(string.format('hi %s guifg=%s', group, color))
         end
 
-        local c1 = "${colors.gray}"
-        local c2 = "${colors.purple}"
-        local c3 = "${colors.darkPurple}"
+        local c1 = "#${colors.gray}"
+        local c2 = "#${colors.base}"
+        local c3 = "#${colors.darker}"
 
         hi("BufferCurrent", c1, c2)
         hi("BufferCurrentIcon", c1, c2)
