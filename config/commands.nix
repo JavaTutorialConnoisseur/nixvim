@@ -1,4 +1,6 @@
-let special_event_color = "#AF86FF";
+{ themeColors, ... }:
+
+let special_event_color = "#${builtins.trace themeColors.visual themeColors.visual}";
 in {
   autoCmd = [
     {
