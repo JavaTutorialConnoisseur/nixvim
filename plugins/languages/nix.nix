@@ -3,7 +3,7 @@ _:
 {
   rootOpts.plugins = {
     nix-develop.enable = true;
-    hmts.enable = true; # string code highlighting (like css)
+    hmts.enable = false; # string code highlighting (like css)
 
     lsp.servers.nil_ls = {
       enable = true;
