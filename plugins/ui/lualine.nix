@@ -1,6 +1,4 @@
-{ themeColors, ... }:
-
-let
+{themeColors, ...}: let
   colors = {
     blue = themeColors.insert;
     cyan = themeColors.visual;
@@ -67,10 +65,10 @@ in {
       };
 
       sections = {
-        lualine_b = [ "filename" "branch" ];
-        lualine_c = [ "diff" ];
-        lualine_z = [ "location" ];
-        lualine_y = [ "filetype" "progress" ];
+        lualine_b = ["filename" "branch"];
+        lualine_c = ["diff"];
+        lualine_z = ["location"];
+        lualine_y = ["filetype" "progress"];
         lualine_x = [
           "lsp_progress"
           {
@@ -85,7 +83,7 @@ in {
         ];
       };
 
-      extensions = [ "fzf" ];
+      extensions = ["fzf"];
     };
   };
 }

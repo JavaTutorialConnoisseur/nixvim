@@ -1,6 +1,5 @@
-_:
-
-let snippetsDir = ./../../.extra-snippets;
+_: let
+  snippetsDir = ./../../.extra-snippets;
 in {
   opts = {
     enable = true;
@@ -10,6 +9,6 @@ in {
     #   paths = snippetsDir + "/[language name]";
     #   include = [ "[language ext / ft]" ];
     # }
-    fromSnipmate = [{ paths = snippetsDir + "/all"; }];
+    fromSnipmate = [{paths = snippetsDir + "/all";}];
   };
 }

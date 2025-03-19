@@ -1,11 +1,9 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     enableCmdlineEnter = true;
     beforeCursor = true;
-    modes = [ "/" "?" ":" ];
+    modes = ["/" "?" ":"];
 
     renderer = ''
       wilder.wildmenu_renderer(

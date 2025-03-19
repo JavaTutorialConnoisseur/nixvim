@@ -1,39 +1,35 @@
-_:
-
-{
+_: {
   rootOpts.plugins.lsp.servers.hls = {
     enable = true;
     installGhc = false;
   };
 
-  rootOpts.autoCmd = [{
-    callback.__raw = ''
-      function()
-        vim.cmd [[
-          setlocal tabstop=2
-          setlocal shiftwidth=2
-        ]]
-      end
-    '';
-    event = [ "FileType" ];
-    pattern = [ "haskell" ];
-    desc = "Set tab and indent length for Haskell files to 2";
-  }];
+  rootOpts.autoCmd = [
+    {
+      callback.__raw = ''
+        function()
+          vim.cmd [[
+            setlocal tabstop=2
+            setlocal shiftwidth=2
+          ]]
+        end
+      '';
+      event = ["FileType"];
+      pattern = ["haskell"];
+      desc = "Set tab and indent length for Haskell files to 2";
+    }
+  ];
 }
-
 # FUTURE: if I ever need haskell, this should be added:
-
 # -- https://github.com/MrcJkb/haskell-tools.nvim
 # RequireEnvironment({ 'haskell-tools', 'which-key' }, function()
 #     local keys = require('which-key')
 #     local ht = require('haskell-tools')
-
 #     local bufnr = vim.api.nvim_get_current_buf()
 #     local haskell_group = vim.api.nvim_create_augroup(
 #         "haskell_group",
 #         { clear = true, }
 #     )
-
 #     vim.api.nvim_create_autocmd("FileType", {
 #         pattern = { "haskell" },
 #         callback = function()
@@ -56,3 +52,4 @@ _:
 #         group = haskell_group
 #     })
 # end)
+

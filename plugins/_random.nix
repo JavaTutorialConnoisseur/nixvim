@@ -1,28 +1,36 @@
-{ pkgs, ... }:
-
-let
-  highlightIf = hi: ln: if hi then "'--highlight-lines', ${ln}" else "' ', ' '";
-  silicon_format = { window-title, line-offset, tmpfile, fname, kind
-    , current-time, lines2hl, shouldHighlight }: ''
-      local pretty_print_fn = string.format("silicon --window-title %s --background '#fff0' %s %s %s --output %s-%s-%s.png",
-        ${window-title}, ${
-          highlightIf shouldHighlight lines2hl
-        }, ${tmpfile}, ${fname}, ${kind}, ${current-time})'';
+{pkgs, ...}: let
+  highlightIf = hi: ln:
+    if hi
+    then "'--highlight-lines', ${ln}"
+    else "' ', ' '";
+  silicon_format = {
+    window-title,
+    line-offset,
+    tmpfile,
+    fname,
+    kind,
+    current-time,
+    lines2hl,
+    shouldHighlight,
+  }: ''
+    local pretty_print_fn = string.format("silicon --window-title %s --background '#fff0' %s %s %s --output %s-%s-%s.png",
+      ${window-title}, ${
+      highlightIf shouldHighlight lines2hl
+    }, ${tmpfile}, ${fname}, ${kind}, ${current-time})'';
 
   silicon_fmtstr = ''
     silicon --window-title %s --background "#fff0" %s --output %s-full-%s.png'';
   silicon_line_fmtstr = ''
     silicon --window-title %s --line-offset %i --background "#fff0" %s --output %s-section-%s.png'';
 in {
-  rootOpts.extraPackages = [ pkgs.silicon ];
+  rootOpts.extraPackages = [pkgs.silicon];
 
   rootOpts.keymaps = [
     {
       mode = "n";
       key = "<leader>bb";
       options.desc = "Open bug report file";
-      action =
-        "<cmd>e /home/parrycat/Documents/projects/random/nixvim/BUGS.md<cr>";
+      action = "<cmd>e /home/parrycat/Documents/projects/random/nixvim/BUGS.md<cr>";
     }
 
     {
@@ -101,7 +109,8 @@ in {
           end
         end
       '';
-      desc = "Prints lines from current selection using 'silicon'."
+      desc =
+        "Prints lines from current selection using 'silicon'."
         + "Input list of indices for highlighting.";
     };
 
@@ -152,17 +161,17 @@ in {
           end
 
           ${
-            silicon_format {
-              shouldHighlight = true;
-              lines2hl = "lines2hl";
-              line-offset = "start_line";
-              current-time = "current_time";
-              fname = "file_name";
-              window-title = "file_name";
-              kind = "'highlighted'";
-              tmpfile = "temp_file";
-            }
+          silicon_format {
+            shouldHighlight = true;
+            lines2hl = "lines2hl";
+            line-offset = "start_line";
+            current-time = "current_time";
+            fname = "file_name";
+            window-title = "file_name";
+            kind = "'highlighted'";
+            tmpfile = "temp_file";
           }
+        }
 
           print("going to be printing: " .. pretty_print_fn)
 

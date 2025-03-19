@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings = {
@@ -15,7 +13,7 @@ _:
         end
       '';
       window.width = 90;
-      plugins = { twilight.enabled = true; };
+      plugins = {twilight.enabled = true;};
     };
   };
 
@@ -23,25 +21,29 @@ _:
     enable = true;
     settings = {
       context = 20;
-      dimming = { alpha = 0.4; };
-      expand = [ "function" "method" "table" "if_statement" ];
+      dimming = {alpha = 0.4;};
+      expand = ["function" "method" "table" "if_statement"];
       treesitter = true;
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = [ "ZenBg" ];
-  rootOpts.plugins.which-key.settings.spec = [{
-    __unkeyed-1 = "<leader>z";
-    icon = {
-      icon = "󱅻 ";
-      color = "azure";
-    };
-  }];
+  rootOpts.plugins.transparent.settings.extra_groups = ["ZenBg"];
+  rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>z";
+      icon = {
+        icon = "󱅻 ";
+        color = "azure";
+      };
+    }
+  ];
 
-  rootOpts.keymaps = [{
-    mode = "n";
-    key = "<leader>z";
-    action = "<Cmd>ZenMode<CR>";
-    options.desc = "Toggle zen mode";
-  }];
+  rootOpts.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>z";
+      action = "<Cmd>ZenMode<CR>";
+      options.desc = "Toggle zen mode";
+    }
+  ];
 }

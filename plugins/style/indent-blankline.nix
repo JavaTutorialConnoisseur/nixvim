@@ -1,13 +1,11 @@
-_:
-
-let
+_: let
   _catppuccin_colors = [
-    [ "Catppuccin1" "#c6a0f6" ]
-    [ "Catppuccin2" "#8aadf4" ]
-    [ "Catppuccin3" "#8bd5ca" ]
-    [ "Catppuccin4" "#a6da95" ]
-    [ "Catppuccin5" "#eed49f" ]
-    [ "Catppuccin6" "#f5a97f" ]
+    ["Catppuccin1" "#c6a0f6"]
+    ["Catppuccin2" "#8aadf4"]
+    ["Catppuccin3" "#8bd5ca"]
+    ["Catppuccin4" "#a6da95"]
+    ["Catppuccin5" "#eed49f"]
+    ["Catppuccin6" "#f5a97f"]
   ];
 in {
   rootOpts.colorschemes.catppuccin.settings.integrations.indent_blankline =
@@ -18,7 +16,7 @@ in {
 
     settings = {
       indent = {
-        highlight = [ "Comment" "Type" "Constant" "Error" ];
+        highlight = ["Comment" "Type" "Constant" "Error"];
         char = "│";
       };
 

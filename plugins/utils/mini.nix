@@ -1,13 +1,11 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     mockDevIcons = true;
 
     modules = {
-      bufremove = { };
-      icons = { };
+      bufremove = {};
+      icons = {};
     };
   };
 }

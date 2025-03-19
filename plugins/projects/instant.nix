@@ -1,9 +1,7 @@
 # collaborative editing plugin
-_:
-
-{
+_: {
   opts = {
     enable = true;
-    settings = { username = "<anon>"; };
+    settings = {username = "<anon>";};
   };
 }

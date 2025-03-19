@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
 
@@ -37,7 +35,7 @@ _:
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = [ "ToggleTerm1Normal" ];
+  rootOpts.plugins.transparent.settings.extra_groups = ["ToggleTerm1Normal"];
   rootOpts.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader><leader>";
@@ -97,35 +95,35 @@ _:
     }
 
     {
-      mode = [ "n" ];
+      mode = ["n"];
       key = "<Leader>ts";
       action = "<cmd>TermSelect<cr>";
       options.desc = "Select terminal";
     }
 
     {
-      mode = [ "n" ];
+      mode = ["n"];
       key = "<Leader>tl";
       action = "<cmd>LazyGitTermToggle<cr>";
       options.desc = "Lazygit";
     }
 
     {
-      mode = [ "n" ];
+      mode = ["n"];
       key = "<Leader>tg";
       action = "<cmd>GefTermToggle<cr>";
       options.desc = "[gdb] + GEF";
     }
 
     {
-      mode = [ "n" ];
+      mode = ["n"];
       key = "<leader>tk";
       action = "<cmd>NixShellTermToggle<cr>";
       options.desc = "Nix-shell";
     }
 
     {
-      mode = [ "n" ];
+      mode = ["n"];
       key = "<Leader>tn";
       action.__raw = ''
         function()
@@ -142,12 +140,14 @@ _:
   ];
 
   rootOpts.keymapsOnEvents = {
-    TermOpen = [{
-      mode = [ "t" ];
-      key = "<C-D>";
-      action = "<cmd>wincmd h<cr>";
-      options.desc = "Terminal exit keymap";
-    }];
+    TermOpen = [
+      {
+        mode = ["t"];
+        key = "<C-D>";
+        action = "<cmd>wincmd h<cr>";
+        options.desc = "Terminal exit keymap";
+      }
+    ];
   };
 
   rootOpts.userCommands = let
@@ -156,7 +156,11 @@ _:
     zshTermCount = "997";
     gefTermCount = "996";
 
-    createTerminal = { count, name, cmd }: ''
+    createTerminal = {
+      count,
+      name,
+      cmd,
+    }: ''
       local Terminal = require('toggleterm.terminal').Terminal
 
       local term = Terminal:new({
@@ -181,7 +185,7 @@ _:
       end
     '';
 
-    toggleTerm = { term, ... }: ''
+    toggleTerm = {term, ...}: ''
       function()
         ${termExists}
 
@@ -205,14 +209,14 @@ _:
 
           if vim.fn.filereadable(shell_path) == 1 then
             local fn = ${
-              toggleTerm {
-                term = {
-                  name = "nix-shell";
-                  cmd = "nix-shell shell.nix";
-                  count = nixShellTermCount;
-                };
-              }
-            }
+          toggleTerm {
+            term = {
+              name = "nix-shell";
+              cmd = "nix-shell shell.nix";
+              count = nixShellTermCount;
+            };
+          }
+        }
 
             fn()
           else
@@ -232,14 +236,14 @@ _:
 
           if vim.fn.isdirectory(gitpath) == 1 then
             local fn = ${
-              toggleTerm {
-                term = {
-                  name = "lazygit";
-                  cmd = "lazygit";
-                  count = lazyGitTermCount;
-                };
-              }
-            }
+          toggleTerm {
+            term = {
+              name = "lazygit";
+              cmd = "lazygit";
+              count = lazyGitTermCount;
+            };
+          }
+        }
 
             fn()
           else

@@ -1,12 +1,10 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     enableTelescope = true;
 
     settings = {
-      detection_methods = [ "pattern" "lsp" ];
+      detection_methods = ["pattern" "lsp"];
       patterns = [
         ".git"
         # ".gitignore"

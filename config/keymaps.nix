@@ -1,5 +1,5 @@
 let
-  normal_mode = map (key: key // { mode = "n"; }) [
+  normal_mode = map (key: key // {mode = "n";}) [
     {
       key = "<leader>bc";
       action = "<Cmd>BufferClose<CR>";
@@ -235,7 +235,7 @@ let
     }
   ];
 
-  insert_mode = map (key: key // { mode = "i"; }) [
+  insert_mode = map (key: key // {mode = "i";}) [
     {
       key = "<C-S>";
       action = "<Esc><Cmd>w<CR>a";
@@ -278,4 +278,4 @@ let
       options.desc = "Move to split right";
     }
   ];
-in { keymaps = normal_mode ++ insert_mode; }
+in {keymaps = normal_mode ++ insert_mode;}

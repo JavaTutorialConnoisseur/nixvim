@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     keymaps = {
@@ -44,11 +42,13 @@ _:
         };
       };
 
-      extra = [{
-        action = { __raw = "require('telescope.builtin').lsp_references"; };
-        key = "<leader>cr";
-        options.desc = "Find code references";
-      }];
+      extra = [
+        {
+          action = {__raw = "require('telescope.builtin').lsp_references";};
+          key = "<leader>cr";
+          options.desc = "Find code references";
+        }
+      ];
     };
   };
 
@@ -79,7 +79,7 @@ _:
         icon = " ";
         color = "purple";
       };
-      mode = [ "n" "x" ];
+      mode = ["n" "x"];
     }
 
     {

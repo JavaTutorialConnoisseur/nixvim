@@ -1,41 +1,42 @@
-_:
-
-let c_or_cpp = "c";
+_: let
+  c_or_cpp = "c";
 in {
   rootOpts.plugins.lsp.servers.ccls.enable = true;
 
   rootOpts.plugins.dap = {
     adapters.executables.gdb = {
       command = "gdb";
-      args = [ "--interpreter=dap" ''--eval-command="set print pretty on"'' ];
+      args = ["--interpreter=dap" ''--eval-command="set print pretty on"''];
     };
 
     configurations = {
-      c = [{
-        name = "Launch";
-        type = "gdb";
-        request = "launch";
-        program.__raw = ''
-          function()
-            return vim.fn.input('Path to executable: ',
-              vim.fn.getcwd() .. '/', 'file')
-          end
-        '';
-        args.__raw = ''
-          function()
-            local inp = vim.fn.input('Input arguments: ')
-
-            local gdbArgs = {}
-            for word in string.gmatch(inp, "%S+") do
-              table.insert(gdbArgs, word)
+      c = [
+        {
+          name = "Launch";
+          type = "gdb";
+          request = "launch";
+          program.__raw = ''
+            function()
+              return vim.fn.input('Path to executable: ',
+                vim.fn.getcwd() .. '/', 'file')
             end
+          '';
+          args.__raw = ''
+            function()
+              local inp = vim.fn.input('Input arguments: ')
 
-            return gdbArgs
-          end
-        '';
-        cwd = "\${workspaceFolder}";
-        stopAtBeginningOfMainSubprogram = true;
-      }];
+              local gdbArgs = {}
+              for word in string.gmatch(inp, "%S+") do
+                table.insert(gdbArgs, word)
+              end
+
+              return gdbArgs
+            end
+          '';
+          cwd = "\${workspaceFolder}";
+          stopAtBeginningOfMainSubprogram = true;
+        }
+      ];
     };
   };
 
@@ -60,6 +61,7 @@ in {
       '';
       desc = "Try running 'make all'";
     };
+
     CC = {
       nargs = "?";
       command.__raw = ''
@@ -102,17 +104,19 @@ in {
     };
   };
 
-  rootOpts.autoCmd = [{
-    callback.__raw = ''
-      function()
-        vim.cmd [[
-          setlocal tabstop=2
-          setlocal shiftwidth=2
-        ]]
-      end
-    '';
-    event = [ "FileType" ];
-    pattern = [ "c" "h" ];
-    desc = "Set tab and indent length for C files to 2";
-  }];
+  rootOpts.autoCmd = [
+    {
+      callback.__raw = ''
+        function()
+          vim.cmd [[
+            setlocal tabstop=2
+            setlocal shiftwidth=2
+          ]]
+        end
+      '';
+      event = ["FileType"];
+      pattern = ["c" "h"];
+      desc = "Set tab and indent length for C files to 2";
+    }
+  ];
 }

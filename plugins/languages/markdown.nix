@@ -1,5 +1,3 @@
-_:
-
-{
-  rootOpts.plugins.lsp.servers.marksman = { enable = true; };
+_: {
+  rootOpts.plugins.lsp.servers.marksman = {enable = true;};
 }

@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
-{
-  extra.packages = [ pkgs.vimPlugins.vim-smoothie ];
+{pkgs, ...}: {
+  extra.packages = [pkgs.vimPlugins.vim-smoothie];
 }

@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings = {
@@ -36,10 +34,12 @@ _:
     };
   };
 
-  rootOpts.keymaps = [{
-    mode = "n";
-    key = "<leader>ht";
-    action = "<Cmd>Hardtime toggle<CR>";
-    options.desc = "Hardtime";
-  }];
+  rootOpts.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>ht";
+      action = "<Cmd>Hardtime toggle<CR>";
+      options.desc = "Hardtime";
+    }
+  ];
 }

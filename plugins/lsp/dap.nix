@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   opts = {
     enable = true;
 
@@ -16,11 +14,13 @@
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [{
-    __unkeyed-1 = "<leader>cc";
-    group = "Debugging functions";
-    icon = " ";
-  }];
+  rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>cc";
+      group = "Debugging functions";
+      icon = " ";
+    }
+  ];
 
   rootOpts.keymaps = [
     {
@@ -149,22 +149,24 @@
     enable = true;
 
     settings = {
-      floating.mappings.close = [ "<ESC>" "q" ];
+      floating.mappings.close = ["<ESC>" "q"];
 
       layouts = let
         section = items: pos: size: {
-          elements = map (id: {
-            id = id;
-            size = 0.5;
-          }) items;
+          elements =
+            map (id: {
+              id = id;
+              size = 0.5;
+            })
+            items;
           position = pos;
           size = size;
         };
       in [
-        (section [ "scopes" "watches" ] "left" 30)
-        (section [ "breakpoints" "stacks" ] "right" 30)
+        (section ["scopes" "watches"] "left" 30)
+        (section ["breakpoints" "stacks"] "right" 30)
       ];
     };
   };
-  rootOpts.extraPlugins = [ (pkgs.vimPlugins.telescope-dap-nvim) ];
+  rootOpts.extraPlugins = [(pkgs.vimPlugins.telescope-dap-nvim)];
 }

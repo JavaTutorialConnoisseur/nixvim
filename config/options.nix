@@ -1,10 +1,9 @@
 # General neovim options. Stuff under `vim.opt`, as well as syntax, filetype
 # and fill/list-chars.
-
 {
   opts = {
     undofile = true;
-    undodir = [ "./.cache/" ];
+    undodir = ["./.cache/"];
 
     # Fold & indent
     smartindent = true;
@@ -47,8 +46,8 @@
   extraConfigVim = ''
     syntax enable
     filetype plugin on
-    set fillchars+=eob:\ 
-    set fillchars+=vert:\ 
+    set fillchars+=eob:\
+    set fillchars+=vert:\
     set listchars+=trail:─
   '';
 }

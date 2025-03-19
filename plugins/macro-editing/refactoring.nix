@@ -1,16 +1,16 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings.show_success_message = true;
   };
 
-  rootOpts.plugins.which-key.settings.spec = [{
-    __unkeyed-1 = "<leader>cp";
-    group = "Printing (printf | var | clean)";
-    icon = " ";
-  }];
+  rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>cp";
+      group = "Printing (printf | var | clean)";
+      icon = " ";
+    }
+  ];
 
   rootOpts.keymaps = [
     {
@@ -25,7 +25,7 @@ _:
     }
 
     {
-      mode = [ "n" "x" ];
+      mode = ["n" "x"];
       key = "<leader>cpv";
       action.__raw = ''
         function()
