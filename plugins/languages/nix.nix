@@ -1,4 +1,4 @@
-_:
+{ pkgs, ... }:
 
 {
   rootOpts.plugins = {
@@ -8,7 +8,7 @@ _:
     lsp.servers.nil_ls = {
       enable = true;
       settings = {
-        formatting.command = [ "nixfmt" ];
+        formatting.command = [ "alejandra" ];
         nix.flake.autoArchive = true;
       };
     };
@@ -27,4 +27,6 @@ _:
     pattern = [ "nix" ];
     desc = "Set tab and indent length for Nix files to 2";
   }];
+
+  rootOpts.extraPackages = [ pkgs.alejandra ];
 }
