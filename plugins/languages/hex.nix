@@ -1,5 +1,3 @@
-_:
-
-{
+_: {
   opts.enable = false;
 }

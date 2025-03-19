@@ -1,13 +1,11 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     nixvimInjections = true;
 
     settings.highlight = {
       enable = true;
-      disable = [ "tex" "latex" ];
+      disable = ["tex" "latex"];
     };
   };
 }

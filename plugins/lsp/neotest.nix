@@ -1,10 +1,8 @@
 _:
-
 # if I need code cov:
 # [coverage](https://github.com/andythigpen/nvim-coverage)
 # if I need competetive stuff:
 # [competitest](https://github.com/xeluxee/competitest.nvim/)
-
 {
   opts = {
     enable = true;
@@ -20,11 +18,13 @@ _:
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [{
-    __unkeyed-1 = "<leader>cn";
-    group = "Testing";
-    icon = "󰙨 ";
-  }];
+  rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>cn";
+      group = "Testing";
+      icon = "󰙨 ";
+    }
+  ];
 
   rootOpts.keymaps = [
     {

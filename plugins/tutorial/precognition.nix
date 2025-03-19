@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings.startVisible = false;
@@ -11,14 +9,14 @@ _:
       key = "<leader>lp";
       action = "<cmd>Precognition peek<cr>";
       options.desc = "Check nice jump methods";
-      mode = [ "n" ];
+      mode = ["n"];
     }
 
     {
       key = "<leader>lt";
       action = "<cmd>Precognition toggle<cr>";
       options.desc = "Toggle persistent jumps show";
-      mode = [ "n" ];
+      mode = ["n"];
     }
   ];
 }

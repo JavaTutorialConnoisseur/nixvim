@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings = {
@@ -13,7 +11,7 @@ _:
         enabled = false;
         hl = "LightBulbFloatWin";
         text = " 󰌶 ";
-        win_opts = { border = "rounded"; };
+        win_opts = {border = "rounded";};
       };
 
       line.enabled = false;
@@ -37,5 +35,5 @@ _:
     };
   };
 
-  rootOpts.plugins.transparent.settings.extraGroups = [ "LightBulbSign" ];
+  rootOpts.plugins.transparent.settings.extraGroups = ["LightBulbSign"];
 }

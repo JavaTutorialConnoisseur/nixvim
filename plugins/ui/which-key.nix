@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings = {
@@ -12,8 +10,8 @@ _:
         scroll_up = "<M-]>";
       };
 
-      sort = [ "group" "alphanum" ];
-      disable.ft = [ "TelescopePrompt" "neo-tree" "neo-tree-popup" ];
+      sort = ["group" "alphanum"];
+      disable.ft = ["TelescopePrompt" "neo-tree" "neo-tree-popup"];
 
       # col: azure, blue, cyan, green, grey, purple, red, orange, yellow
       spec = [
@@ -35,7 +33,7 @@ _:
             icon = "󰸭 ";
             color = "orange";
           };
-          mode = [ "n" "x" ];
+          mode = ["n" "x"];
         }
 
         {
@@ -86,40 +84,42 @@ _:
     };
   };
 
-  rootOpts.autoCmd = [{
-    callback.__raw = ''
-      function(state)
-        local buf = state.buf
-        local keys = require('which-key')
-        vim.bo[buf].buflisted = false
+  rootOpts.autoCmd = [
+    {
+      callback.__raw = ''
+        function(state)
+          local buf = state.buf
+          local keys = require('which-key')
+          vim.bo[buf].buflisted = false
 
-        keys.add({
-          buffer = buf,
-          { "q",
-            "<cmd>close<cr>",
-            desc = "Close q-closable buffer"
-          },
-        })
-      end'';
-    event = [ "FileType" ];
-    pattern = [
-      "PlenaryTestPopup"
+          keys.add({
+            buffer = buf,
+            { "q",
+              "<cmd>close<cr>",
+              desc = "Close q-closable buffer"
+            },
+          })
+        end'';
+      event = ["FileType"];
+      pattern = [
+        "PlenaryTestPopup"
 
-      "checkhealth"
-      "help"
-      "query"
-      "lspinfo"
-      "man"
+        "checkhealth"
+        "help"
+        "query"
+        "lspinfo"
+        "man"
 
-      "notify"
-      "qf" # what is this pattern?
+        "notify"
+        "qf" # what is this pattern?
 
-      "neotest-output"
-      "neotest-summary"
-      "neotest-output-panel"
-    ];
-    desc = "Allows for closing specific filetypes w/ just 'q'";
-  }];
+        "neotest-output"
+        "neotest-summary"
+        "neotest-output-panel"
+      ];
+      desc = "Allows for closing specific filetypes w/ just 'q'";
+    }
+  ];
 
   rootOpts.colorschemes.catppuccin.settings.integrations.which_key = true;
 }

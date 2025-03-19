@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
 
@@ -214,7 +212,7 @@ _:
       "NeoTreeWinSeparator"
     ];
 
-    autoGroups.neotree = { };
+    autoGroups.neotree = {};
 
     # Custom autocommands (taken from AstroNvim)
     autoCmd = let

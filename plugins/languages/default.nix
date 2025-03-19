@@ -1,5 +1,4 @@
-{ lib, ... }@args:
-
+{lib, ...} @ args:
 args.defaultFn {
   lib = lib;
   dir = ./.;

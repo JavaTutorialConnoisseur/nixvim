@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 pkgs.vimUtils.buildVimPlugin {
   name = "alternate-toggler";
 

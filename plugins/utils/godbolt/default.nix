@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
-{
-  extra.packages = [ pkgs.vimPlugins.godbolt-nvim ];
+{pkgs, ...}: {
+  extra.packages = [pkgs.vimPlugins.godbolt-nvim];
 }

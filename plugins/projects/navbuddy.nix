@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     lsp.autoAttach = true;
@@ -12,9 +10,11 @@ _:
     # mappings: <leader>g? inside window
   };
 
-  rootOpts.keymaps = [{
-    mode = "n";
-    key = "<leader>gt";
-    action = "<cmd>Navbuddy<cr>";
-  }];
+  rootOpts.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>gt";
+      action = "<cmd>Navbuddy<cr>";
+    }
+  ];
 }

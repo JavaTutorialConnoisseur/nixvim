@@ -1,6 +1,5 @@
-{ themeColors, ... }:
-
-let special_event_color = "#${themeColors.visual}";
+{themeColors, ...}: let
+  special_event_color = "#${themeColors.visual}";
 in {
   autoCmd = [
     {
@@ -11,8 +10,8 @@ in {
           vim.opt_local.spell = true
         end
       '';
-      event = [ "FileType" ];
-      pattern = [ "text" "gitcommit" "markdown" "tex" ];
+      event = ["FileType"];
+      pattern = ["text" "gitcommit" "markdown" "tex"];
     }
 
     {
@@ -24,7 +23,7 @@ in {
           vim.api.nvim_set_hl(0, 'LineNr', { fg = "white" })
         end
       '';
-      event = [ "BufEnter" "BufWritePre" ];
+      event = ["BufEnter" "BufWritePre"];
     }
 
     {
@@ -35,7 +34,7 @@ in {
           vim.cmd('match ExtraWhitespace /\\s\\+$/')
         end
       '';
-      event = [ "BufEnter" "BufWritePre" ];
+      event = ["BufEnter" "BufWritePre"];
     }
 
     {
@@ -46,7 +45,7 @@ in {
           vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 150 })
         end
       '';
-      event = [ "TextYankPost" ];
+      event = ["TextYankPost"];
     }
 
     {
@@ -55,7 +54,7 @@ in {
         function()
           vim.cmd("checktime")
         end'';
-      event = [ "FocusGained" "TermClose" "TermLeave" ];
+      event = ["FocusGained" "TermClose" "TermLeave"];
     }
 
     {
@@ -67,7 +66,7 @@ in {
           vim.cmd("tabnext " .. current_tab)
         end
       '';
-      event = [ "VimResized" ];
+      event = ["VimResized"];
     }
   ];
 

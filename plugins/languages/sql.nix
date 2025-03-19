@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   rootOpts.plugins = {
     lsp.servers.sqls.enable = true;
 

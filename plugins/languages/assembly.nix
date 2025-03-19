@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   # WARN: a bit buggy
-  rootOpts.plugins.lsp.servers.asm_lsp = { enable = true; };
+  rootOpts.plugins.lsp.servers.asm_lsp.enable = true;
 }

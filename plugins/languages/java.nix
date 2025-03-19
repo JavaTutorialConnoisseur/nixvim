@@ -1,5 +1,4 @@
 _:
-
 # FUTURE: to enable DAP, eclipse.jdt.ls needs to load the java-debug extension.
 # dunno where / how to do that without explicit control?
 {

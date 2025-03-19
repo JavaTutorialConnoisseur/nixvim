@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   opts = {
     enable = true;
     texlivePackage = pkgs.texliveFull;
@@ -15,12 +13,11 @@
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = [ "VimtexMsg" ];
-  rootOpts.extraPackages = [ pkgs.texlivePackages.latexmk ];
+  rootOpts.plugins.transparent.settings.extra_groups = ["VimtexMsg"];
+  rootOpts.extraPackages = [pkgs.texlivePackages.latexmk];
 
   rootOpts.autoCmd = let
-    action = texcmd:
-      ''"<cmd>lua vim.cmd [[execute 'normal <Plug>(${texcmd})']]<cr>"'';
+    action = texcmd: ''"<cmd>lua vim.cmd [[execute 'normal <Plug>(${texcmd})']]<cr>"'';
   in [
     {
       callback.__raw = ''
@@ -98,33 +95,33 @@
               },
 
               { "<leader>xb", ${
-                action "vimtex-env-change"
-              }, desc = "Change surrounding begin{} - end{}" },
+          action "vimtex-env-change"
+        }, desc = "Change surrounding begin{} - end{}" },
               { "<leader>xk", ${
-                action "vimtex-stop"
-              }, desc = "Stop current *tex compilation" },
+          action "vimtex-stop"
+        }, desc = "Stop current *tex compilation" },
               { "<leader>xK", ${
-                action "vimtex-stop-all"
-              }, desc = "Stop all *tex compilation" },
+          action "vimtex-stop-all"
+        }, desc = "Stop all *tex compilation" },
               { "<leader>xl", ${
-                action "vimtex-compile"
-              }, desc = "Start *tex project compilation" },
+          action "vimtex-compile"
+        }, desc = "Start *tex project compilation" },
               { "<leader>xL", ${
-                action "vimtex-compile-selected"
-              }, desc = "Start *tex (selected) compilation" },
+          action "vimtex-compile-selected"
+        }, desc = "Start *tex (selected) compilation" },
               { "<leader>xv", ${
-                action "vimtex-view"
-              }, desc = "View project .pdf without compiling" },
+          action "vimtex-view"
+        }, desc = "View project .pdf without compiling" },
               { "<leader>xm", ${
-                action "vimtex-imaps-list"
-              }, desc = "List insert-mode *tex mappings" }
+          action "vimtex-imaps-list"
+        }, desc = "List insert-mode *tex mappings" }
             }
           })
         end
       '';
 
-      event = [ "FileType" ];
-      pattern = [ "tex" ];
+      event = ["FileType"];
+      pattern = ["tex"];
       desc = "Add which-key group name and keybinds for tex";
     }
 
@@ -142,8 +139,8 @@
         end
       '';
 
-      event = [ "FileType" ];
-      pattern = [ "tex" ];
+      event = ["FileType"];
+      pattern = ["tex"];
       desc = "Add table-of-contents binding";
     }
   ];

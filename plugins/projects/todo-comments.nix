@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   opts = {
     enable = true;
     settings.keywords = {
@@ -12,7 +10,7 @@ _:
       IMPL = {
         color = "info";
         icon = " ";
-        alt = [ "ADDME" ];
+        alt = ["ADDME"];
       };
     };
   };
