@@ -48,6 +48,7 @@
         ignore ? [],
       }: let
         shouldRemain = x: !(builtins.elem x ignore);
+
         definitions = lib.filter shouldRemain (lib.attrNames
           (lib.filterAttrs (filename: kind:
             filename
@@ -68,7 +69,8 @@
               extraPlugins = plugin.extra.packages;
             })
             (plugin.rootOpts or {})
-          ]) definitions);
+          ])
+        definitions);
     in {
       default = mkNixvim defaultTheme {
         disabledLangs = disabledLangs defaultDisabled;
