@@ -55,6 +55,7 @@
             != "default.nix"
             && (kind == "regular" || kind == "directory"))
           (builtins.readDir dir)));
+
       in
         lib.mkMerge (map (file: let
           pluginName = lib.elemAt (lib.splitString "." file) 0;
