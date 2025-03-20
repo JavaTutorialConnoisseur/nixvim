@@ -23,10 +23,10 @@
 
     defaultDisabled = ["scala" "haskell"];
     defaultTheme.themeColors = {
-      normal = "dbc077"; #dbc077
-      insert = "76597b"; #76597b
-      visual = "9ca0a4"; #9ca0a4
-      replace = "1c1408"; #1c1408
+      normal = "dbc077"; #7287fd
+      insert = "76597b"; #8839ef
+      visual = "9ca0a4"; #8c8fa1
+      replace = "1c1408"; #dc8a78
     };
   in {
     packages = forAllSystems (system: let
