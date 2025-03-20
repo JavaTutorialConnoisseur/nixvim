@@ -6,7 +6,7 @@ _: {
 
   rootOpts.keymaps = [
     {
-      mode = "n";
+      mode = ["n" "v" "x"];
       key = "<leader>gy";
       action.__raw = ''
         function()
