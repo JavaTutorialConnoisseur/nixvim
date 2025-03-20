@@ -18,6 +18,9 @@ jobs:
       - name: Check commit messages
         run: |
           if git log -1 --pretty=%B | grep -q '^('; then
+            echo "Log: Commit message format correct."
+            exit 0
+          else
             echo "Error: Commit message must start with '('."
             exit 1
           fi
