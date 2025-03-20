@@ -43,11 +43,14 @@
     hidden = true;
   };
 
+  extraConfigLua = ''
+    vim.opt.fillchars:append("eob: ")
+    vim.opt.fillchars:append("vert: ")
+    vim.opt.listchars:append("trail:─")
+  '';
+
   extraConfigVim = ''
     syntax enable
     filetype plugin on
-    set fillchars+=eob:\
-    set fillchars+=vert:\
-    set listchars+=trail:─
   '';
 }
