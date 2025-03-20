@@ -1,0 +1,23 @@
+name: Commit Message Format Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  commit-message-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check commit messages
+        run: |
+          if git log -1 --pretty=%B | grep -q '^('; then
+            echo "Error: Commit message must start with '('."
+            exit 1
+          fi
