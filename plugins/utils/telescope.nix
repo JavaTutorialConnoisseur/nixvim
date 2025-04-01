@@ -129,6 +129,10 @@
           desc = "Words in all files";
           key = "<leader>gR";
           fn = "live_grep";
+          args = {
+            hidden = true;
+            no_ignore = true;
+          };
         }
 
         {
