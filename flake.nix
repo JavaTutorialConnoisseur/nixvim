@@ -1,5 +1,5 @@
 {
-  description = "Trying out nixvim";
+  description = "Full nixvim config of Parrydog^{TM}";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -31,47 +31,15 @@
   in {
     packages = forAllSystems (system: let
       pkgs = import nixpkgs {inherit system;};
+      defaultFn = import ./defaultFn.nix;
 
-      disabledLangs = langs: map (lang: lang + ".nix") langs;
-
+      disabledLangs = langs: map (lang: "${lang}.nix") langs;
       mkNixvim = theme: specialArgs:
         nixvim.legacyPackages.${system}.makeNixvimWithModule {
           inherit pkgs;
           extraSpecialArgs = specialArgs // {inherit pkgs;} // theme;
           module = ./.;
         };
-
-      defaultFn = {
-        lib,
-        dir,
-        args,
-        ignore ? [],
-      }: let
-        shouldRemain = x: !(builtins.elem x ignore);
-
-        definitions = lib.filter shouldRemain (lib.attrNames
-          (lib.filterAttrs (filename: kind:
-            filename
-            != "default.nix"
-            && (kind == "regular" || kind == "directory"))
-          (builtins.readDir dir)));
-
-      in
-        lib.mkMerge (map (file: let
-          pluginName = lib.elemAt (lib.splitString "." file) 0;
-          plugin = import (dir + "/${file}") args;
-        in
-          lib.mkMerge [
-            (lib.optionalAttrs (plugin ? opts) {
-              plugins.${pluginName} = plugin.opts;
-            })
-            (lib.optionalAttrs (plugin ? extra) {
-              extraConfigLua = plugin.extra.config or "";
-              extraPlugins = plugin.extra.packages;
-            })
-            (plugin.rootOpts or {})
-          ])
-        definitions);
     in {
       default = mkNixvim defaultTheme {
         disabledLangs = disabledLangs defaultDisabled;
