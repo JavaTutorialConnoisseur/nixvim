@@ -64,8 +64,10 @@ in {
           hi("BufferCurrentSign", c2, "none")
           hi("BufferCurrentSignRight", c2, "none")
 
-          hi("BufferInactive", "gray", "none")
-          hi("BufferDefaultVisible", c3, "none")
+          hi("BufferAlternate", c2, "none")
+          hi("BufferInactive", "#A4ABC4", "none")
+          hi("BufferDefaultVisible", c2, "none")
+          hi("BufferVisible", c2, "none")
         end
       '';
       event = ["BufEnter" "BufWritePre"];
