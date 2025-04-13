@@ -1,21 +1,17 @@
-<!--toc:start-->
-- [To-Do's](#to-dos)
-- [Improvements](#improvements)
-<!--toc:end-->
+# What is this???
 
-# To-Do's
--------
+# How do I use this???
 
-Fill in this README <!-- TODO: -->
+# Why???
 
-# Improvements
-------------
+## To-Do's
 
-Possible other plugins: (in order of likelihood / usefulness)
-- (nil so far)
+- Fill in this README
 
-Functions:
-- (nil so far)
+## Improvements
 
-Future:
-- (nil so far)
+<!-- Possible other plugins: -->
+<!-- Functions: -->
+barbar : set other color for current tab instead of totally transparent
+<!-- Future: -->
+None! Perfect as-is!
