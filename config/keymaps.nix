@@ -49,6 +49,12 @@ let
     }
 
     {
+      key = "<A-`>";
+      action = "<Cmd>b#<CR>";
+      options.desc = "Go to alternate buffer";
+    }
+
+    {
       key = "<A-->";
       action = "<Cmd>BufferPrevious<CR>";
       options.desc = "Move to previous (left) buffer";
