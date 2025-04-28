@@ -4,21 +4,21 @@ _: {
     settings = {
       autocmd = {
         enabled = true;
-        updatetime = 1000;
+        updatetime = 10;
       };
 
       float = {
         enabled = false;
         hl = "LightBulbFloatWin";
-        text = " 󰌶 ";
-        win_opts = {border = "rounded";};
+        text = " 💡 ";
+        win_opts.border = "rounded";
       };
 
       line.enabled = false;
       number.enabled = false;
 
       sign = {
-        enabled = true;
+        enabled = false;
         hl = "LightBulbSign";
         text = "💡";
         lens_text = "🔎";
@@ -26,14 +26,34 @@ _: {
 
       status_text = {
         enabled = false;
-        text = " 󰌶 ";
+        text = " 💡 ";
       };
+
       virtual_text = {
-        enabled = false;
-        text = "󰌶";
+        enabled = true;
+        text = "💡";
+        pos = "eol";
+        hl = "LightBulbVirtualText";
+        # hl_mode = "combine";
       };
     };
   };
 
-  rootOpts.plugins.transparent.settings.extraGroups = ["LightBulbSign"];
+  rootOpts.autoCmd = [
+    {
+      desc = "Set virtualtext bg highlight for lightbulb to 'none'.";
+      callback.__raw = ''
+        function()
+          vim.cmd('hi LightBulbVirtualText guibg=none')
+        end
+      '';
+      event = ["BufEnter" "BufWritePre"];
+    }
+  ];
+
+  rootOpts.plugins.transparent.settings.extraGroups = [
+    "LightBulbSign"
+    "LightBulbVirtualText"
+    "LightBulbFloatWin"
+  ];
 }
