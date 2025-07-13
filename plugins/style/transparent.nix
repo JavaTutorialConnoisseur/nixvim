@@ -7,6 +7,7 @@ _: {
       "MsgArea"
       "MsgSeparator"
       "Folded"
+      "TabLineFill"
 
       "BufferCurrentSign"
       "BufferCurrentSignRight"

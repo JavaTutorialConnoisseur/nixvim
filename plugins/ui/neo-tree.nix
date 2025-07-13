@@ -205,6 +205,8 @@ _: {
     ];
 
     plugins.transparent.settings.extra_groups = [
+      "NeoTreeStatusLine"
+      "NeoTreeStatusLineNC"
       "NeoTreeTabActive"
       "NeoTreeTabInactive"
       "NeoTreeNormal"
