@@ -7,6 +7,7 @@
 ## To-Do's
 
 - Fill in this README
+- Make code references and LSP options' treesitter be custom (horizontal instead of vertical)
 
 ## Improvements
 
@@ -14,4 +15,4 @@
 <!-- Functions: -->
 barbar : set other color for current tab instead of totally transparent
 <!-- Future: -->
-None! Perfect as-is!
+make LSP telescope preview window horizontal
