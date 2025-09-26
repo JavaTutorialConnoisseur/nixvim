@@ -12,7 +12,8 @@
     shiftwidth = 4;
     expandtab = true;
     smarttab = true;
-    foldenable = false;
+    foldenable = true;
+    foldmethod = "manual";
 
     # Mouse & clipboard
     clipboard = "unnamedplus";

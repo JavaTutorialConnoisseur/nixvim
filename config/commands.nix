@@ -3,6 +3,28 @@
 in {
   autoCmd = [
     {
+      desc = "Save view (folding) on file close";
+      callback.__raw = ''
+        function()
+          vim.cmd('mkview')
+        end
+      '';
+      event = ["BufWinLeave"];
+      pattern = ["*.*"];
+    }
+
+    {
+      desc = "Load view (folding) on file open";
+      callback.__raw = ''
+        function()
+          vim.cmd('silent! loadview')
+        end
+      '';
+      event = ["BufWinEnter"];
+      pattern = ["*.*"];
+    }
+
+    {
       desc = "Set spelling and line wrapping for text-adjacent files";
       callback.__raw = ''
         function()
