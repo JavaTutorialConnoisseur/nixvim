@@ -12,8 +12,5 @@ in {
       mapleader = " ";
       maplocalleader = " ";
     };
-
-    viAlias = true;
-    vimAlias = true;
   };
 }
