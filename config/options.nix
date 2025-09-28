@@ -13,10 +13,7 @@
     expandtab = true;
     smarttab = true;
     foldenable = true;
-    foldmethod = "manual";
-    foldlevel = 99;
-    foldlevelstart = 99;
-    foldcolumn = "4";
+    foldcolumn = "1";
 
     # Mouse & clipboard
     clipboard = "unnamedplus";
