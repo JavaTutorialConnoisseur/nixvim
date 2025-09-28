@@ -28,7 +28,7 @@ _: {
         }
 
         {
-          click = "v.lua.ScFa"; # FOLDING
+          click = "v:lua.ScFa"; # FOLDING
           text = [{__raw = "require('statuscol.builtin').foldfunc";}];
         }
 

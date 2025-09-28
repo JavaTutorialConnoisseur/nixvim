@@ -17,6 +17,9 @@
     foldlevel = 99;
     foldlevelstart = 99;
     foldcolumn = "1";
+    foldexpr.__raw = ''
+        "nvim_treesitter#foldexpr()"
+    '';
 
     # Mouse & clipboard
     clipboard = "unnamedplus";
@@ -50,7 +53,7 @@
   extraConfigLua = ''
     vim.opt.fillchars:append("eob: ")
     vim.opt.fillchars:append("vert: ")
-    vim.opt.fillchars:append("fold: ")
+    vim.opt.fillchars:append("fold:─")
     vim.opt.fillchars:append("foldopen:")
     vim.opt.fillchars:append("foldsep: ")
     vim.opt.fillchars:append("foldclose:")
