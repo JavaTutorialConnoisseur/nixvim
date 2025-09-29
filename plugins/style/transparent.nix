@@ -4,6 +4,7 @@ _: {
     settings.extra_groups = [
       "NormalFloat"
       "FloatBorder"
+      "FloatTitle"
       "MsgArea"
       "MsgSeparator"
       "Folded"
