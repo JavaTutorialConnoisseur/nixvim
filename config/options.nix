@@ -13,13 +13,11 @@
     expandtab = true;
     smarttab = true;
     foldenable = true;
-    foldmethod = "expr";
     foldlevel = 99;
     foldlevelstart = 99;
     foldcolumn = "1";
-    foldexpr.__raw = ''
-        "nvim_treesitter#foldexpr()"
-    '';
+    foldmethod = "expr";
+    foldexpr = "nvim_treesitter#foldexpr()";
 
     # Mouse & clipboard
     clipboard = "unnamedplus";

@@ -49,6 +49,16 @@ in {
     }
 
     {
+      desc = "Set highlights for folds";
+      callback.__raw = ''
+        function()
+          vim.cmd('hi Folded guifg=#${themeColors.normal}')
+        end
+      '';
+      event = ["BufEnter" "BufWritePre"];
+    }
+
+    {
       desc = "Set highlights for postspace";
       callback.__raw = ''
         function()
