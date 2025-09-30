@@ -1,6 +1,12 @@
 let
   normal_mode = map (key: key // {mode = "n";}) [
     {
+      key = "<leader>Fr";
+      action = "<Cmd>lua vim.opt.foldexpr = \"nvim_treesitter#foldexpr()\"<CR>";
+      options.desc = "Refresh treesitter folds in buffer";
+    }
+
+    {
       key = "<leader>bc";
       action = "<Cmd>BufferClose<CR>";
       options.desc = "Close (tab) buffer";
