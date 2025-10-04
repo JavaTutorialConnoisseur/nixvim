@@ -2,6 +2,12 @@ _: {
   opts = {
     enable = true;
     enableTelescope = true;
+    settings = {
+      use_git_branch = false;
+      follow_cwd = false;
+      autostart = false;
+      autoload = false;
+    };
   };
 
   rootOpts.plugins.which-key.settings.spec = [

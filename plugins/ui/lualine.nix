@@ -65,7 +65,26 @@ in {
       };
 
       sections = {
-        lualine_b = ["filename" "branch"];
+        lualine_b = [
+          "filename"
+          "branch"
+          {
+            __raw = ''
+              function()
+                local isPersisting = vim.g.persisting
+                if not isPersisting then return "󱞄 " end
+                local session = vim.g.persisting_session
+                local maxLen = 10
+
+                if string.len(session) > 10 then
+                  return "󰚹 ..." .. session:sub(-10)
+                end
+
+                return "󰚹 ..." .. vim.g.persisting_session
+              end
+            '';
+          }
+        ];
         lualine_c = ["diff"];
         lualine_z = ["location"];
         lualine_y = ["filetype" "progress"];
