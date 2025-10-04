@@ -25,8 +25,15 @@ _: {
     {
       mode = "n";
       key = "<leader>Ss";
-      options.desc = "Toggle session";
-      action = "<cmd>SessionToggle<cr>";
+      options.desc = "Start session";
+      action = "<cmd>SessionStart<cr>";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>Se";
+      options.desc = "Stop session";
+      action = "<cmd>SessionStop<cr>";
     }
 
     {
