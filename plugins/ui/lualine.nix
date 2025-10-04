@@ -68,6 +68,12 @@ in {
         lualine_b = [
           "filename"
           "branch"
+        ];
+        lualine_c = ["diff"];
+        lualine_z = ["location"];
+        lualine_y = [
+          "filetype"
+          "progress"
           {
             __raw = ''
               function()
@@ -76,8 +82,8 @@ in {
                 local session = vim.g.persisting_session
                 local maxLen = 10
 
-                if string.len(session) > 10 then
-                  return "󰚹 ..." .. session:sub(-10)
+                if string.len(session) > maxLen then
+                  return "󰚹 ..." .. session:sub(-maxLen)
                 end
 
                 return "󰚹 ..." .. vim.g.persisting_session
@@ -85,9 +91,6 @@ in {
             '';
           }
         ];
-        lualine_c = ["diff"];
-        lualine_z = ["location"];
-        lualine_y = ["filetype" "progress"];
         lualine_x = [
           "lsp_progress"
           {
