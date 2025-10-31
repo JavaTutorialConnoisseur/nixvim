@@ -1,10 +1,12 @@
 _: {
   opts = {
     enable = true;
-    lsp.autoAttach = true;
-    window.size = {
-      height = 35;
-      width = 100;
+    settings = {
+      lsp.auto_attach = true;
+      window.size = {
+        height = 35;
+        width = 120;
+      };
     };
 
     # mappings: <leader>g? inside window

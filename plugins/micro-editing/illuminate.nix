@@ -3,9 +3,12 @@ _:
 {
   opts = {
     enable = true;
-    delay = 200;
-    filetypesDenylist = ["dirbuf" "dirvish" "fugitive" "toggleterm"];
-    largeFileOverrides.providers = ["lsp"];
-    minCountToHighlight = 2;
+
+    settings = {
+      delay = 200;
+      filetypes_denylist = ["dirbuf" "dirvish" "fugitive" "toggleterm"];
+      large_file_overrides.providers = ["lsp"];
+      min_count_to_highlight = 2;
+    };
   };
 }
