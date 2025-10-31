@@ -9,7 +9,6 @@
 - Fill in this README >:(
 - Make code references and LSP options' treesitter be custom (horizontal instead of vertical)
 - make Toggleterm propagate env vars that ran with nixvim
-- add actual ability to control kitty scrollback
 
 ## Improvements
 
