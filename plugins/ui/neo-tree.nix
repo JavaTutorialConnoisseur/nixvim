@@ -2,19 +2,57 @@ _: {
   opts = {
     enable = true;
 
-    autoCleanAfterSessionRestore = true;
-    closeIfLastWindow = true;
+    settings = {
+      event_handlers = {
+        neo_tree_buffer_enter = ''
+          function(_)
+            vim.opt_local.signcolumn = "auto"
+            vim.opt_local.foldcolumn = "0"
+          end
+        '';
+      };
 
-    eventHandlers = {
-      neo_tree_buffer_enter = ''
-        function(_)
-          vim.opt_local.signcolumn = "auto"
-          vim.opt_local.foldcolumn = "0"
-        end
-      '';
-    };
+      auto_clean_after_session_restore = true;
+      close_if_last_window = true;
+      filesystem = {
+        follow_current_file.enabled = true;
+        hijack_netrw_behavior = "open_current";
+      };
 
-    extraOptions = {
+      default_component_configs = {
+        git_status.symbols = {
+          added = "";
+          conflict = "󰵍";
+          deleted = "󰗨";
+          ignored = "◌";
+          modified = "󰕛";
+          renamed = "󰑕";
+          staged = "";
+          unstaged = "";
+          untracked = "󰷺";
+        };
+      };
+
+      source_selector = {
+        contentLayout.__raw = "'center'";
+        separator = "";
+        winbar = true;
+        sources = [
+          {
+            displayName = "Files";
+            source = "filesystem";
+          }
+          {
+            displayName = "Bufs";
+            source = "buffers";
+          }
+          {
+            displayName = "Git";
+            source = "git_status";
+          }
+        ];
+      };
+
       commands = {
         child_or_open.__raw = ''
           function(state)
@@ -140,45 +178,6 @@ _: {
           Y = "copy_selector";
         };
       };
-    };
-
-    defaultComponentConfigs = {
-      gitStatus.symbols = {
-        added = "";
-        conflict = "󰵍";
-        deleted = "󰗨";
-        ignored = "◌";
-        modified = "󰕛";
-        renamed = "󰑕";
-        staged = "";
-        unstaged = "";
-        untracked = "󰷺";
-      };
-    };
-
-    filesystem = {
-      followCurrentFile.enabled = true;
-      hijackNetrwBehavior = "open_current";
-    };
-
-    sourceSelector = {
-      contentLayout.__raw = "'center'";
-      separator = "";
-      winbar = true;
-      sources = [
-        {
-          displayName = "Files";
-          source = "filesystem";
-        }
-        {
-          displayName = "Bufs";
-          source = "buffers";
-        }
-        {
-          displayName = "Git";
-          source = "git_status";
-        }
-      ];
     };
   };
 
