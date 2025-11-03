@@ -5,8 +5,9 @@ _: {
     settings = {
       direction = "float";
       float_opts.border = "rounded";
-      shading_factor = 2;
       size = 10;
+      # shading_factor = 2;
+      shade_terminals = false;
 
       highlights = {
         Normal.link = "Normal";

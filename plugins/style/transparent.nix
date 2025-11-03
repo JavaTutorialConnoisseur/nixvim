@@ -11,6 +11,7 @@ _: {
       "MsgSeparator"
       "Folded"
       "TabLineFill"
+      "FoldColumn"
 
       "BufferCurrentSign"
       "BufferCurrentSignRight"
