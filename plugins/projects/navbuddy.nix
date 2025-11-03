@@ -4,13 +4,17 @@ _: {
     settings = {
       lsp.auto_attach = true;
       window.size = {
-        height = 35;
-        width = 120;
+        height = 20;
+        width = 90;
       };
     };
 
     # mappings: <leader>g? inside window
   };
+
+  rootOpts.extraConfigLua = ''
+    vim.g.navbuddy_taransparent = true
+  '';
 
   rootOpts.keymaps = [
     {
