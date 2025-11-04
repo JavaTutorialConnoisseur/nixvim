@@ -33,25 +33,25 @@ _: {
         };
       };
 
-      source_selector = {
-        contentLayout.__raw = "'center'";
-        separator = "";
-        winbar = true;
-        sources = [
-          {
-            displayName = "Files";
-            source = "filesystem";
-          }
-          {
-            displayName = "Bufs";
-            source = "buffers";
-          }
-          {
-            displayName = "Git";
-            source = "git_status";
-          }
-        ];
-      };
+      # source_selector = {
+      #   contentLayout.__raw = "'center'";
+      #   separator = "";
+      #   winbar = true;
+      #   sources = [
+      #     {
+      #       displayName = "Files";
+      #       source = "filesystem";
+      #     }
+      #     {
+      #       displayName = "Bufs";
+      #       source = "buffers";
+      #     }
+      #     {
+      #       displayName = "Git";
+      #       source = "git_status";
+      #     }
+      #   ];
+      # };
 
       commands = {
         child_or_open.__raw = ''
@@ -211,6 +211,7 @@ _: {
       "NeoTreeNormal"
       "NeoTreeNormalNC"
       "NeoTreeWinSeparator"
+      "NeoTreeEndOfBuffer"
     ];
 
     autoGroups.neotree = {};
