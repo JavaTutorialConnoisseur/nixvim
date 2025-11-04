@@ -5,3 +5,6 @@
 debug.txt
 result/*
 result
+
+tags
+.dmypy.json
