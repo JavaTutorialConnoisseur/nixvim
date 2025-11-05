@@ -7,6 +7,6 @@ _: {
 
   rootOpts.plugins.smartcolumn = {
     enable = true;
-    settings.colorcolumn = "80";
+    settings.colorcolumn = "100";
   };
 }
