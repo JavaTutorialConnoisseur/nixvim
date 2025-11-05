@@ -1,6 +1,10 @@
 {themeColors, ...}: let
   special_event_color = "#${themeColors.visual}";
 in {
+  autoGroups = {
+    nojumptootherfile.clear = true;
+  };
+
   autoCmd = [
     {
       desc = "Save view (folding) on file close";
@@ -11,6 +15,28 @@ in {
         end
       '';
       event = ["BufWinLeave"];
+      pattern = "*.*";
+    }
+
+    {
+      desc = "Restart view (folding) on file open";
+      group = "nojumptootherfile";
+      once = true;
+
+      callback.__raw = ''
+        vim.schedule_wrap(function()
+          vim.defer_fn(function()
+            vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+          end, 10)
+
+          vim.defer_fn(function()
+            vim.cmd([[
+              silent! loadview
+            ]])
+          end, 20)
+        end)
+      '';
+      event = ["BufReadPost"];
       pattern = "*.*";
     }
 
