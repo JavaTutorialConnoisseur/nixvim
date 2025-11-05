@@ -1,9 +1,10 @@
 let
   normal_mode = map (key: key // {mode = "n";}) [
     {
-      key = "<leader>Fr";
-      action = "<Cmd>lua vim.opt.foldexpr = \"nvim_treesitter#foldexpr()\"<CR>";
-      options.desc = "Refresh treesitter folds in buffer";
+      key = "<leader>F";
+      action = ''
+        <Cmd>lua vim.schedule(function() vim.cmd("silent! loadview") end)<CR>'';
+      options.desc = "Refresh loadview";
     }
 
     {

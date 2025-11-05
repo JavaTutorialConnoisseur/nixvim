@@ -62,5 +62,8 @@
   extraConfigVim = ''
     syntax enable
     filetype plugin on
+
+    set viewoptions-=options
+    set sessionoptions-=options
   '';
 }
