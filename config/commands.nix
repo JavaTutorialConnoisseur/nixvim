@@ -4,24 +4,24 @@ in {
   autoCmd = [
     {
       desc = "Save view (folding) on file close";
+
       callback.__raw = ''
         function()
-          vim.cmd('mkview')
+          vim.cmd("mkview")
         end
       '';
       event = ["BufWinLeave"];
-      pattern = ["*.*"];
+      pattern = "*.*";
     }
 
     {
-      desc = "Load view (folding) on file open";
+      desc = "Refresh fold method on save";
       callback.__raw = ''
-        function()
-          vim.cmd('silent! loadview')
-        end
+        vim.schedule_wrap(function()
+          vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+        end)
       '';
-      event = ["BufWinEnter"];
-      pattern = ["*.*"];
+      event = ["BufWritePost"];
     }
 
     {
@@ -52,7 +52,7 @@ in {
       desc = "Set highlights for folds";
       callback.__raw = ''
         function()
-          vim.cmd('hi Folded guifg=#${themeColors.normal}')
+          vim.cmd('hi Folded guifg=gray')
         end
       '';
       event = ["BufEnter" "BufWritePre"];
@@ -73,7 +73,8 @@ in {
       desc = "Highlight on yank";
       callback.__raw = ''
         function()
-          vim.cmd(string.format('hi %s guifg=%s guibg=%s', 'YankHighlight', 'black', '${special_event_color}'))
+          vim.cmd(string.format(
+            'hi %s guifg=%s guibg=%s', 'YankHighlight', 'black', '${special_event_color}'))
           vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 150 })
         end
       '';

@@ -23,7 +23,10 @@ _: {
 
       lspBuf = {
         K = "hover";
-        "<leader>f" = "format";
+        "<leader>f" = {
+          action = "format";
+          desc = "Format code";
+        };
         "<leader>rl" = {
           action = "rename";
           desc = "Rename with LSP";
@@ -56,7 +59,7 @@ _: {
   rootOpts.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>f";
-      group = "Format Code";
+      group = "Format code";
       icon = {
         icon = "󰉵 ";
         color = "purple";
