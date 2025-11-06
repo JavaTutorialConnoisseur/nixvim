@@ -5,7 +5,7 @@ _: {
     settings = {
       direction = "float";
       float_opts.border = "rounded";
-      size = 10;
+      size = 60;
       # shading_factor = 2;
       shade_terminals = false;
 
@@ -118,9 +118,9 @@ _: {
 
     {
       mode = ["n"];
-      key = "<leader>tk";
-      action = "<cmd>NixShellTermToggle<cr>";
-      options.desc = "Nix-shell";
+      key = "<Leader>tv";
+      action = "<cmd>MiniZshTermToggle<cr>";
+      options.desc = "vertical split terminal";
     }
 
     {
@@ -152,15 +152,16 @@ _: {
   };
 
   rootOpts.userCommands = let
-    nixShellTermCount = "999";
-    lazyGitTermCount = "998";
-    zshTermCount = "997";
-    gefTermCount = "996";
+    lazyGitTermCount = "10";
+    zshTermCount = "11";
+    miniZshTermCount = "12";
+    gefTermCount = "13";
 
     createTerminal = {
       count,
       name,
       cmd,
+      direction ? "float",
     }: ''
       local Terminal = require('toggleterm.terminal').Terminal
 
@@ -168,7 +169,7 @@ _: {
         display_name = "[${name}]",
         count = "${count}",
         cmd = "${cmd}",
-        direction = "float",
+        direction = "${direction}",
         hidden = true,
         close_on_exit = true,
       })
@@ -202,33 +203,6 @@ _: {
         end
       end'';
   in {
-    NixShellTermToggle = {
-      command.__raw = ''
-        function()
-          local cwd = vim.fn.getcwd()
-          local shell_path = vim.fn.expand(cwd .. '/shell.nix')
-
-          if vim.fn.filereadable(shell_path) == 1 then
-            local fn = ${
-          toggleTerm {
-            term = {
-              name = "nix-shell";
-              cmd = "nix-shell shell.nix";
-              count = nixShellTermCount;
-            };
-          }
-        }
-
-            fn()
-          else
-            vim.notify("File «shell.nix» does not " ..
-              "exist in the current directory!", "error")
-          end
-        end
-      '';
-      desc = "Toggles the Nix Shell terminal.";
-    };
-
     LazyGitTermToggle = {
       command.__raw = ''
         function()
@@ -280,6 +254,20 @@ _: {
         }}
       '';
       desc = "Toggles the zsh terminal.";
+    };
+
+    MiniZshTermToggle = {
+      command.__raw = ''
+        ${toggleTerm {
+          term = {
+            name = "vertical";
+            cmd = "SET_ZSH_MINI=true zsh";
+            count = miniZshTermCount;
+            direction = "vertical";
+          };
+        }}
+      '';
+      desc = "Toggles the zsh vertical terminal.";
     };
   };
 }
