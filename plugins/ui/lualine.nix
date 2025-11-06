@@ -97,6 +97,17 @@ in {
           {
             __raw = ''
               function()
+                if not pcall(require, 'lsp_signature') then return end
+                local sig = require("lsp_signature").status_line(12)
+                if not sig then return end
+                return sig.label
+              end
+            '';
+          }
+
+          {
+            __raw = ''
+              function()
                   local count = vim.fn.wordcount().visual_words
                   if not count then return "" end
                   return tostring(count) .. " words selected"
