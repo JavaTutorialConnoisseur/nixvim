@@ -62,6 +62,7 @@ in {
           "alpha"
           "neo-tree"
           "norg"
+          "toggleterm"
         ];
       };
 
