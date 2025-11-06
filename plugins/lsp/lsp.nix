@@ -55,7 +55,17 @@ _: {
     };
   };
 
-  rootOpts.plugins.lsp-signature.enable = true;
+  # function signature while writing
+  rootOpts.plugins.lsp-signature = {
+    enable = true;
+    settings = {
+      floating_window = false;
+      hint_enable = false;
+
+      toggle_key = "<C-k>";
+    };
+  };
+
   rootOpts.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>f";
