@@ -17,16 +17,6 @@ _: {
     };
   };
 
-  rootOpts.plugins.twilight = {
-    enable = true;
-    settings = {
-      context = 20;
-      dimming = {alpha = 0.4;};
-      expand = ["function" "method" "table" "if_statement"];
-      treesitter = true;
-    };
-  };
-
   rootOpts.plugins.transparent.settings.extra_groups = ["ZenBg"];
   rootOpts.plugins.which-key.settings.spec = [
     {

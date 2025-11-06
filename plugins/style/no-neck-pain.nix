@@ -1,0 +1,3 @@
+_: {
+  opts.enable = true;
+}
