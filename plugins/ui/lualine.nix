@@ -61,6 +61,7 @@ in {
           "vimtex-toc"
           "alpha"
           "neo-tree"
+          "norg"
         ];
       };
 
