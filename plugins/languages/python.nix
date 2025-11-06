@@ -5,17 +5,14 @@
       settings.plugins = {
         # code style guide
         flake8.enabled = true;
-
-        pylsp_mypy = {
-          # type safety (kinda bad)
-          enabled = true;
-          dmypy = true;
-        };
+        pycodestyle.enabled = true;
+        mccabe.enabled = true;
+        pyflakes.enabled = true;
 
         black = {
           # code formatting
           enabled = true;
-          line_length = 79;
+          line_length = 99;
         };
       };
     };
