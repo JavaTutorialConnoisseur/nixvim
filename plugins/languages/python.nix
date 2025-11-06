@@ -1,18 +1,33 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   rootOpts.plugins = {
     lsp.servers.pylsp = {
       enable = true;
-      settings.plugins = {
+      settings.plugins ={
         # code style guide
-        flake8.enabled = true;
-        pycodestyle.enabled = true;
-        mccabe.enabled = true;
-        pyflakes.enabled = true;
+        autopep8.enabled = false;
+        flake8 = {
+          enabled = false;
+          ignore = ["F401"];
+        };
 
-        black = {
-          # code formatting
+        # complexity checker
+        mccabe.enabled = true;
+
+        # good ol' dynamic linter
+        pylint = {
           enabled = true;
-          line_length = 99;
+          executable = lib.getExe pkgs.pylint;
+          # args = ["--disable=F401"];
+        };
+
+        # code formatting
+        black = {
+          enabled = true;
+          line_length = 79;
         };
       };
     };
