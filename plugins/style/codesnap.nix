@@ -14,35 +14,37 @@ _: {
       # bg_theme = "grape";
       bg_padding = 0;
 
+      # if this path doesn't exist, the thread panics and nvim crashes lmao
       save_path = "~/Pictures/Screenshots/";
+      code_font_family = "JetBrainsMonoNL Nerd Font";
       title = "";
       watermark = "";
     };
   };
 
+  # to do a session-temporary override for anything, do:
+  # lua require('codesnap').setup({code_font_family = ...})
+  # and subsequent mapping calls will respect the new setup
   rootOpts.keymaps = [
-    # TODO: maybe add map for saving w/ specified FONT, or settings otherwise?
-    # cmd would be:
-    # lua local x = require('codesnap'); x.setup(...); x.copy_into_clipboard();
     {
       mode = "x";
       key = "<leader>pc";
       options.desc = "Pretty-print to clipboard";
-      action = "<cmd>CodeSnap<cr>";
+      action = "<esc><cmd>CodeSnap<cr>";
     }
 
     {
       mode = "x";
       key = "<leader>ps";
       options.desc = "Pretty-print to ~/Pictures/Screenshots";
-      action = "<cmd>CodeSnapSave<cr>";
+      action = "<esc><cmd>CodeSnapSave<cr>";
     }
 
     {
       mode = "x";
       key = "<leader>ph";
       options.desc = "Pretty-print highlighted to ~/Pictures/Screenshots";
-      action = "<cmd>CodeSnapSaveHighlight<cr>";
+      action = "<esc><cmd>CodeSnapSaveHighlight<cr>";
     }
   ];
 }
