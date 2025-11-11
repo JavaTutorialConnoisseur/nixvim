@@ -3,7 +3,13 @@
   pkgs,
   ...
 }: {
-  opts = {enable = true;};
+  opts = {
+    enable = true;
+    extensions = {
+      undo.enable = true;
+      live-grep-args.enable = true;
+    };
+  };
 
   rootOpts = {
     extraPackages = [pkgs.ripgrep];
@@ -32,7 +38,7 @@
     ];
 
     extraConfigLuaPre = ''
-      local TelescopeWithTheme = function(fn, args, extension)
+      TelescopeWithTheme = function(fn, args, extension)
         args.layout_config = {
           anchor = "N",
           mirror = true,
@@ -101,6 +107,7 @@
           desc = "Visualize undotree";
           key = "<leader>gu";
           fn = "undo";
+          extension = "undo";
         }
 
         {
@@ -132,6 +139,13 @@
           args = {
             glob_pattern = "*";
           };
+        }
+
+        {
+          desc = "Words with custom args";
+          key = "<leader>gA";
+          fn = "live_grep_args";
+          extension = "live_grep_args";
         }
 
         {
