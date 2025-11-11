@@ -20,7 +20,7 @@ _: {
     }
   ];
 }
-# FUTURE: if I ever need haskell, this should be added:
+# if I ever need haskell, this should be added:
 # -- https://github.com/MrcJkb/haskell-tools.nvim
 # RequireEnvironment({ 'haskell-tools', 'which-key' }, function()
 #     local keys = require('which-key')

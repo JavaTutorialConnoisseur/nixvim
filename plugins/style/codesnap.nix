@@ -22,7 +22,7 @@ _: {
 
   rootOpts.keymaps = [
     # TODO: maybe add map for saving w/ specified FONT, or settings otherwise?
-    # cmd would be: 
+    # cmd would be:
     # lua local x = require('codesnap'); x.setup(...); x.copy_into_clipboard();
     {
       mode = "x";
