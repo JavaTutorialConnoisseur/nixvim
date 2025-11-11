@@ -15,5 +15,3 @@
 <!-- Possible other plugins: -->
 <!-- Functions: -->
 barbar : set other color for current tab instead of totally transparent
-<!-- Future: -->
-make LSP telescope preview window horizontal

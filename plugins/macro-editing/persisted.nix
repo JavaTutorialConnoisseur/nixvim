@@ -61,7 +61,9 @@ _: {
       mode = "n";
       key = "<leader>gs";
       options.desc = "Sessions";
-      action = "<cmd>Telescope persisted<cr>";
+      action =
+        "<cmd>lua TelescopeWithTheme('persisted', "
+        + "{cmd = path, prompt_title = 'Sessions - <C-d> to delete'}, 'persisted')<cr>";
     }
   ];
 

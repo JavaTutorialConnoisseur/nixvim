@@ -45,16 +45,32 @@ _: {
       '';
       options.desc = "Clean all generated var prints";
     }
+
+    {
+      mode = ["n" "x"];
+      key = "<leader>cR";
+      action.__raw = ''
+        function()
+          local ft = vim.fn.expand("%:e")
+          local refactorable = {
+            ts = true, js = true, lua = true,
+            c = true, cpp = true, go = true, cs = true,
+            py = true, java = true,
+            php = true, rb = true,
+          }
+
+          if not refactorable[ft] then
+            vim.notify("Filetype <" .. ft .. "> is not refactorable...", "error")
+          else
+            TelescopeWithTheme("refactors", {cmd = path}, "refactoring")
+          end
+        end
+      '';
+      options.desc = "Choose refactoring";
+    }
   ];
 
-  rootOpts.extraConfigLua = ''
+  rootOpts.extraConfigLuaPre = ''
     require("telescope").load_extension("refactoring")
-
-    vim.keymap.set(
-      {"n", "x"},
-      "<leader>cR",
-      function() require('telescope').extensions.refactoring.refactors() end,
-      { desc = "Choose refactoring", }
-    )
   '';
 }
