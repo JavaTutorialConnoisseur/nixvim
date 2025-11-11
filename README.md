@@ -6,12 +6,17 @@
 
 ## To-Do's
 
+<!-- TODO: -->
 - Fill in this README >:(
-- Make code references and LSP options' treesitter be custom (horizontal instead of vertical)
-- make Toggleterm propagate env vars that ran with nixvim
+<!-- TODO: -->
+- Make the stupid defaultFn not be stupid
+<!-- TODO: -->
+- Change the github automation / commit rules
 
 ## Improvements
 
-<!-- Possible other plugins: -->
+<!-- Plugins: -->
+<!-- TODO: -->
+- barbar : set other color for alt tab background instead
+<!-- New plugins: -->
 <!-- Functions: -->
-barbar : set other color for current tab instead of totally transparent
