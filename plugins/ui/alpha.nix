@@ -40,7 +40,7 @@ _: let
       keymap = [
         "n"
         key
-        "<cmd>:lua ${fn}<cr>" # potentially a bug if someone misunderstands 'fn'
+        "<cmd>lua ${fn}<cr>"
         {
           noremap = true;
           silent = true;
@@ -67,24 +67,31 @@ _: let
       })
 
       (mkButton {
-        key = "r";
-        fn = "vim.cmd('Telescope oldfiles')";
-        icon = "";
-        dscr = "recent files";
+        key = "t";
+        fn = "TelescopeWithTheme('live_grep', {cmd = path}, '')";
+        icon = "";
+        dscr = "live grep";
       })
 
       (mkButton {
         key = "f";
-        fn = "vim.cmd('Telescope find_files')";
+        fn = "TelescopeWithTheme('find_files', {cmd = path}, '')";
         icon = "󰥨";
         dscr = "find file";
       })
 
       (mkButton {
-        key = "t";
-        fn = "vim.cmd('Telescope live_grep')";
-        icon = "";
-        dscr = "live grep";
+        key = "r";
+        fn = "TelescopeWithTheme('oldfiles', {cmd = path}, '')";
+        icon = "";
+        dscr = "recent files";
+      })
+
+      (mkButton {
+        key = "s";
+        fn = "TelescopeWithTheme('persisted', {cmd = path}, 'persisted')";
+        icon = "";
+        dscr = "find sessions";
       })
 
       (mkButton {

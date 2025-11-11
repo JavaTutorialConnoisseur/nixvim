@@ -44,14 +44,6 @@ _: {
           desc = "Go to symbol implementation";
         };
       };
-
-      extra = [
-        {
-          action = {__raw = "require('telescope.builtin').lsp_references";};
-          key = "<leader>cr";
-          options.desc = "Find code references";
-        }
-      ];
     };
   };
 
@@ -67,6 +59,13 @@ _: {
   };
 
   rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>cr";
+      __unkeyed-2 = ''
+        <cmd>lua TelescopeWithTheme("lsp_references", {cmd = path}, "")<cr>'';
+      group = "Find code references";
+    }
+
     {
       __unkeyed-1 = "<leader>f";
       group = "Format code";
