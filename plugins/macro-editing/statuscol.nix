@@ -7,7 +7,7 @@ _: {
       setopt = true;
 
       bt_ignore = null;
-      ft_ignore = null; # TODO: add things here that don't fit
+      ft_ignore = null;
 
       clickmod = "c";
       thousands = false;

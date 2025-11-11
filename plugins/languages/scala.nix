@@ -1,6 +1,6 @@
 _: {
 }
-# FUTURE: if I ever need scala, this is one way:
+# If I ever need scala, this is one way:
 # -- https://github.com/scalameta/nvim-metals
 # RequireEnvironment('metals', function()
 #     local nvim_metals_group = vim.api.nvim_create_augroup(

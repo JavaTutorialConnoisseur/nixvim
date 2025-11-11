@@ -1,12 +1,7 @@
 Bugs
 -------------
 
-<!-- TODO: add a project movement plugin, not project-nvim since depr. -->
-
 All bugs in the configuration during work can go here:
-
-- treesitter fucks up during certain injected langs (bash, most commonly in `stylix.nix`)
-            - solved stupidly via toggling code injections hmts in `nix.nix` (ugly, but no red paragraph?)
 
 - visual bug: in VSPLIT, sometimes context / depth line segments disappear. I don't use vsplit much so idc
 
