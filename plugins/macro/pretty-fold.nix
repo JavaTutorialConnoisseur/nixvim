@@ -1,11 +1,4 @@
-{
-  pkgs,
-  lib,
-  themeColors,
-  ...
-}: {
-  extra.packages = [(import ./package.nix {inherit lib pkgs;})];
-
+{pkgs, ...}: {
   rootOpts.extraConfigLua = ''
     require('pretty-fold').setup({
       keep_indentation = false,
@@ -23,16 +16,19 @@
     })
   '';
 
-  rootOpts.plugins.which-key.settings.spec = [
-    # {
-    #   mode = "n";
-    #   __unkeyed-1 = "<leader>ca";
-    #   __unkeyed-2 = "<cmd>lua require('actions-preview').code_actions()<cr>";
-    #   desc = "Preview code actions";
-    #   icon = {
-    #     icon = " ";
-    #     color = "purple";
-    #   };
-    # }
+  extra.packages = [
+    (
+      pkgs.vimUtils.buildVimPlugin
+      {
+        name = "pretty-fold";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "bbjornstad";
+          repo = "pretty-fold.nvim";
+          rev = "1eb18f228972e86b7b8f5ef33ca8091e53fb1e49";
+          hash = "sha256-0cHPm+JPGoYsjJEg3eIWv2Td1S+LQYBRbp71XPQsWMg=";
+        };
+      }
+    )
   ];
 }

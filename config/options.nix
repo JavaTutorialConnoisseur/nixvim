@@ -1,6 +1,6 @@
 # General neovim options. Stuff under `vim.opt`, as well as syntax, filetype
 # and fill/list-chars.
-{
+_: {
   opts = {
     undofile = true;
     undodir = ["./.cache/"];
