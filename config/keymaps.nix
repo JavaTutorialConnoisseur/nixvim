@@ -20,6 +20,13 @@ _: let
     }
 
     {
+      mode = "n";
+      key = "<leader>bb";
+      options.desc = "Open bug report file";
+      action = "<cmd>e /home/parrycat/Documents/projects/random/nixvim/BUGS.md<cr>";
+    }
+
+    {
       key = "<leader>bod";
       action = "<Cmd>BufferOrderByDirectory<CR>";
       options.desc = "By directory";
