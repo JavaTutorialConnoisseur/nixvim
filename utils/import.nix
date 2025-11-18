@@ -12,5 +12,11 @@
   imports = configImports ++ pluginImports;
 in (
   # lib.traceValSeqNFn lib.id 10 {inherit imports;}
-  {inherit imports;}
+  {
+    inherit imports;
+    config.globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+  }
 )
