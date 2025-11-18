@@ -1,4 +1,4 @@
-let
+_: let
   normal_mode = map (key: key // {mode = "n";}) [
     {
       key = "<leader>F";

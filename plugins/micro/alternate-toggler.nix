@@ -1,0 +1,40 @@
+{
+  lib,
+  pkgs,
+  ...
+}: {
+  rootOpts.plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>a";
+      icon = {
+        icon = " ";
+        color = "purple";
+      };
+    }
+  ];
+
+  rootOpts.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>a";
+      action = "<Cmd>ToggleAlternate<CR>";
+      options.desc = "Toggle alternate";
+    }
+  ];
+
+  extra.packages = [
+    (
+      pkgs.vimUtils.buildVimPlugin
+      {
+        name = "alternate-toggler";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "rmagatti";
+          repo = "alternate-toggler";
+          rev = "fe798aa9e4af26c9e33ca1add9d255209d03b108";
+          hash = "sha256-7t0UJ5pIa4BAECf09EodyrXqii9nYsq2n7NDKCoXw78=";
+        };
+      }
+    )
+  ];
+}
