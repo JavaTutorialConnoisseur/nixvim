@@ -3,11 +3,23 @@
     nix-develop.enable = true;
     hmts.enable = false; # string code highlighting (like css)
 
-    lsp.servers.nil_ls = {
-      enable = true;
-      settings = {
-        formatting.command = ["alejandra"];
-        nix.flake.autoArchive = true;
+    lsp.servers = {
+      nixd = {
+        enable = true;
+        # cmd = ["nixd --semantic-tokens=false"];
+        cmd = ["nixd"];
+        settings = {
+          formatting.command = ["alejandra"];
+          nixpkgs.expr = "import <nixpkgs> { }";
+          diagnostic.suppress = ["sema-unused-def-lambda-witharg-formal"];
+          # TODO: un-hardcode this:
+          # options = {
+          #   home-manager.expr = ''
+          #     (builtins.getFlake "/home/parrycat/.dotfiles").nixosConfigurations.nixos-xerinae.options'';
+          #   nixos.expr = ''
+          #     (builtins.getFlake "/home/parrycat/.dotfiles").homeConfigurations."parrycat@nixos-xerinae".options'';
+          # };
+        };
       };
     };
   };
@@ -28,5 +40,5 @@
     }
   ];
 
-  rootOpts.extraPackages = [pkgs.alejandra];
+  rootOpts.extraPackages = [pkgs.alejandra pkgs.nixd];
 }
