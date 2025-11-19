@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  sessionVars,
+  ...
+}: {
   rootOpts.plugins = {
     nix-develop.enable = true;
     hmts.enable = false; # string code highlighting (like css)
@@ -19,15 +24,22 @@
         cmd = ["nixd"];
         settings = {
           formatting.command = ["alejandra"];
-          # TODO: un-hardcode this & options:
-          nixpkgs.expr = "import <nixpkgs> { }";
           diagnostic.suppress = ["sema-unused-def-lambda-witharg-formal"];
-          # options = {
-          #   home-manager.expr = ''
-          #     (builtins.getFlake "/home/parrycat/.dotfiles").nixosConfigurations.nixos-xerinae.options'';
-          #   nixos.expr = ''
-          #     (builtins.getFlake "/home/parrycat/.dotfiles").homeConfigurations."parrycat@nixos-xerinae".options'';
-          # };
+
+          nixpkgs.expr =
+            if (sessionVars != null)
+            then "(builtins.getFlake \"${sessionVars.dotfilesDir}\").inputs.pkgs { }"
+            else "import <nixpkgs> { }";
+
+          options = lib.optionalAttrs (sessionVars != null) (let
+            inherit (sessionVars) hostname username dotfilesDir;
+            targ_flake = "(builtins.getFlake \"${dotfilesDir}\")";
+          in {
+            home-manager.expr = ''
+              ${targ_flake}.nixosConfigurations.${hostname}.options'';
+            nixos.expr = ''
+              ${targ_flake}.homeConfigurations."${username}@${hostname}".options'';
+          });
         };
       };
     };
