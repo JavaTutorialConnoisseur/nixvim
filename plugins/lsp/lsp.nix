@@ -3,14 +3,6 @@ _: {
     enable = true;
     keymaps = {
       diagnostic = {
-        "<leader>d[" = {
-          action = "goto_prev";
-          desc = "Go to previous diagnostic";
-        };
-        "<leader>d]" = {
-          action = "goto_next";
-          desc = "Go to next diagnostic";
-        };
         "<leader>do" = {
           action = "open_float";
           desc = "Open diagnostic details";
@@ -22,22 +14,13 @@ _: {
       };
 
       lspBuf = {
-        K = "hover";
         "<leader>f" = {
           action = "format";
           desc = "Format code";
         };
-        "<leader>rl" = {
-          action = "rename";
-          desc = "Rename with LSP";
-        };
         "<leader>cD" = {
           action = "declaration";
           desc = "Go to symbol declaration";
-        };
-        "<leader>cd" = {
-          action = "definition";
-          desc = "Go to symbol definition";
         };
         "<leader>ci" = {
           action = "implementation";
@@ -60,10 +43,10 @@ _: {
 
   rootOpts.plugins.which-key.settings.spec = [
     {
-      __unkeyed-1 = "<leader>cr";
+      __unkeyed-1 = "<leader>cT";
       __unkeyed-2 = ''
         <cmd>lua TelescopeWithTheme("lsp_references", {cmd = path}, "")<cr>'';
-      group = "Find code references";
+      group = "Find code references with telescope";
     }
 
     {

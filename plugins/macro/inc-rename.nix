@@ -6,8 +6,8 @@ _: {
   rootOpts.keymaps = [
     {
       mode = ["n"];
-      key = "<leader>rn";
-      options.desc = "Rename word under cursor w/ preview";
+      key = "<leader>ro";
+      options.desc = "Rename word under cursor w/ old inc-rename";
       action.__raw = ''
         function()
           local word_under_cursor = vim.fn.expand("<cword>")
