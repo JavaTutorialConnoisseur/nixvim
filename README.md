@@ -8,7 +8,6 @@
 
 <!-- TODO: (x4) -->
 - Fill in this README >:(
-- Make the stupid defaultFn not be stupid
 - Change the github automation / commit rules
 
 ## Improvements
