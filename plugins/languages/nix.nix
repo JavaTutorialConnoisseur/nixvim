@@ -4,15 +4,24 @@
     hmts.enable = false; # string code highlighting (like css)
 
     lsp.servers = {
+      nil_ls = {
+        enable = true;
+        settings.formatting.command = [""];
+        onAttach.function = ''
+          client.server_capabilities.referencesProvider = false
+          client.server_capabilities.definitionProvider = false
+          client.server_capabilities.renameProvider = false
+        '';
+      };
+
       nixd = {
         enable = true;
-        # cmd = ["nixd --semantic-tokens=false"];
         cmd = ["nixd"];
         settings = {
           formatting.command = ["alejandra"];
+          # TODO: un-hardcode this & options:
           nixpkgs.expr = "import <nixpkgs> { }";
           diagnostic.suppress = ["sema-unused-def-lambda-witharg-formal"];
-          # TODO: un-hardcode this:
           # options = {
           #   home-manager.expr = ''
           #     (builtins.getFlake "/home/parrycat/.dotfiles").nixosConfigurations.nixos-xerinae.options'';
