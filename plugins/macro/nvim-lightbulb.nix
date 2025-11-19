@@ -25,12 +25,12 @@ _: {
       };
 
       status_text = {
-        enabled = false;
+        enabled = true;
         text = " 💡 ";
       };
 
       virtual_text = {
-        enabled = true;
+        enabled = false;
         text = "💡";
         pos = "eol";
         hl = "LightBulbVirtualText";
@@ -38,18 +38,6 @@ _: {
       };
     };
   };
-
-  rootOpts.autoCmd = [
-    {
-      desc = "Set virtualtext bg highlight for lightbulb to 'none'.";
-      callback.__raw = ''
-        function()
-          vim.cmd('hi LightBulbVirtualText guibg=none')
-        end
-      '';
-      event = ["BufEnter" "BufWritePre"];
-    }
-  ];
 
   rootOpts.plugins.transparent.settings.extraGroups = [
     "LightBulbSign"
