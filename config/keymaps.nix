@@ -51,12 +51,6 @@ _: let
     }
 
     {
-      key = "<leader>qc";
-      action = "<Cmd>q<CR>";
-      options.desc = "Quit current";
-    }
-
-    {
       key = "<leader>qq";
       action = "<Cmd>qall!<CR>";
       options.desc = "Quit all";
@@ -162,12 +156,6 @@ _: let
       key = "<A-p>";
       action = "<Cmd>BufferPin<CR>";
       options.desc = "Toggle buffer pin";
-    }
-
-    {
-      key = "<C-p>";
-      action = "<Cmd>BufferPick<CR>";
-      options.desc = "Pick buffer";
     }
 
     {
