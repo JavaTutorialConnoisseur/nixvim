@@ -39,7 +39,10 @@
 
       mkConfigurable = {
         theme ? defTheme,
-        specialArgs ? {inherit disabledFiles;},
+        specialArgs ? {
+          inherit disabledFiles;
+          sessionVars = null;
+        },
       }:
         mkNixvim {inherit theme specialArgs;};
     in {
