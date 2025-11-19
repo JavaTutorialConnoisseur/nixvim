@@ -6,17 +6,14 @@
 
 ## To-Do's
 
-<!-- TODO: -->
+<!-- TODO: (x4) -->
 - Fill in this README >:(
-<!-- TODO: -->
 - Make the stupid defaultFn not be stupid
-<!-- TODO: -->
 - Change the github automation / commit rules
 
 ## Improvements
 
 <!-- Plugins: -->
-<!-- TODO: -->
 - barbar : set other color for alt tab background instead
 <!-- New plugins: -->
 <!-- Functions: -->

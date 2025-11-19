@@ -1,4 +1,4 @@
 _: {
-  # a bit buggy
-  rootOpts.plugins.lsp.servers.asm_lsp.enable = true;
+  # a bit buggy -> turn this off for Godbolt for sure
+  rootOpts.plugins.lsp.servers.asm_lsp.enable = false;
 }

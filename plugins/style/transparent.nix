@@ -1,7 +1,6 @@
 _: {
   opts = {
     enable = true;
-    # FUTURE: see if any more groups need to be added here.
     # (Just run 'highlight')
     settings.extra_groups = [
       "NormalFloat"
