@@ -109,6 +109,15 @@ in {
           {
             __raw = ''
               function()
+                if not pcall(require, 'nvim-lightbulb') then return end
+                return require('nvim-lightbulb').get_status_text()
+              end
+            '';
+          }
+
+          {
+            __raw = ''
+              function()
                   local count = vim.fn.wordcount().visual_words
                   if not count then return "" end
                   return tostring(count) .. " words selected"
