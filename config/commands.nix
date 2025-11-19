@@ -51,10 +51,9 @@ in {
     }
 
     {
-      desc = "Set spelling and line wrapping for text-adjacent files";
+      desc = "Set spelling and for text-adjacent files";
       callback.__raw = ''
         function()
-          vim.opt_local.wrap = true
           vim.opt_local.spell = true
         end
       '';
