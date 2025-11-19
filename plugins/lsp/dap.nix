@@ -152,15 +152,14 @@
       floating.mappings.close = ["<ESC>" "q"];
 
       layouts = let
-        section = items: pos: size: {
+        section = items: position: size: {
+          inherit position size;
           elements =
             map (id: {
               id = id;
               size = 0.5;
             })
             items;
-          position = pos;
-          size = size;
         };
       in [
         (section ["scopes" "watches"] "left" 30)

@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  # BUG: automatic highlighting here seems kinda broken
   rootOpts.keymaps = [
     {
       mode = "n";
