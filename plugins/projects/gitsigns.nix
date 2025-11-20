@@ -23,9 +23,9 @@ _: {
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = ["GitSignsAdd" "GitSignsChange" "GitSignsDelete"];
+  root.plugins.transparent.settings.extra_groups = ["GitSignsAdd" "GitSignsChange" "GitSignsDelete"];
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>i";
       group = "Git";
@@ -37,7 +37,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>iB";

@@ -1,10 +1,10 @@
 {pkgs, ...}: {
-  extra.packages = [pkgs.vimPlugins.live-share-nvim pkgs.vimPlugins.instant-nvim];
-  # this is necessary but UNFREE!!!
-  # rootOpts.extraPackages = [pkgs.ngrok];
+  extra.plugins = with pkgs.vimPlugins; [live-share-nvim instant-nvim];
+  # this is necessary (to host) but UNFREE!!! Also needs your goddamn CREDIT CARD dude.
+  # root.extraPackages = [pkgs.ngrok];
 
   # TEST: -> check if this works (on Friday)
-  extra.luaPre = ''
+  root.extraConfigLua = ''
     vim.g.instant_username = "<anon>"
     require("live-share").setup({
       port_internal = 8080,

@@ -14,15 +14,9 @@
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
-    {
-      __unkeyed-1 = "<leader>cc";
-      group = "Debugging functions";
-      icon = " ";
-    }
-  ];
+  extra.plugins = [(pkgs.vimPlugins.telescope-dap-nvim)];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>ccb";
@@ -131,7 +125,7 @@
     }
   ];
 
-  rootOpts.extraConfigLua = ''
+  root.extraConfigLua = ''
     local dap, dapui = require("dap"), require("dapui")
 
     dap.listeners.before.attach.dapui_config = function() dapui.open() end
@@ -144,28 +138,37 @@
     end
   '';
 
-  rootOpts.plugins.dap-virtual-text.enable = true;
-  rootOpts.plugins.dap-ui = {
-    enable = true;
+  root.plugins = {
+    which-key.settings.spec = [
+      {
+        __unkeyed-1 = "<leader>cc";
+        group = "Debugging functions";
+        icon = " ";
+      }
+    ];
 
-    settings = {
-      floating.mappings.close = ["<ESC>" "q"];
+    dap-virtual-text.enable = true;
+    dap-ui = {
+      enable = true;
 
-      layouts = let
-        section = items: position: size: {
-          inherit position size;
-          elements =
-            map (id: {
-              id = id;
-              size = 0.5;
-            })
-            items;
-        };
-      in [
-        (section ["scopes" "watches"] "left" 30)
-        (section ["breakpoints" "stacks"] "right" 30)
-      ];
+      settings = {
+        floating.mappings.close = ["<ESC>" "q"];
+
+        layouts = let
+          section = items: position: size: {
+            inherit position size;
+            elements =
+              map (id: {
+                id = id;
+                size = 0.5;
+              })
+              items;
+          };
+        in [
+          (section ["scopes" "watches"] "left" 30)
+          (section ["breakpoints" "stacks"] "right" 30)
+        ];
+      };
     };
   };
-  rootOpts.extraPlugins = [(pkgs.vimPlugins.telescope-dap-nvim)];
 }

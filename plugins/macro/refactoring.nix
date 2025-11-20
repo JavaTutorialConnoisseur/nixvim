@@ -4,7 +4,7 @@ _: {
     settings.show_success_message = true;
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>cp";
       group = "Printing (printf | var | clean)";
@@ -12,7 +12,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>cpf";
@@ -70,7 +70,7 @@ _: {
     }
   ];
 
-  rootOpts.extraConfigLuaPre = ''
+  root.extraConfigLuaPre = ''
     require("telescope").load_extension("refactoring")
   '';
 }

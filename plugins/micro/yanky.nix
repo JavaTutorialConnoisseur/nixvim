@@ -4,7 +4,7 @@ _: {
     enableTelescope = true;
   };
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = ["n" "v" "x"];
       key = "<leader>gy";

@@ -6,13 +6,15 @@
 
 ## To-Do's
 
-<!-- TODO: (x4) -->
+### Urgent!
+
+### Not urgent :)
+<!-- FUTURE: (x2) -->
 - Fill in this README >:(
 - Change the github automation / commit rules
 
 ## Improvements
 
 <!-- Plugins: -->
-- barbar : set other color for alt tab background instead
 <!-- New plugins: -->
 <!-- Functions: -->

@@ -17,8 +17,8 @@ _: {
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = ["ZenBg"];
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.transparent.settings.extra_groups = ["ZenBg"];
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>z";
       icon = {
@@ -28,7 +28,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>z";

@@ -1,28 +1,26 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
-  rootOpts.plugins.which-key.settings.spec = [
-    {
-      __unkeyed-1 = "<leader>a";
-      icon = {
-        icon = " ";
-        color = "purple";
-      };
-    }
-  ];
+{pkgs, ...}: {
+  root = {
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed-1 = "<leader>a";
+        icon = {
+          icon = " ";
+          color = "purple";
+        };
+      }
+    ];
 
-  rootOpts.keymaps = [
-    {
-      mode = "n";
-      key = "<leader>a";
-      action = "<Cmd>ToggleAlternate<CR>";
-      options.desc = "Toggle alternate";
-    }
-  ];
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>a";
+        action = "<Cmd>ToggleAlternate<CR>";
+        options.desc = "Toggle alternate";
+      }
+    ];
+  };
 
-  extra.packages = [
+  extra.plugins = [
     (
       pkgs.vimUtils.buildVimPlugin
       {

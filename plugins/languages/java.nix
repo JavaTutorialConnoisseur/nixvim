@@ -3,7 +3,7 @@ _:
 # to enable DAP, eclipse.jdt.ls needs to load the java-debug extension.
 # dunno where / how to do that without explicit control?
 {
-  rootOpts.plugins = {
+  root.plugins = {
     jdtls = {
       enable = false;
       # This expects that the project is directly inside of its workspace

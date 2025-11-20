@@ -25,7 +25,7 @@ _: {
   # to do a session-temporary override for anything, do:
   # lua require('codesnap').setup({code_font_family = ...})
   # and subsequent mapping calls will respect the new setup
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "x";
       key = "<leader>pc";

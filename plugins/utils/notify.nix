@@ -21,7 +21,7 @@ _: {
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>n";
       group = "Notifications";
@@ -32,7 +32,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>nd";
@@ -48,7 +48,7 @@ _: {
     }
   ];
 
-  rootOpts.plugins.transparent.settings.extra_groups = [
+  root.plugins.transparent.settings.extra_groups = [
     "NotifyWARNBorder"
     "NotifyWARNTitle"
     "NotifyWARNIcon"

@@ -1,9 +1,9 @@
 _: {
   opts.enable = true;
 
-  rootOpts.opts.inccommand = "split";
+  root.opts.inccommand = "split";
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = ["n"];
       key = "<leader>ro";

@@ -39,7 +39,7 @@ _: {
     };
   };
 
-  rootOpts.plugins.transparent.settings.extraGroups = [
+  root.plugins.transparent.settings.extraGroups = [
     "LightBulbSign"
     "LightBulbVirtualText"
     "LightBulbFloatWin"

@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  rootOpts.extraConfigLua = ''
+  root.extraConfigLua = ''
     require('pretty-fold').setup({
       keep_indentation = false,
       fill_char = '━',
@@ -16,7 +16,7 @@
     })
   '';
 
-  extra.packages = [
+  extra.plugins = [
     (
       pkgs.vimUtils.buildVimPlugin
       {

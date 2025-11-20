@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>cC";
@@ -8,5 +8,5 @@
     }
   ];
 
-  extra.packages = [pkgs.vimPlugins.godbolt-nvim];
+  extra.plugins = [pkgs.vimPlugins.godbolt-nvim];
 }

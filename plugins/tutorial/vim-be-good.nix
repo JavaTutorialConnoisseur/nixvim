@@ -1,7 +1,7 @@
 _: {
   opts.enable = true;
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>lv";

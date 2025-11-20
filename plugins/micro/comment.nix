@@ -14,7 +14,7 @@ _: {
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>|";
       group = "Uncomment custom area";
@@ -40,7 +40,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>|";

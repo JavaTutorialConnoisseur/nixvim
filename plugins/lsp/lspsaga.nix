@@ -13,7 +13,7 @@ _: {
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>rn";
       __unkeyed-2 = "<cmd>Lspsaga rename mode=i<cr>";
@@ -76,5 +76,5 @@ _: {
     }
   ];
 
-  rootOpts.plugins.transparent.settings.extra_groups = ["WinBar" "WinBarNC"];
+  root.plugins.transparent.settings.extra_groups = ["WinBar" "WinBarNC"];
 }

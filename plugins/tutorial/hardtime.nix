@@ -34,7 +34,7 @@ _: {
     };
   };
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>ht";

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  extra.packages = [pkgs.vimPlugins.cellular-automaton-nvim];
+  extra.plugins = [pkgs.vimPlugins.cellular-automaton-nvim];
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       mode = "n";
       __unkeyed-1 = "<leader>br";
