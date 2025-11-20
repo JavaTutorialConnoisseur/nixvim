@@ -160,16 +160,16 @@ _: {
 
       window = {
         fuzzy_finder_mappings = {
-          "<C-J>" = "move_cursor_down";
-          "<C-K>" = "move_cursor_up";
+          "<c-j>" = "move_cursor_down";
+          "<c-k>" = "move_cursor_up";
         };
 
         mappings = {
           "[b" = "prev_source";
           "]b" = "next_source";
 
-          "<Space>".__raw = "false";
-          "<Tab>" = "reveal_with_focus";
+          "<space>".__raw = "false";
+          "<tab>" = "reveal_with_focus";
 
           h = "parent_or_close";
           l = "child_or_open";

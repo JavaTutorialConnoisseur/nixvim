@@ -32,7 +32,7 @@ _: {
     {
       mode = "n";
       key = "<leader>z";
-      action = "<Cmd>ZenMode<CR>";
+      action = "<cmd>ZenMode<cr>";
       options.desc = "Toggle zen mode";
     }
   ];

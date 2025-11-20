@@ -17,7 +17,7 @@
   root.extraPackages = [pkgs.texlivePackages.latexmk];
 
   root.autoCmd = let
-    action = texcmd: ''"<cmd>lua vim.cmd [[execute 'normal <Plug>(${texcmd})']]<cr>"'';
+    action = texcmd: ''"<cmd>lua vim.cmd [[execute 'normal <plug>(${texcmd})']]<cr>"'';
   in [
     {
       callback.__raw = ''
@@ -28,7 +28,7 @@
               mode = { "x", "n", "o" }
             },
 
-            { "<F6>", "<plug>(vimtex-env-surround-visual)",
+            { "<f6>", "<plug>(vimtex-env-surround-visual)",
               desc = "Surround visual selection w/ env", mode = "x"
             },
 
@@ -90,7 +90,7 @@
                 desc = "Show documentation"
               },
 
-              { "<F6>", "<plug>(vimtex-env-surround-line)",
+              { "<f6>", "<plug>(vimtex-env-surround-line)",
                 desc = "Surround line with \\begin-\\end"
               },
 

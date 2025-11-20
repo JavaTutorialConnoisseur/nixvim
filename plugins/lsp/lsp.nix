@@ -1,34 +1,7 @@
 _: {
-  opts = {
-    enable = true;
-    keymaps = {
-      diagnostic = {
-        "<leader>do" = {
-          action = "open_float";
-          desc = "Open diagnostic details";
-        };
-        "<leader>dq" = {
-          action = "setloclist";
-          desc = "Open diagnostic list";
-        };
-      };
+  opts.enable = true;
 
-      lspBuf = {
-        "<leader>f" = {
-          action = "format";
-          desc = "Format code";
-        };
-        "<leader>cD" = {
-          action = "declaration";
-          desc = "Go to symbol declaration";
-        };
-        "<leader>ci" = {
-          action = "implementation";
-          desc = "Go to symbol implementation";
-        };
-      };
-    };
-  };
+  root.colorschemes.catppuccin.settings.integrations.native_lsp.enabled = true;
 
   # function signature while writing
   root.plugins.lsp-signature = {
@@ -37,18 +10,50 @@ _: {
       floating_window = false;
       hint_enable = false;
 
-      toggle_key = "<C-k>";
+      toggle_key = "<c-k>";
     };
   };
 
-  root.plugins.which-key.settings.spec = [
+  root.keymaps = [
     {
-      __unkeyed-1 = "<leader>cT";
-      __unkeyed-2 = ''
-        <cmd>lua TelescopeWithTheme("lsp_references", {cmd = path}, "")<cr>'';
-      group = "Find code references with telescope";
+      key = "<leader>ci";
+      action = "<cmd>lua vim.lsp.buf.implementation()<cr>";
+      options.desc = "Go to symbol implementation";
     }
 
+    {
+      key = "<leader>cD";
+      action = "<cmd>lua vim.lsp.buf.declaration()<cr>";
+      options.desc = "Go to symbol declaration";
+    }
+
+    {
+      key = "<leader>f";
+      action = "<cmd>lua vim.lsp.buf.format()<cr>";
+      options.desc = "Format code";
+    }
+
+    {
+      key = "<leader>do";
+      action = "<cmd>lua vim.diagnostic.open_float()<cr>";
+      options.desc = "Open diagnostic details";
+    }
+
+    {
+      key = "<leader>dq";
+      action = "<cmd>lua vim.diagnostic.setloclist()<cr>";
+      options.desc = "Open diagnostic list";
+    }
+
+    {
+      key = "<leader>cT";
+      action = ''
+        <cmd>lua TelescopeWithTheme("lsp_references", {cmd = path}, "")<cr>'';
+      options.desc = "Find code references with telescope";
+    }
+  ];
+
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>f";
       group = "Format code";
@@ -86,8 +91,4 @@ _: {
       };
     }
   ];
-
-  root = {
-    colorschemes.catppuccin.settings.integrations.native_lsp.enabled = true;
-  };
 }

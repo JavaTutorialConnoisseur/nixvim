@@ -6,8 +6,8 @@ _: {
       icons.rules = false;
 
       keys = {
-        scroll_down = "<M-[>";
-        scroll_up = "<M-]>";
+        scroll_down = "<m-[>";
+        scroll_up = "<m-]>";
       };
 
       sort = ["group" "alphanum"];

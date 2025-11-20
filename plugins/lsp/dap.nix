@@ -152,7 +152,7 @@
       enable = true;
 
       settings = {
-        floating.mappings.close = ["<ESC>" "q"];
+        floating.mappings.close = ["<esc>" "q"];
 
         layouts = let
           section = items: position: size: {

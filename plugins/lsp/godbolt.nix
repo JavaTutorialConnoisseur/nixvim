@@ -3,7 +3,7 @@
     {
       mode = "n";
       key = "<leader>cC";
-      action = "<Cmd>GodboltCompiler telescope<CR>";
+      action = "<cmd>GodboltCompiler telescope<cr>";
       options.desc = "Compile w/ Godbolt";
     }
   ];
