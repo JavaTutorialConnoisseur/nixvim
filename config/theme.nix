@@ -1,5 +1,5 @@
 _: {
-  # TODO: change theme propagation by targeting nixvim with this:
+  # FUTURE: (after themer program complete) change theme propagation by targeting nixvim with this:
   # https://github.com/nix-community/stylix/pull/415
   colorschemes.mini-base16 = {
     enable = false;
