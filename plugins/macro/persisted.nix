@@ -63,7 +63,7 @@ _: {
       options.desc = "Sessions";
       action =
         "<cmd>lua TelescopeWithTheme('persisted', "
-        + "{cmd = path, prompt_title = 'Sessions - <C-d> to delete'}, 'persisted')<cr>";
+        + "{cmd = path, prompt_title = 'Sessions - <c-d> to delete'}, 'persisted')<cr>";
     }
   ];
 

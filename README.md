@@ -14,9 +14,6 @@
 - Change the github automation / commit rules
 
 ## Improvements
-<!-- TODO: (x2) -->
-- rename CR and Cmd to lowercase
-- remove all explicit binding into which-key
 
 <!-- Plugins: -->
 <!-- New plugins: -->

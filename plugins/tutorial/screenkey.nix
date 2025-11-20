@@ -3,7 +3,7 @@
     {
       mode = "n";
       key = "<leader>hk";
-      action = "<Cmd>Screenkey toggle<CR>";
+      action = "<cmd>Screenkey toggle<cr>";
       options.desc = "Screenkey";
     }
   ];

@@ -25,7 +25,7 @@ _: {
           vim.opt_local.foldcolumn = "0"
           vim.opt_local.signcolumn = "no"
           if t.hidden then
-            vim.keymap.set({ "n", "t", "i" }, "<F7>", function()
+            vim.keymap.set({ "n", "t", "i" }, "<f7>", function()
               t:toggle()
             end, { desc = "Toggle terminal", buffer = t.bufnr })
           end
@@ -40,7 +40,6 @@ _: {
   root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader><leader>";
-      __unkeyed-2 = "<cmd>ZshTermToggle<cr>";
       desc = "Zsh";
       icon = {
         icon = "󱆃 ";
@@ -62,70 +61,77 @@ _: {
   root.keymaps = [
     {
       mode = "n";
-      key = "<F7>";
-      action = "<Cmd>execute v:count . 'ToggleTerm'<CR>";
+      key = "<f7>";
+      action = "<cmd>execute v:count . 'ToggleTerm'<cr>";
       options.desc = "Toggle terminal";
     }
 
     {
       mode = "t";
-      key = "<F7>";
-      action = "<Cmd>ToggleTerm<CR>";
+      key = "<f7>";
+      action = "<cmd>ToggleTerm<cr>";
       options.desc = "Toggle terminal";
     }
 
     {
       mode = "i";
-      key = "<F7>";
-      action = "<Esc><Cmd>ToggleTerm<CR>";
+      key = "<f7>";
+      action = "<esc><cmd>ToggleTerm<cr>";
       options.desc = "Toggle terminal";
     }
 
     {
       mode = "t";
-      key = "<Esc><Esc>";
-      action = "<C-\\><C-n>";
+      key = "<esc><esc>";
+      action = "<c-\\><c-n>";
       options.desc = "Switch to normal mode";
     }
 
     {
       mode = "t";
-      key = "<Esc><cr>";
+      key = "<esc><cr>";
       action = "<esc>";
       options.desc = "Send 'escape' key";
     }
 
     {
       mode = ["n"];
-      key = "<Leader>ts";
+      key = "<leader>ts";
       action = "<cmd>TermSelect<cr>";
       options.desc = "Select terminal";
     }
 
     {
       mode = ["n"];
-      key = "<Leader>tl";
+      key = "<leader><leader>";
+      action = "<cmd>ZshTermToggle<cr>";
+      options.desc = "Zsh";
+    }
+
+    {
+      mode = ["n"];
+      key = "<leader>tl";
       action = "<cmd>LazyGitTermToggle<cr>";
       options.desc = "Lazygit";
     }
 
     {
       mode = ["n"];
-      key = "<Leader>tg";
+      key = "<leader>tg";
       action = "<cmd>GefTermToggle<cr>";
       options.desc = "[gdb] + GEF";
     }
 
     {
       mode = ["n"];
-      key = "<Leader>tv";
+      key = "<leader>tv";
       action = "<cmd>MiniZshTermToggle<cr>";
       options.desc = "vertical split terminal";
     }
 
     {
       mode = ["n"];
-      key = "<Leader>tn";
+      key = "<leader>tn";
       action.__raw = ''
         function()
           local curterm = require("toggleterm.terminal").get_focused_id()
@@ -144,7 +150,7 @@ _: {
     TermOpen = [
       {
         mode = ["t"];
-        key = "<C-D>";
+        key = "<c-d>";
         action = "<cmd>wincmd h<cr>";
         options.desc = "Terminal exit keymap";
       }

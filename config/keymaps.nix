@@ -3,19 +3,19 @@ _: let
     {
       key = "<leader>F";
       action = ''
-        <Cmd>lua vim.schedule(function() vim.cmd("silent! loadview") end)<CR>'';
+        <cmd>lua vim.schedule(function() vim.cmd("silent! loadview") end)<cr>'';
       options.desc = "Refresh loadview";
     }
 
     {
       key = "<leader>bc";
-      action = "<Cmd>BufferClose<CR>";
+      action = "<cmd>BufferClose<cr>";
       options.desc = "Close (tab) buffer";
     }
 
     {
       key = "<leader>bn";
-      action = "<Cmd>tabnew<CR>";
+      action = "<cmd>tabnew<cr>";
       options.desc = "New (tab) buffer";
     }
 
@@ -28,211 +28,211 @@ _: let
 
     {
       key = "<leader>bod";
-      action = "<Cmd>BufferOrderByDirectory<CR>";
+      action = "<cmd>BufferOrderByDirectory<cr>";
       options.desc = "By directory";
     }
 
     {
       key = "<leader>bol";
-      action = "<Cmd>BufferOrderByLanguage<CR>";
+      action = "<cmd>BufferOrderByLanguage<cr>";
       options.desc = "By language";
     }
 
     {
       key = "<leader>bon";
-      action = "<Cmd>BufferOrderByBufferNumber<CR>";
+      action = "<cmd>BufferOrderByBufferNumber<cr>";
       options.desc = "By number";
     }
 
     {
       key = "<leader>bow";
-      action = "<Cmd>BufferOrderByWindowNumber<CR>";
+      action = "<cmd>BufferOrderByWindowNumber<cr>";
       options.desc = "By window number";
     }
 
     {
       key = "<leader>qq";
-      action = "<Cmd>qall!<CR>";
+      action = "<cmd>qall!<cr>";
       options.desc = "Quit all";
     }
 
     {
-      key = "<A-`>";
-      action = "<Cmd>b#<CR>";
+      key = "<m-`>";
+      action = "<cmd>b#<cr>";
       options.desc = "Go to alternate buffer";
     }
 
     {
-      key = "<A-->";
-      action = "<Cmd>BufferPrevious<CR>";
+      key = "<m-->";
+      action = "<cmd>BufferPrevious<cr>";
       options.desc = "Move to previous (left) buffer";
     }
 
     {
-      key = "<A-=>";
-      action = "<Cmd>BufferNext<CR>";
+      key = "<m-=>";
+      action = "<cmd>BufferNext<cr>";
       options.desc = "Move to next (right) buffer";
     }
 
     {
-      key = "<A-,>";
-      action = "<Cmd>BufferMovePrevious<CR>";
+      key = "<m-,>";
+      action = "<cmd>BufferMovePrevious<cr>";
       options.desc = "Move current buffer left";
     }
 
     {
-      key = "<A-.>";
-      action = "<Cmd>BufferMoveNext<CR>";
+      key = "<m-.>";
+      action = "<cmd>BufferMoveNext<cr>";
       options.desc = "Move current buffer right";
     }
 
     {
-      key = "<A-0>";
-      action = "<Cmd>BufferLast<CR>";
+      key = "<m-0>";
+      action = "<cmd>BufferLast<cr>";
       options.desc = "Move to the last buffer";
     }
 
     {
-      key = "<A-1>";
-      action = "<Cmd>BufferGoto 1<CR>";
+      key = "<m-1>";
+      action = "<cmd>BufferGoto 1<cr>";
       options.desc = "Move to buffer 1";
     }
 
     {
-      key = "<A-2>";
-      action = "<Cmd>BufferGoto 2<CR>";
+      key = "<m-2>";
+      action = "<cmd>BufferGoto 2<cr>";
       options.desc = "Move to buffer 2";
     }
 
     {
-      key = "<A-3>";
-      action = "<Cmd>BufferGoto 3<CR>";
+      key = "<m-3>";
+      action = "<cmd>BufferGoto 3<cr>";
       options.desc = "Move to buffer 3";
     }
 
     {
-      key = "<A-4>";
-      action = "<Cmd>BufferGoto 4<CR>";
+      key = "<m-4>";
+      action = "<cmd>BufferGoto 4<cr>";
       options.desc = "Move to buffer 4";
     }
 
     {
-      key = "<A-5>";
-      action = "<Cmd>BufferGoto 5<CR>";
+      key = "<m-5>";
+      action = "<cmd>BufferGoto 5<cr>";
       options.desc = "Move to buffer 5";
     }
 
     {
-      key = "<A-6>";
-      action = "<Cmd>BufferGoto 6<CR>";
+      key = "<m-6>";
+      action = "<cmd>BufferGoto 6<cr>";
       options.desc = "Move to buffer 6";
     }
 
     {
-      key = "<A-7>";
-      action = "<Cmd>BufferGoto 7<CR>";
+      key = "<m-7>";
+      action = "<cmd>BufferGoto 7<cr>";
       options.desc = "Move to buffer 7";
     }
 
     {
-      key = "<A-8>";
-      action = "<Cmd>BufferGoto 8<CR>";
+      key = "<m-8>";
+      action = "<cmd>BufferGoto 8<cr>";
       options.desc = "Move to buffer 8";
     }
 
     {
-      key = "<A-9>";
-      action = "<Cmd>BufferGoto 9<CR>";
+      key = "<m-9>";
+      action = "<cmd>BufferGoto 9<cr>";
       options.desc = "Move to buffer 9";
     }
 
     {
-      key = "<A-c>";
-      action = "<Cmd>BufferClose<CR>";
+      key = "<m-c>";
+      action = "<cmd>BufferClose<cr>";
       options.desc = "Close the buffer";
     }
 
     {
-      key = "<A-p>";
-      action = "<Cmd>BufferPin<CR>";
+      key = "<m-p>";
+      action = "<cmd>BufferPin<cr>";
       options.desc = "Toggle buffer pin";
     }
 
     {
-      key = "<C-A>";
+      key = "<c-a>";
       action = "ggVG";
       options.desc = "Select whole file";
     }
 
     {
       key = "m";
-      action = "<Cmd>noh<CR>";
+      action = "<cmd>noh<cr>";
       options.desc = "clear selection";
     }
 
     {
-      key = "<C-S>";
-      action = "<Cmd>w<CR>";
+      key = "<c-s>";
+      action = "<cmd>w<cr>";
       options.desc = "Save the file";
     }
 
     {
-      key = "<C-h>";
-      action = "<Cmd>5winc ><CR>";
+      key = "<c-h>";
+      action = "<cmd>5winc ><cr>";
       options.desc = "Resize split left by 5u";
     }
 
     {
-      key = "<C-j>";
-      action = "<Cmd>5winc +<CR>";
+      key = "<c-j>";
+      action = "<cmd>5winc +<cr>";
       options.desc = "Resize split down by 5u";
     }
 
     {
-      key = "<C-k>";
-      action = "<Cmd>5winc -<CR>";
+      key = "<c-k>";
+      action = "<cmd>5winc -<cr>";
       options.desc = "Resize split up by 5u";
     }
 
     {
-      key = "<C-l>";
-      action = "<Cmd>5winc <<CR>";
+      key = "<c-l>";
+      action = "<cmd>5winc <<cr>";
       options.desc = "Resize split right by 5u";
     }
 
     {
-      key = "<M-Left>";
+      key = "<m-left>";
       action = "^";
       options.desc = "Go to line start";
     }
 
     {
-      key = "<M-Right>";
+      key = "<m-right>";
       action = "$";
       options.desc = "Go to line end";
     }
 
     {
-      key = "<M-h>";
-      action = "<Cmd>wincmd h<CR>";
+      key = "<m-h>";
+      action = "<cmd>wincmd h<cr>";
       options.desc = "Move to split left";
     }
 
     {
-      key = "<M-j>";
-      action = "<Cmd>wincmd j<CR>";
+      key = "<m-j>";
+      action = "<cmd>wincmd j<cr>";
       options.desc = "Move to split down";
     }
 
     {
-      key = "<M-k>";
-      action = "<Cmd>wincmd k<CR>";
+      key = "<m-k>";
+      action = "<cmd>wincmd k<cr>";
       options.desc = "Move to split up";
     }
 
     {
-      key = "<M-l>";
-      action = "<Cmd>wincmd l<CR>";
+      key = "<m-l>";
+      action = "<cmd>wincmd l<cr>";
       options.desc = "Move to split right";
     }
 
@@ -245,44 +245,44 @@ _: let
 
   insert_mode = map (key: key // {mode = "i";}) [
     {
-      key = "<C-S>";
-      action = "<Esc><Cmd>w<CR>a";
+      key = "<c-s>";
+      action = "<esc><cmd>w<cr>a";
       options.desc = "Save the file";
     }
 
     {
-      key = "<M-Left>";
-      action = "<C-O>^";
+      key = "<m-left>";
+      action = "<c-o>^";
       options.desc = "Go to line start";
     }
 
     {
-      key = "<M-Right>";
-      action = "<C-O>$";
+      key = "<m-right>";
+      action = "<c-o>$";
       options.desc = "Go to line end";
     }
 
     {
-      key = "<M-h>";
-      action = "<Esc><Cmd>wincmd h<CR>";
+      key = "<m-h>";
+      action = "<esc><cmd>wincmd h<cr>";
       options.desc = "Move to split left";
     }
 
     {
-      key = "<M-j>";
-      action = "<Esc><Cmd>wincmd j<CR>";
+      key = "<m-j>";
+      action = "<esc><cmd>wincmd j<cr>";
       options.desc = "Move to split down";
     }
 
     {
-      key = "<M-k>";
-      action = "<Esc><Cmd>wincmd k<CR>";
+      key = "<m-k>";
+      action = "<esc><cmd>wincmd k<cr>";
       options.desc = "Move to split up";
     }
 
     {
-      key = "<M-l>";
-      action = "<Esc><Cmd>wincmd l<CR>";
+      key = "<m-l>";
+      action = "<esc><cmd>wincmd l<cr>";
       options.desc = "Move to split right";
     }
   ];

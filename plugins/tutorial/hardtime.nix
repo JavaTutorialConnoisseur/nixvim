@@ -38,7 +38,7 @@ _: {
     {
       mode = "n";
       key = "<leader>ht";
-      action = "<Cmd>Hardtime toggle<CR>";
+      action = "<cmd>Hardtime toggle<cr>";
       options.desc = "Hardtime";
     }
   ];
