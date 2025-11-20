@@ -14,7 +14,7 @@
       {
         mode = "n";
         key = "<leader>a";
-        action = "<Cmd>ToggleAlternate<CR>";
+        action = "<cmd>ToggleAlternate<cr>";
         options.desc = "Toggle alternate";
       }
     ];
