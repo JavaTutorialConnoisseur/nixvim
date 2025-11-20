@@ -10,7 +10,7 @@ _: {
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>S";
       group = "Sessions";
@@ -21,7 +21,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>Ss";
@@ -67,7 +67,7 @@ _: {
     }
   ];
 
-  rootOpts.extraConfigLua = ''
+  root.extraConfigLua = ''
     vim.opt.sessionoptions:append 'globals'
     vim.api.nvim_create_autocmd({ 'User' }, {
       pattern = 'PersistedSavePre',

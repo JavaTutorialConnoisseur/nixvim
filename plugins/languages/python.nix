@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  rootOpts.plugins = {
+  root.plugins = {
     lsp.servers.pylsp = {
       enable = true;
       settings.plugins ={
@@ -59,7 +59,7 @@
     };
   };
 
-  # rootOpts.autoCmd = [
+  # root.autoCmd = [
   #   {
   #     callback.__raw = ''
   #       function()
@@ -77,6 +77,6 @@
   #   }
   # ];
 
-  rootOpts.plugins.dap-python.enable = true;
-  rootOpts.extraPackages = [pkgs.python312Packages.pytest];
+  root.plugins.dap-python.enable = true;
+  root.extraPackages = [pkgs.python312Packages.pytest];
 }

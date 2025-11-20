@@ -181,7 +181,7 @@ _: {
     };
   };
 
-  rootOpts = {
+  root = {
     colorschemes.catppuccin.settings.integrations.neotree = true;
     plugins.which-key.settings.spec = [
       {

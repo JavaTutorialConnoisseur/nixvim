@@ -84,7 +84,7 @@ _: {
     };
   };
 
-  rootOpts.autoCmd = [
+  root.autoCmd = [
     {
       callback.__raw = ''
         function(state)
@@ -121,5 +121,5 @@ _: {
     }
   ];
 
-  rootOpts.colorschemes.catppuccin.settings.integrations.which_key = true;
+  root.colorschemes.catppuccin.settings.integrations.which_key = true;
 }

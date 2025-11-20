@@ -5,7 +5,7 @@ _: {
     settings.highlight = "NonText";
   };
 
-  rootOpts.plugins.smartcolumn = {
+  root.plugins.smartcolumn = {
     enable = true;
     settings.colorcolumn = "100";
   };

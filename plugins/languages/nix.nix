@@ -4,7 +4,7 @@
   sessionVars,
   ...
 }: {
-  rootOpts.plugins = {
+  root.plugins = {
     nix-develop.enable = true;
     hmts.enable = false; # string code highlighting (like css)
 
@@ -45,7 +45,7 @@
     };
   };
 
-  rootOpts.autoCmd = [
+  root.autoCmd = [
     {
       callback.__raw = ''
         function()
@@ -61,5 +61,5 @@
     }
   ];
 
-  rootOpts.extraPackages = [pkgs.alejandra pkgs.nixd];
+  root.extraPackages = [pkgs.alejandra pkgs.nixd];
 }

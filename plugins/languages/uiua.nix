@@ -1,5 +1,5 @@
 _: {
-  rootOpts.plugins = {
+  root.plugins = {
     lsp.servers.uiua.enable = true;
   };
 }

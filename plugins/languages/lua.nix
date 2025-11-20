@@ -1,3 +1,3 @@
 _: {
-  rootOpts.plugins.lsp.servers.lua_ls.enable = true;
+  root.plugins.lsp.servers.lua_ls.enable = true;
 }

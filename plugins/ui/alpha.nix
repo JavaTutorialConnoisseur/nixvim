@@ -105,10 +105,10 @@ _: let
 in {
   opts = {
     enable = true;
-    layout = [winheight-padding header (padding 2) buttons (padding 4)];
+    settings.layout = [winheight-padding header (padding 2) buttons (padding 4)];
   };
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>hs";
@@ -125,7 +125,7 @@ in {
     }
   ];
 
-  rootOpts = {
+  root = {
     autoGroups.alpha = {};
     autoCmd = [
       {

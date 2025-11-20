@@ -4,7 +4,7 @@ _: {
     settings.startVisible = false;
   };
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       key = "<leader>lp";
       action = "<cmd>Precognition peek<cr>";

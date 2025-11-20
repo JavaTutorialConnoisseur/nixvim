@@ -23,9 +23,9 @@
   silicon_line_fmtstr = ''
     silicon --window-title %s --line-offset %i --background "#fff0" %s --output %s-section-%s.png'';
 in {
-  rootOpts.extraPackages = [pkgs.silicon];
+  root.extraPackages = [pkgs.silicon];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>pa";
@@ -48,7 +48,7 @@ in {
     }
   ];
 
-  rootOpts.userCommands = {
+  root.userCommands = {
     PrettyPrintFile = {
       command.__raw = ''
         function()

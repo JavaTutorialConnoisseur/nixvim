@@ -1,9 +1,9 @@
 _: let
   c_or_cpp = "c";
 in {
-  rootOpts.plugins.lsp.servers.ccls.enable = true;
+  root.plugins.lsp.servers.ccls.enable = true;
 
-  rootOpts.plugins.dap = {
+  root.plugins.dap = {
     adapters.executables.gdb = {
       command = "gdb";
       args = ["--interpreter=dap" ''--eval-command="set print pretty on"''];
@@ -40,7 +40,7 @@ in {
     };
   };
 
-  rootOpts.extraConfigLua = ''
+  root.extraConfigLua = ''
     if ${c_or_cpp} == "c" then
       vim.g.c_syntax_for_h = 1
     elseif ${c_or_cpp} == "cpp" then
@@ -48,7 +48,7 @@ in {
     end
   '';
 
-  rootOpts.userCommands = {
+  root.userCommands = {
     Make = {
       command.__raw = ''
         function()
@@ -104,7 +104,7 @@ in {
     };
   };
 
-  rootOpts.autoCmd = [
+  root.autoCmd = [
     {
       callback.__raw = ''
         function()

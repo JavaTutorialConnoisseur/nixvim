@@ -15,7 +15,7 @@ _: {
     };
   };
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>td";
@@ -52,7 +52,7 @@ _: {
     }
   ];
 
-  rootOpts.plugins.transparent.settings.extra_groups = [
+  root.plugins.transparent.settings.extra_groups = [
     "TodoSignNOTE"
     "TodoSignFIX"
     "TodoSignHACK"

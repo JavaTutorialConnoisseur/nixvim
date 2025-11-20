@@ -1,5 +1,5 @@
 _: {
-  rootOpts.plugins = {
+  root.plugins = {
     lsp.servers.sqls.enable = true;
 
     vim-dadbod.enable = true;

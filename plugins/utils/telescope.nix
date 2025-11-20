@@ -1,5 +1,5 @@
 {
-  helpers,
+  lib,
   pkgs,
   ...
 }: {
@@ -11,7 +11,7 @@
     };
   };
 
-  rootOpts = {
+  root = {
     extraPackages = [pkgs.ripgrep];
 
     colorschemes.catppuccin.settings.integrations.telescope.enabled = true;
@@ -73,7 +73,7 @@
         inherit key mode;
 
         action.__raw = "function() TelescopeWithTheme('${fn}', ${
-          helpers.toLuaObject args
+          lib.nixvim.toLuaObject args
         }, '${builtins.toString extension}') end";
         options = {inherit desc;};
       };

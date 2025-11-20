@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>hk";
@@ -8,7 +8,7 @@
     }
   ];
 
-  extra.packages = let
+  extra.plugins = let
     version = "2.1.0";
     name = "screenkey.nvim";
   in [

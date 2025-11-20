@@ -8,7 +8,7 @@ _: let
     ["Catppuccin6" "#f5a97f"]
   ];
 in {
-  rootOpts.colorschemes.catppuccin.settings.integrations.indent_blankline =
+  root.colorschemes.catppuccin.settings.integrations.indent_blankline =
     true;
 
   opts = {

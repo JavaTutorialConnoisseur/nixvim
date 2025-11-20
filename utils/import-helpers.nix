@@ -34,18 +34,14 @@
     inherit (lib) recursiveUpdate optionalAttrs pipe;
 
     pluginExtras = optionalAttrs (plugin ? extra) {
-      extraConfigLua = plugin.extra.lua or "";
-      extraConfigLuaPre = plugin.extra.luaPre or "";
-      extraConfigVim = plugin.extra.vim or "";
-      extraPlugins = plugin.extra.packages; # TODO: rename to extra.plugins
+      extraPlugins = plugin.extra.plugins;
     };
 
     pluginOptions = optionalAttrs (plugin ? opts) {
       plugins.${name} = plugin.opts;
     };
 
-    # TODO: rename to plugin.root
-    pluginRoot = optionalAttrs (plugin ? rootOpts) plugin.rootOpts;
+    pluginRoot = optionalAttrs (plugin ? root) plugin.root;
   in
     pipe pluginOptions [
       (recursiveUpdate pluginExtras)

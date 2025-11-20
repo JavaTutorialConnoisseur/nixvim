@@ -36,8 +36,8 @@ _: {
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = ["ToggleTerm1Normal"];
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.transparent.settings.extra_groups = ["ToggleTerm1Normal"];
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader><leader>";
       __unkeyed-2 = "<cmd>ZshTermToggle<cr>";
@@ -59,7 +59,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<F7>";
@@ -140,7 +140,7 @@ _: {
     }
   ];
 
-  rootOpts.keymapsOnEvents = {
+  root.keymapsOnEvents = {
     TermOpen = [
       {
         mode = ["t"];
@@ -151,7 +151,7 @@ _: {
     ];
   };
 
-  rootOpts.userCommands = let
+  root.userCommands = let
     lazyGitTermCount = "10";
     zshTermCount = "11";
     miniZshTermCount = "12";

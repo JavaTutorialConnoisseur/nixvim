@@ -12,11 +12,11 @@ _: {
     # mappings: <leader>g? inside window
   };
 
-  rootOpts.extraConfigLua = ''
+  root.extraConfigLua = ''
     vim.g.navbuddy_taransparent = true
   '';
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       key = "<leader>gt";

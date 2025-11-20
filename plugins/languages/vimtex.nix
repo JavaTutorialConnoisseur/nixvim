@@ -13,10 +13,10 @@
     };
   };
 
-  rootOpts.plugins.transparent.settings.extra_groups = ["VimtexMsg"];
-  rootOpts.extraPackages = [pkgs.texlivePackages.latexmk];
+  root.plugins.transparent.settings.extra_groups = ["VimtexMsg"];
+  root.extraPackages = [pkgs.texlivePackages.latexmk];
 
-  rootOpts.autoCmd = let
+  root.autoCmd = let
     action = texcmd: ''"<cmd>lua vim.cmd [[execute 'normal <Plug>(${texcmd})']]<cr>"'';
   in [
     {

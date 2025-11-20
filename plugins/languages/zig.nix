@@ -1,3 +1,3 @@
 _: {
-  rootOpts.plugins.lsp.servers.zls.enable = true;
+  root.plugins.lsp.servers.zls.enable = true;
 }

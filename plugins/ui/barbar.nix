@@ -39,7 +39,7 @@ in {
     };
   };
 
-  rootOpts.autoCmd = [
+  root.autoCmd = [
     {
       desc = "Set all tab bar highlights";
       callback.__raw = ''

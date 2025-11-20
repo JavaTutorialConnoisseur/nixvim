@@ -18,7 +18,7 @@ _:
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>cn";
       group = "Testing";
@@ -26,7 +26,7 @@ _:
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "n";
       action = "<cmd>lua require('neotest').run.run()<cr>";

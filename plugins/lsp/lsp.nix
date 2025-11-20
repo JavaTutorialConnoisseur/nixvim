@@ -31,7 +31,7 @@ _: {
   };
 
   # function signature while writing
-  rootOpts.plugins.lsp-signature = {
+  root.plugins.lsp-signature = {
     enable = true;
     settings = {
       floating_window = false;
@@ -41,7 +41,7 @@ _: {
     };
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>cT";
       __unkeyed-2 = ''
@@ -87,7 +87,7 @@ _: {
     }
   ];
 
-  rootOpts = {
+  root = {
     colorschemes.catppuccin.settings.integrations.native_lsp.enabled = true;
   };
 }

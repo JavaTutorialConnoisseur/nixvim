@@ -26,14 +26,14 @@ _: {
     };
   };
 
-  rootOpts.plugins = {
+  root.plugins = {
     cmp-nvim-lsp.enable = true;
     cmp-snippy.enable = true;
     friendly-snippets.enable = true;
     intellitab.enable = true;
   };
 
-  rootOpts.plugins.which-key.settings.spec = [
+  root.plugins.which-key.settings.spec = [
     {
       __unkeyed-1 = "<leader>s";
       group = "Snippets";
@@ -58,7 +58,7 @@ _: {
     }
   ];
 
-  rootOpts.keymaps = [
+  root.keymaps = [
     {
       mode = "i";
       key = "<tab>";
