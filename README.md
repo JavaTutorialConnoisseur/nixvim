@@ -9,9 +9,8 @@
 ### Urgent!
 
 ### Not urgent :)
-<!-- FUTURE: (x2) -->
+<!-- FUTURE: (x1) -->
 - Fill in this README >:(
-- Change the github automation / commit rules
 
 ## Improvements
 
