@@ -29,6 +29,14 @@ _: {
         "netrw"
         "lazy"
         "mason"
+
+        "beacon"
+        "sagaoutline"
+        "sagadiagnostic"
+        "sagafinder"
+        "sagarename"
+        "saga_unitest"
+        "diff"
       ];
       hint = false;
     };
