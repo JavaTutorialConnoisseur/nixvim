@@ -8,6 +8,12 @@ _: let
     }
 
     {
+      key = "<leader>;";
+      action = "<esc>mp$a;<esc>`p";
+      options.desc = "Add semicolon at EOL";
+    }
+
+    {
       key = "<leader>bc";
       action = "<cmd>BufferClose<cr>";
       options.desc = "Close (tab) buffer";
@@ -165,7 +171,7 @@ _: let
     }
 
     {
-      key = "m";
+      key = "<leader>M";
       action = "<cmd>noh<cr>";
       options.desc = "clear selection";
     }
