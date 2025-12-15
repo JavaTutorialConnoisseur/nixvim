@@ -24,18 +24,8 @@
       "x86_64-darwin"
     ];
   in {
-    nixosModules.default = {
-      config,
-      lib,
-      ...
-    }: {
+    nixosModules.default = _: {
       imports = [./modules.nix];
-      config = let
-        cfg = config.programs.my-nixvim;
-      in
-        lib.mkIf cfg.enable {
-          environment.systemPackages = [cfg.package];
-        };
     };
 
     packages = forAllSystems (system: let
