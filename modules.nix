@@ -3,14 +3,14 @@
   lib,
   ...
 }: let
-  inherit (lib.types) either package attrs attrsOf str listOf;
+  inherit (lib.types) either package lambda attrs attrsOf str listOf;
   cfg = config.programs.my-nixvim;
 in {
   options.programs.my-nixvim = {
     enable = lib.mkEnableOption "my nixvim config";
 
     package = lib.mkOption {
-      type = either package attrs;
+      type = either package lambda;
       description = "The nixvim package to use";
     };
 
