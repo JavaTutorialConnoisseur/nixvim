@@ -4,9 +4,9 @@
   ...
 }: let
   inherit (lib.types) either package attrs attrsOf str listOf;
-  cfg = config.programs.nixvim;
+  cfg = config.programs.my-nixvim;
 in {
-  options.programs.nixvim = {
+  options.programs.my-nixvim = {
     enable = lib.mkEnableOption "my nixvim config";
 
     package = lib.mkOption {
@@ -36,7 +36,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = let
-      nixvim =
+      my-nixvim =
         if lib.isDerivation cfg.package
         then cfg.package
         else
@@ -47,6 +47,6 @@ in {
               sessionVars = cfg.settings.vars or null;
             };
           };
-    in [nixvim];
+    in [my-nixvim];
   };
 }

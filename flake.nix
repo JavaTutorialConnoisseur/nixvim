@@ -30,9 +30,11 @@
       ...
     }: {
       imports = [./modules.nix];
-      config = with config.programs.nixvim;
-        lib.mkIf enable {
-          environment.systemPackages = [package];
+      config = let
+        cfg = config.programs.my-nixvim;
+      in
+        lib.mkIf cfg.enable {
+          environment.systemPackages = [cfg.package];
         };
     };
 
